@@ -4,7 +4,7 @@
 /* ------------------ NAVIGATION ------------------ */
 nav {
   width: $nav-width;
-  height: $nav-heigt;
+  height: $nav-height;
   @include flexCenter;
   justify-content: space-between;
   padding: $nav-padding;
