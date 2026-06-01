@@ -1,4 +1,4 @@
-@use "../abstracts/variables" as *;
+@use "variables" as *;
 
 @mixin flexCenter {
   display: flex;
@@ -87,7 +87,7 @@
   box-shadow: 0 0 5px $pastel-dark;
 }
 
-@mixin absoluteCenter {
+@mixin absoluteCenterOffset {
   position: absolute;
   top: 50%;
   left: -50%;
