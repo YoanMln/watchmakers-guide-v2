@@ -1,0 +1,13 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+/* ------------------ BOUTONS ------------------ */
+button:not(.btn-quiz) {
+  @include btnStyle;
+  transition: $transition-btn;
+  cursor: $cursor-btn;
+
+  &:hover {
+    @include btnStyleHover;
+  }
+}
