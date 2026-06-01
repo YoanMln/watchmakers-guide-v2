@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $black-background;
+
+  .home__title {
+    font-size: 2rem;
+    color: $bronze;
+  }
+
+  .home__description {
+    font-size: 1.2rem;
+    color: $light;
+    text-align: center;
+    max-width: 600px;
+  }
+}
