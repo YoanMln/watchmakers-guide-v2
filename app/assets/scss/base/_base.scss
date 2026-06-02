@@ -12,8 +12,8 @@ body {
   background-color: #181818;
 
   &[data-page="home"] {
-    background: url("../images/img/main-techniques.webp") center/cover fixed
-      no-repeat;
+    background: url("~/assets/images/background/main-background.webp")
+      center/cover fixed no-repeat;
     padding-top: 0;
   }
 }
