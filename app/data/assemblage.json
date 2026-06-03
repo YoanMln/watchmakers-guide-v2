@@ -16,14 +16,14 @@
   {
     "outil": "Porte mouvement",
     "image": "porte-mvt.webp",
-    "utilisation": "Permet la sécurisation du mouvement lors d'une réparation ou d'un assemblage. Certains support sont spécifique aux dimensions d'un calibre.",
+    "utilisation": "Permet la sécurisation du mouvement lors d'une réparation ou d'un assemblage. Certains supports sont spécifiques aux dimensions d'un calibre.",
     "section": "Assemblage"
   },
 
   {
     "outil": "Loupe d'horloger",
     "image": "loupe.webp",
-    "utilisation": "Permet d'améliorer la vision de l'horloger, Différents grossissement existent, comme le x4, x5, ,x10, x15 ou même plus !",
+    "utilisation": "Permet d'améliorer la vision de l'horloger. Différents grossissements existent, comme le x4, x5, ,x10, x15 ou même plus !",
     "section": "Assemblage"
   },
 

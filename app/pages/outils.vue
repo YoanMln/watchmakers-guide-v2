@@ -53,19 +53,15 @@ const tools = computed(() => {
 
     <section class="container-card">
       <div class="card-grid">
-        <article
-          v-for="tool in tools"
-          :key="tool.outil || tool.outils"
-          class="card"
-        >
+        <article v-for="tool in tools" :key="tool.outil" class="card">
           <img
             :src="`/images/outils/${tool.image}`"
-            :alt="tool.outil || tool.outils"
+            :alt="tool.outil"
             class="card-image"
           />
 
           <h2>
-            {{ tool.outil || tool.outils }}
+            {{ tool.outil }}
           </h2>
 
           <p>
