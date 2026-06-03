@@ -5,7 +5,7 @@
     "details": [
       "Parallélisme : l'aiguille doit être parallèle au cadran.",
       "Partagement : l'aiguille doit être chassée à fleur de son axe (roue à canon ou roue des heures).",
-      "Saut : il doit s'effectuer dans les limites de l'index 12H"
+      "Saut : il doit s'effectuer dans les limites de l'index 12H."
     ]
   },
 
@@ -15,8 +15,8 @@
     "details": [
       "Parallélisme : l'aiguille doit être parallèle à l'aiguille d'heure.",
       "Partagement : l'aiguille doit être chassée à fleur de son axe (chaussée).",
-      "Repère : Il doit être à minuit +/-2 mn",
-      "Saut : il doit s'effectuer entre minuit +/-3 mn"
+      "Repère : Il doit être à minuit +/-2 mn.",
+      "Saut : il doit s'effectuer entre minuit +/-3 mn."
     ]
   },
 
@@ -24,8 +24,8 @@
     "etape": "Contrôle du posage : aiguille de seconde",
     "image": "controle-seconde.webp",
     "details": [
-      "Parallélisme : l'aiguille doit être parallèle à l'aiguille de minute",
-      "Partagement : La hauteur de chasse entre l'aiguille de minute et la seconde doit être identique à la hauteur entre l'heure et la minute.",
+      "Parallélisme : l'aiguille doit être parallèle à l'aiguille des minutes.",
+      "Partagement : La hauteur de chasse entre l'aiguille des minutes et la seconde doit être identique à la hauteur entre l'heure et la minute.",
       "Note : Il est important de conserver la propreté des aiguilles au fur et à mesure de l'assemblage afin de toucher le moins possible les aiguilles, ce qui pourrait nuire à leur fragilité."
     ]
   }
