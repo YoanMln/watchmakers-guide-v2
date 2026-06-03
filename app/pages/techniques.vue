@@ -26,7 +26,9 @@ const techniques = computed(() => {
 
 <template>
   <article class="techniques-page">
-    <h1 class="title-pages">Techniques d'assemblage en horlogerie</h1>
+    <div class="title-page">
+      <h1 class="title-pages">Techniques d'assemblage en horlogerie</h1>
+    </div>
 
     <div class="container-select">
       <div class="list-choice">
