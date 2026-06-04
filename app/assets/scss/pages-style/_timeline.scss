@@ -10,32 +10,76 @@
   margin: 0 auto;
   max-width: $timeline-width;
   position: relative;
-  background-color: #111;
 
   &__content {
+    @include card-construct;
+    background: linear-gradient(
+      135deg,
+      $pastel-dark 0%,
+      darken($pastel-dark, 5%) 100%
+    );
+    border: 1px solid rgba($bronze, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease,
+      border-color 0.4s ease;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        $bronze 0%,
+        lighten($bronze, 15%) 100%
+      );
+      transform: scaleY(0);
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      border-color: rgba($bronze, 0.4);
+
+      &::before {
+        transform: scaleY(1);
+      }
+    }
+
     &-title {
       font-weight: $font-weight300;
       font-size: 45px;
-      margin: -10px 0 0;
-      padding: 0 10px;
+      margin: 0 0 15px;
+      padding: 0 15px;
       color: $bronze;
       transition: 0.4s;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+      &:hover {
+        color: lighten($bronze, 10%);
+      }
     }
 
     &-date {
-      margin: 0;
-      color: white;
-      font-size: 27px;
+      margin: 0 0 15px;
+      padding: 0 15px;
+      color: rgba($light, 0.9);
+      font-size: 24px;
       font-weight: $font-weight300;
-      line-height: 30px;
+      font-style: italic;
     }
 
     &-desc {
       margin: 0;
-      font-size: 20px;
+      padding: 0 15px 15px;
+      font-size: 18px;
       font-weight: $font-weight300;
-      color: white;
-      line-height: 27px;
+      color: $pastel-grey;
+      line-height: 1.4;
     }
   }
 
@@ -94,10 +138,6 @@
         top: 50%;
         opacity: 1;
       }
-
-      .timeline__content-title {
-        margin: -50px 0 20px;
-      }
     }
   }
 
@@ -110,7 +150,6 @@
     width: 100%;
     padding: 80px 0;
     position: relative;
-    background-color: #111;
   }
 
   &-header {
@@ -120,7 +159,6 @@
 
     &__title {
       font-size: 46px;
-
       margin: 0;
     }
 
@@ -129,7 +167,10 @@
       font-weight: 300;
       color: $light;
       letter-spacing: 1.5px;
-      margin-top: 20px;
+      margin: 20px auto 0;
+      max-width: 600px;
+      line-height: 1.4;
+      text-align: center;
     }
   }
 }
