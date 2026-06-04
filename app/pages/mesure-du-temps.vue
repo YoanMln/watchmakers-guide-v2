@@ -1,26 +1,25 @@
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 
 import timeline from "~/data/timeline/timeline.json";
 
 const items = timeline;
-
 const timelineItems = ref([]);
+
+let observer;
 
 onMounted(async () => {
   await nextTick();
 
-  const observer = new IntersectionObserver(
+  observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("timeline-item--active");
-
           observer.unobserve(entry.target);
         }
       });
     },
-
     {
       threshold: 0.15,
     }
@@ -29,6 +28,10 @@ onMounted(async () => {
   timelineItems.value.forEach((el) => {
     observer.observe(el);
   });
+});
+
+onBeforeUnmount(() => {
+  observer?.disconnect();
 });
 </script>
 
