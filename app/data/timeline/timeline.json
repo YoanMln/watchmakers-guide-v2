@@ -4,7 +4,7 @@
     "alt": "gnomon ancien",
     "title": "Le gnomon",
     "date": "IIIème millénaire av J.-C",
-    "desc": "C'est le plus ancien instrument à mesurer le temps. Il est formé d'un style vertical qui peut être aussi : un tronc d'arbre, en colonne, une aiguille de pierre, dont l'ombre projetée sur la terre sert à la détermination du temps. l'ombre la plus courte indique le midi vrai. Les différentes directions de l'ombre permettent de diviser la journée en périodes égales."
+    "desc": "C'est le plus ancien instrument à mesurer le temps. Il est formé d'un style vertical qui peut être aussi : un tronc d'arbre, en colonne, une aiguille de pierre, dont l'ombre projetée sur la terre sert à la détermination du temps. L'ombre la plus courte indique le midi vrai. Les différentes directions de l'ombre permettent de diviser la journée en périodes égales."
   },
   {
     "img": "Cadran-solaire.webp",
@@ -17,7 +17,7 @@
     "img": "Clepsydre.webp",
     "alt": "Clépsydre",
     "title": "La clépsydre",
-    "date": "Partie d'Egypte en 1500 av J.-C, la clépsydre s'est ensuite répandue chez les Romains en 159 av J.-C",
+    "date": "Partie d'Égypte en 1500 av J.-C, la clépsydre s'est ensuite répandue chez les Romains en 159 av J.-C",
     "desc": "Garde-temps constitué d'un récipient rempli d'eau avec un trou à sa partie inférieure. À mesure que l'eau s'écoule par le trou, son niveau dans le récipient baisse. Ce niveau indique les différentes heures de la journée."
   },
   {
@@ -32,7 +32,7 @@
     "alt": "horloge à Foliot",
     "title": "Horloges à Foliot",
     "date": "1370",
-    "desc": "La véritable horloge mécanique apparaît. Un poids suspendu à une corde fournit de l'énergie à la machine, tandis qu'un système de régulation, appelé verge et foliot, interrompt régulièrement la chute du poids. N'étant pas très précise, elle possède qu'une aiguille, celle des heures."
+    "desc": "La véritable horloge mécanique apparaît. Un poids suspendu à une corde fournit de l'énergie à la machine, tandis qu'un système de régulation, appelé verge et foliot, interrompt régulièrement la chute du poids. N'étant pas très précise, elle ne possède qu'une aiguille, celle des heures."
   },
   {
     "img": "ressort-barillet.webp",
@@ -67,7 +67,7 @@
     "alt": "longitude",
     "title": "Calcul de la longitude",
     "date": "1714",
-    "desc": "Avec d'autres États, le parlement anglais met au concours \"toutes méthodes capable de déterminer la longitude en mer\" avec une prime de 10 000 livres pour un résultat n'excédant pas 1° d'erreur, 15 000 livres pour 40 min et 20 000 livres pour 1/2° ou moins."
+    "desc": "Avec d'autres États, le parlement anglais met au concours \"toutes méthodes capables de déterminer la longitude en mer\" avec une prime de 10 000 livres pour un résultat n'excédant pas 1° d'erreur, 15 000 livres pour 40 min et 20 000 livres pour 1/2° ou moins."
   },
   {
     "img": "compensateur.webp",
@@ -102,7 +102,7 @@
     "alt": "invention échappement",
     "title": "L'échappement",
     "date": "XVIIIème siècle",
-    "desc": "George Grahan invente le mécanisme à ancre encore utilisé sur de nombreuses horloges du XIXème siècle."
+    "desc": "George Graham invente le mécanisme à ancre encore utilisé sur de nombreuses horloges du XIXème siècle."
   },
   {
     "img": "ancre-suisse.webp",
@@ -116,14 +116,14 @@
     "alt": "manufacture d'horlogerie Suisse",
     "title": "Essor de l'horlogerie Suisse",
     "date": "XIXème siècle",
-    "desc": "Apparitions des marques suivantes : Longine fondée en 1832, Jaeger-LeCoultre fondée en 1839, Patek Philippe fondée en 1839, Ulysse Nardin fondée en 1846, Omega fondée en 1848, Tissot fondée en 1853, Zenith fondée en 1865, Piaget fondée en 1874, Audemars Piguet fondée en 1875."
+    "desc": "Apparitions des marques suivantes : Longines fondée en 1832, Jaeger-LeCoultre fondée en 1839, Patek Philippe fondée en 1839, Ulysse Nardin fondée en 1846, Omega fondée en 1848, Tissot fondée en 1853, Zenith fondée en 1865, Piaget fondée en 1874, Audemars Piguet fondée en 1875."
   },
   {
     "img": "rubis.webp",
     "alt": "processus Verneuil",
     "title": "Découverte du processus Verneuil",
     "date": "1902",
-    "desc": "Auguste Verneuil découvrit le processus de fusion à la flamme de l'oxyde d'alumine, qui reste de nos jours d'actualité pour obtenir des corindon et des rubis synthétiques."
+    "desc": "Auguste Verneuil découvrit le processus de fusion à la flamme de l'oxyde d'alumine, qui reste de nos jours d'actualité pour obtenir des corindons et des rubis synthétiques."
   },
   {
     "img": "hans.webp",
