@@ -1,5 +1,6 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
+@use "sass:color";
 
 /* ------------------ MESURE DU TEMPS ------------------ */
 
@@ -16,7 +17,7 @@
     background: linear-gradient(
       135deg,
       $pastel-dark 0%,
-      darken($pastel-dark, 5%) 100%
+      color.adjust($pastel-dark, $lightness: 5%) 100%
     );
     border: 1px solid rgba($bronze, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease,
@@ -34,7 +35,7 @@
       background: linear-gradient(
         180deg,
         $bronze 0%,
-        lighten($bronze, 15%) 100%
+        color.adjust($bronze, $lightness: 15%) 100%
       );
       transform: scaleY(0);
       transition: transform 0.4s ease;
@@ -60,7 +61,7 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 
       &:hover {
-        color: lighten($bronze, 10%);
+        color: color.adjust($bronze, $lightness: 10%);
       }
     }
 
