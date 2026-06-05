@@ -17,7 +17,7 @@
     background: linear-gradient(
       135deg,
       $pastel-dark 0%,
-      color.adjust($pastel-dark, $lightness: 5%) 100%
+      color.adjust($pastel-dark, $lightness: -5%) 100%
     );
     border: 1px solid rgba($bronze, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease,
