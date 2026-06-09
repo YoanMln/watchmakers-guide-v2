@@ -6,7 +6,12 @@ const props = defineProps({
   total: { type: Number, required: true },
 });
 
-const percentage = computed(() => (props.current / props.total) * 100);
+const percentage = computed(() => {
+  const total = props.total;
+  if (!Number.isFinite(total) || total <= 0) return 0;
+  const raw = (props.current / total) * 100;
+  return Math.min(100, Math.max(0, raw));
+});
 </script>
 
 <template>
