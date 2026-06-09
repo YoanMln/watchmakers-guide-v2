@@ -15,7 +15,14 @@ const percentage = computed(() => {
 </script>
 
 <template>
-  <div class="progress-bar">
+  <div
+    class="progress-bar"
+    role="progressbar"
+    :aria-valuenow="Math.round(percentage)"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    aria-label="Progress"
+  >
     <div class="progress-bar__fill" :style="{ width: `${percentage}%` }"></div>
   </div>
 </template>
@@ -45,7 +52,7 @@ const percentage = computed(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 30px;
+    min-width: 0px;
   }
 }
 </style>
