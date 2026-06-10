@@ -2,11 +2,39 @@
 @use "../abstracts/variables" as *;
 
 /* ------------------ QUIZ -----------------------------*/
+
+.header-container-quiz {
+  position: $header-container-position;
+  z-index: $header-container-z-index;
+  max-width: $header-container-max-width;
+  width: $header-container-width;
+  padding: $header-container-padding;
+  color: $light;
+  text-align: $header-container-text-align;
+  background-color: #111111e1;
+  border-radius: 5px;
+  border: 1px solid $bronze;
+}
+
 .title-quiz {
   color: $bronze;
 }
 .sub-text {
   color: $light;
+}
+
+#quiz-progression {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.quiz-difficulty {
+  display: flex;
+}
+
+.current-question {
+  margin-top: 3rem;
 }
 
 .container-btn-difficulty {
@@ -34,7 +62,6 @@
   flex: 1 1 100px;
   max-width: 300px;
   min-width: 180px;
-  width: auto;
   padding: 1rem 1.5rem;
   white-space: normal;
   text-align: center;
@@ -43,6 +70,10 @@
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba($bronze, 0.2);
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
@@ -61,7 +92,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.893);
   color: white;
   padding: 20px 30px;
   border: 1px solid $bronze;
