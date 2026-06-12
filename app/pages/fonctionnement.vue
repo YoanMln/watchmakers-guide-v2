@@ -4,6 +4,8 @@ useSeoMeta({
   description:
     "Découvrez comment fonctionne un mouvement mécanique de montre — barillet, rouages, échappement et balancier expliqués simplement.",
 });
+import fonctionnementdata from "~/data/fonctionnement/fonctionnement-data.json";
+const etapes = fonctionnementdata.etapes;
 </script>
 
 <template>
@@ -46,7 +48,7 @@ useSeoMeta({
         <div class="schema-parts">
           <img
             class="watch-parts"
-            src="assets/images/fonctionnement/watch-parts.webp"
+            src="/images/fonctionnement/watch-parts.webp"
             alt="schéma des différentes parties d'une montre"
           />
         </div>
@@ -54,89 +56,20 @@ useSeoMeta({
     </div>
 
     <div class="fonctionnement-details">
-      <h2 class="title-details">Fonctionnement de la montre mécanique</h2>
-      <div class="card-fonctionnement">
-        <div class="accumulation-content">
-          <h2 class="card-title">Accumulation</h2>
-          <p class="resume-details">
-            L'accumulateur d'énergie d'une montre mécanique est le ressort
-            contenu dans le barillet. l'énergie est stockée dans le ressort du
-            barillet. En remontant la montre, le ressort s'enroule autour de
-            l'axe. En se détendant, il fait tourner le barillet, ce qui entraîne
-            les rouages du mouvement.
-          </p>
+      <div
+        v-for="etape in etapes"
+        :key="etape.titre"
+        class="card-fonctionnement"
+      >
+        <div class="steps-content">
+          <h2 class="card-title">{{ etape.titre }}</h2>
+          <p class="resume-details">{{ etape.texte }}</p>
         </div>
         <div class="schema-fonctionnement">
           <img
             class="watch-parts"
-            src="assets/images/fonctionnement/parts/barillet.webp"
-            alt="barillet d'une montre mécanique"
-          />
-        </div>
-      </div>
-      <div class="card-fonctionnement">
-        <div class="accumulation-content">
-          <h2 class="card-title">Transmission et comptage</h2>
-          <p class="resume-details">
-            Le rouage transmet l’énergie du barillet à l’échappement. Chaque
-            rouage est dimensionné pour respecter la fréquence du balancier,
-            afin d’assurer une rotation régulière et précise des roues.
-          </p>
-        </div>
-        <div class="schema-fonctionnement">
-          <img
-            class="watch-parts"
-            src="assets/images/fonctionnement/parts/transmission.webp"
-            alt="barillet d'une montre mécanique"
-          />
-        </div>
-      </div>
-      <div class="card-fonctionnement">
-        <div class="accumulation-content">
-          <h2 class="card-title">Distribution</h2>
-          <p class="resume-details">
-            La distribution est assurée par la roue d’échappement, l’ancre et la
-            cheville du plateau. Ce système entretient les oscillations du
-            balancier en libérant l’énergie de façon rythmée.
-          </p>
-        </div>
-        <div class="schema-fonctionnement">
-          <img
-            class="watch-parts"
-            src="assets/images/fonctionnement/parts/distribution.webp"
-            alt="barillet d'une montre mécanique"
-          />
-        </div>
-      </div>
-      <div class="card-fonctionnement">
-        <div class="accumulation-content">
-          <h2 class="card-title">Régulation</h2>
-          <p class="resume-details">
-            Assurée par le balancier-spiral. celui-ci va rythmer la rotation du
-            rouage de manière très précise et ainsi réguler la distribution de
-            l’énergie
-          </p>
-        </div>
-        <div class="schema-fonctionnement">
-          <img
-            class="watch-parts"
-            src="assets/images/fonctionnement/parts/regulation.webp"
-            alt="barillet d'une montre mécanique"
-          />
-        </div>
-      </div>
-      <div class="card-fonctionnement">
-        <div class="accumulation-content">
-          <h2 class="card-title">Affichage</h2>
-          <p class="resume-details">
-            Celui-ci est assuré par les aiguilles et le cadran.
-          </p>
-        </div>
-        <div class="schema-fonctionnement">
-          <img
-            class="watch-parts"
-            src="assets/images/fonctionnement/parts/affichage.webp"
-            alt="barillet d'une montre mécanique"
+            :src="`/images/fonctionnement/parts/${etape.image}`"
+            :alt="etape.alt"
           />
         </div>
       </div>
