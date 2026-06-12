@@ -1,6 +1,6 @@
 <script setup>
 useSeoMeta({
-  title: "Fonctionnement d'une montre mécanique | Watchmakers Guide",
+  title: "Fonctionnement d'un mouvement mécanique | Watchmakers Guide",
   description:
     "Découvrez le fonctionnement d’une montre mécanique : du barillet au balancier, en passant par les rouages et l’échappement, tout est expliqué simplement et clairement.",
 });
