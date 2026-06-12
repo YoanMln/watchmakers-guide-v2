@@ -2,7 +2,7 @@
 useSeoMeta({
   title: "Fonctionnement d'une montre mécanique | Watchmakers Guide",
   description:
-    "Découvrez comment fonctionne un mouvement mécanique de montre — barillet, rouages, échappement et balancier expliqués simplement.",
+    "Découvrez le fonctionnement d’une montre mécanique : du barillet au balancier, en passant par les rouages et l’échappement, tout est expliqué simplement et clairement.",
 });
 import fonctionnementdata from "~/data/fonctionnement/fonctionnement-data.json";
 const etapes = fonctionnementdata.etapes;
