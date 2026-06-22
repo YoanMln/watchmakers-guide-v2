@@ -47,7 +47,7 @@ function restartQuiz() {
   showFeedback.value = false;
 }
 
-// niveau de difficultés //
+// niveaux de difficulté
 
 const difficultyLevels = [
   {
