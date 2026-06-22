@@ -46,6 +46,29 @@ function restartQuiz() {
   score.value = 0;
   showFeedback.value = false;
 }
+
+// niveaux de difficulté
+
+const difficultyLevels = [
+  {
+    value: "novice",
+    numeral: "I",
+    label: "Novice",
+    description: "Vocabulaire, pièces visibles et marques emblématiques",
+  },
+  {
+    value: "horloger",
+    numeral: "II",
+    label: "Horloger",
+    description: "Mécanismes internes, réglage et complications classiques",
+  },
+  {
+    value: "maitre horloger",
+    numeral: "III",
+    label: "Maître-horloger",
+    description: "Haute fréquence, tourbillon et régulation avancée",
+  },
+];
 </script>
 
 <template>
@@ -54,20 +77,21 @@ function restartQuiz() {
       <h1 class="title-quiz">Quiz horloger</h1>
 
       <!-- Sélection difficulté -->
-      <div v-if="!selectedDifficulty">
-        <h2 class="sub-text">Choisissez le niveau de difficulté :</h2>
+      <div v-if="!selectedDifficulty" class="difficulty-selection">
+        <h2 class="sub-text">Choisissez votre niveau de maîtrise :</h2>
 
-        <div class="container-btn-difficulty">
-          <button class="btn-quiz" @click="chooseDifficulty('novice')">
-            Novice
-          </button>
-
-          <button class="btn-quiz" @click="chooseDifficulty('horloger')">
-            Horloger
-          </button>
-
-          <button class="btn-quiz" @click="chooseDifficulty('maitre horloger')">
-            Maître-horloger
+        <div class="container-card-difficulty">
+          <button
+            v-for="level in difficultyLevels"
+            :key="level.value"
+            class="card-difficulty"
+            @click="chooseDifficulty(level.value)"
+          >
+            <p class="card-difficulty__numeral">{{ level.numeral }}</p>
+            <h3 class="card-difficulty__title">{{ level.label }}</h3>
+            <p class="card-difficulty__desc">
+              {{ level.description }}
+            </p>
           </button>
         </div>
       </div>
