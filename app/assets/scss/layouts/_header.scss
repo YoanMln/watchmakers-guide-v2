@@ -62,19 +62,4 @@ header h2 {
   gap: $btn-container-home-gap;
   margin-top: $btn-container-home-margin-top;
   flex-wrap: wrap;
-
-  a {
-    text-decoration: $btn-home-a-text-decoration;
-    font-size: $btn-home-a-font-size;
-    min-width: $btn-home-a-min-width;
-    padding: $btn-home-a-padding;
-    text-align: $btn-home-a-text-align;
-    @include btnStyle;
-    transition: $btn-home-a-transition;
-
-    &:hover {
-      @include btnStyleHover;
-      transform: $btn-home-a-transform;
-    }
-  }
 }

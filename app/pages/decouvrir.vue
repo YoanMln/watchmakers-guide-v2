@@ -16,7 +16,7 @@
             Découvrez l'évolution de la mesure du temps à travers les âges...
           </p>
           <div class="gate-action">
-            <NuxtLink class="gate-btn" to="/mesure-du-temps"
+            <NuxtLink class="btn btn--discovery" to="/mesure-du-temps"
               >Commencer le voyage</NuxtLink
             >
           </div>
@@ -27,7 +27,9 @@
             Explorez les mécanismes les plus complexes
           </p>
           <div class="gate-action">
-            <NuxtLink class="gate-btn" to="/complications">Explorez</NuxtLink>
+            <NuxtLink class="btn btn--discovery" to="/complications"
+              >Explorez</NuxtLink
+            >
           </div>
         </div>
         <div class="gate quiz-gate">
@@ -36,7 +38,7 @@
             Testez vos connaissances avec un quiz au niveau adaptatif
           </p>
           <div class="gate-action">
-            <NuxtLink class="gate-btn" to="/quiz">Démarrer</NuxtLink>
+            <NuxtLink class="btn btn--discovery" to="/quiz">Démarrer</NuxtLink>
           </div>
         </div>
       </div>

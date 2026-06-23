@@ -65,14 +65,15 @@
 .card-difficulty {
   display: flex;
   flex-direction: column;
+  background-color: transparent;
   padding: 3rem 1rem;
-  border: 1px solid $pastel-dark !important;
+  border: 1px solid $pastel-dark;
   transition: border-color 0.25s ease, transform 0.25s ease;
   &:hover {
-    border-color: $bronze !important;
-    background-color: transparent !important;
+    border-color: $bronze;
+    background-color: transparent;
     transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba($bronze, 0.2) !important;
+    box-shadow: 0 15px 30px rgba($bronze, 0.2);
   }
 }
 
@@ -114,7 +115,7 @@
 }
 
 .btn-quiz {
-  @include btn-quiz;
+  
   flex: 1 1 100px;
   max-width: 300px;
   min-width: 180px;
@@ -138,9 +139,6 @@
   justify-content: center;
 }
 
-.btn-retry {
-  @include btn-quiz;
-}
 
 /////////////---ALERT---/////////////////
 #custom-alert {
