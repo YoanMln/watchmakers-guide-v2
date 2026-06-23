@@ -19,18 +19,20 @@ useHead({
         </h2>
       </div>
       <div class="btn-container-home">
-        <NuxtLink to="/decouvrir">Découvrir l'horlogerie</NuxtLink>
+        <NuxtLink class="btn-index" to="/decouvrir"
+          >Découvrir l'horlogerie</NuxtLink
+        >
       </div>
       <div class="nav-home">
         <ul class="nav-home-list">
           <li>
-            <NuxtLink to="/fonctionnement"> Fonctionnment</NuxtLink>
+            <NuxtLink to="/fonctionnement"> Fonctionnement</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/outils">Outils de l'horloger</NuxtLink>
           </li>
           <li>
-            <NuxtLink to="techniques">Techniques</NuxtLink>
+            <NuxtLink to="/techniques">Techniques</NuxtLink>
           </li>
         </ul>
       </div>
