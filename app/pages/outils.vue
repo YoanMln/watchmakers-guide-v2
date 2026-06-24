@@ -1,9 +1,9 @@
 <script setup>
 import { ref, computed } from "vue";
 
-import assemblage from "~/data/assemblage.json";
-import maintenance from "~/data/maintenance-entretien.json";
-import reglage from "~/data/reglage-controle.json";
+import assemblage from "~/data/outils/assemblage.json";
+import maintenance from "~/data/outils/maintenance-entretien.json";
+import reglage from "~/data/outils/reglage-controle.json";
 
 const selectedTool = ref("assemblage");
 
