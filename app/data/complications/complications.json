@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "slug": "quantieme-perpetuel",
+    "name": "Quantième perpétuel",
+    "category": "Calendrier",
+    "shortDescription": "Affiche la date en tenant compte automatiquement des mois de 30, 31 jours et des années bissextiles.",
+    "description": "Un quantième perpétuel permet d'indiquer le jour, le quantième, le mois et les phase de lune. À la différence du quantième simple, le quantème perpétuel tient automatiquement compte de la longueur des mois sans intervention manuelle.",
+    "howItWorks": [
+      "Le mécanisme est composé de cames, de leviers et de roues.",
+      "Deux systèmes principaux existent : la came de 48, où une aiguille indique les 48 mois d'un cycle de 4 ans et les années bissextiles, et la came de 12, qui utilise une aiguille pour les 12 mois et une seconde pour le cycle des années bissextiles.",
+      "Le mécanisme distingue automatiquement les mois de 30 jours, de 31 jours et le mois de février.",
+      "Il prend en compte le cycle des années bissextiles sans nécessiter de correction annuelle.",
+      "À la fin de chaque mois, il adapte automatiquement le passage à la date suivante.",
+      "Sa conception nécessite un très grand nombre de composants ainsi qu'un réglage d'une extrême précision."
+    ],
+    "image": "/images/complications/perpetual-calendar.webp"
+  },
+  {
+    "id": 2,
+    "slug": "phase-de-lune",
+    "name": "Phase de lune",
+    "category": "Astronomique",
+    "shortDescription": "Affiche l’évolution du cycle lunaire sur le cadran.",
+    "description": "La phase de lune est une complication qui reproduit l’évolution apparente de la lune au fil de son cycle. Elle est souvent associée à une ouverture sur le cadran laissant apparaître un disque décoré. Au-delà de son utilité historique, elle est aujourd’hui surtout appréciée pour sa dimension poétique et esthétique.",
+    "howItWorks": [
+      "Un disque portant généralement deux représentations de la lune est placé sous une ouverture du cadran.",
+      "Ce disque avance progressivement grâce à un engrenage entraîné par le mouvement.",
+      "Le mécanisme est calibré pour reproduire le cycle lunaire d’environ 29 jours et demi.",
+      "Sur les versions simples, une légère dérive peut apparaître au fil du temps.",
+      "Les versions plus élaborées améliorent la précision du suivi du cycle lunaire."
+    ],
+    "image": "/images/complications/moon-phase-1.webp"
+  },
+
+  {
+    "id": 3,
+    "slug": "repetition-minute",
+    "name": "Répétition minute",
+    "category": "Sonnerie",
+    "shortDescription": "Indique l’heure à la demande grâce à une sonnerie frappant les heures, les quarts et les minutes.",
+    "description": "La répétition minute est l’une des complications sonores les plus prestigieuses de l’horlogerie. Elle permet d’indiquer l’heure sur demande, au moyen d’un mécanisme qui fait sonner successivement les heures, les quarts puis les minutes. Son développement exige un très haut niveau de maîtrise technique, tant pour la mécanique que pour la qualité acoustique.",
+    "howItWorks": [
+      "L’utilisateur active la complication à l’aide d’un poussoir ou d’un verrou latéral.",
+      "Le mécanisme lit la position des aiguilles pour déterminer l’heure exacte à sonner.",
+      "Un premier marteau frappe les heures sur un timbre grave. voir image '1' ",
+      "Un second rythme permet de sonner les quarts voir image '2' ",
+      "Les minutes restantes sont ensuite frappées sur un timbre plus aigu.",
+      "L’ensemble doit être parfaitement synchronisé pour garantir une lecture sonore fiable."
+    ],
+    "image": "/images/complications/minute-repeater.webp"
+  },
+
+  {
+    "id": 4,
+    "slug": "chronographe",
+    "name": "Chronographe",
+    "category": "Mesure-du-temps",
+    "shortDescription": "Permet de mesurer un intervalle de temps indépendamment de l’heure principale.",
+    "description": "Le chronographe est une complication permettant de démarrer, d’arrêter et de remettre à zéro une mesure de temps. Il ne doit pas être confondu avec le chronomètre, qui désigne une certification de précision obtenue par un instrument horaire.",
+    "howItWorks": [
+      "Le mécanisme est composé de plusieurs groupes de pièces aux fonctions bien définies.",
+      "La commande permet de démarrer, arrêter ou remettre à zéro le chronographe.",
+      "L’embrayage transmet le mouvement au mécanisme de mesure.",
+      "Le bloqueur permet de stopper la mesure en cours.",
+      "Les compteurs affichent les temps mesurés.",
+      "Le système de retour à zéro repositionne les aiguilles après utilisation."
+    ],
+    "image": "/images/complications/chronograph.webp"
+  },
+  {
+    "id": 5,
+    "slug": "tourbillon",
+    "name": "Tourbillon",
+    "category": "Tourbillon",
+    "shortDescription": "Place l’organe réglant dans une cage en rotation afin de compenser certaines variations de marche liées à la gravité.",
+    "description": "Le tourbillon est une complication mise au point pour améliorer la régularité de marche des montres mécaniques en compensant les écarts provoqués par les effets de la gravité sur l’organe réglant. Il consiste à loger l’échappement et le balancier dans une cage mobile effectuant généralement une rotation complète en une minute.",
+    "howItWorks": [
+      "Le balancier et l’échappement sont installés dans une cage mobile.",
+      "Cette cage tourne sur elle-même à vitesse régulière, souvent en une minute.",
+      "La rotation modifie en permanence la position des organes réglants face à la gravité.",
+      "L’objectif est de moyenner les écarts de marche observés selon les positions de la montre.",
+      "Le tourbillon est aussi devenu une démonstration de savoir-faire technique et esthétique."
+    ],
+    "image": "/images/complications/tourbillon.webp"
+  }
+]
