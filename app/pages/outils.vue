@@ -28,6 +28,7 @@ const categories = [
 const filteredTools = computed(() => {
   return (
     categories.find((category) => category.id === selectedTool.value)?.data ??
+    categories[0]?.data ??
     []
   );
 });
