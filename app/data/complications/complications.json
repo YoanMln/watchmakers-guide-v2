@@ -5,7 +5,7 @@
     "name": "Quantième perpétuel",
     "category": "Calendrier",
     "shortDescription": "Affiche la date en tenant compte automatiquement des mois de 30, 31 jours et des années bissextiles.",
-    "description": "Un quantième perpétuel permet d'indiquer le jour, le quantième, le mois et les phase de lune. À la différence du quantième simple, le quantème perpétuel tient automatiquement compte de la longueur des mois sans intervention manuelle.",
+    "description": "Un quantième perpétuel permet d'indiquer le jour, le quantième, le mois et les phases de lune. À la différence du quantième simple, le quantième perpétuel tient automatiquement compte de la longueur des mois sans intervention manuelle.",
     "howItWorks": [
       "Le mécanisme est composé de cames, de leviers et de roues.",
       "Deux systèmes principaux existent : la came de 48, où une aiguille indique les 48 mois d'un cycle de 4 ans et les années bissextiles, et la came de 12, qui utilise une aiguille pour les 12 mois et une seconde pour le cycle des années bissextiles.",
@@ -43,8 +43,8 @@
     "howItWorks": [
       "L’utilisateur active la complication à l’aide d’un poussoir ou d’un verrou latéral.",
       "Le mécanisme lit la position des aiguilles pour déterminer l’heure exacte à sonner.",
-      "Un premier marteau frappe les heures sur un timbre grave. voir image '1' ",
-      "Un second rythme permet de sonner les quarts voir image '2' ",
+      "Un premier marteau frappe les heures sur un timbre grave. (voir image : « 1 ») ",
+      "Un second rythme permet de sonner les quarts (voir image : « 2 ») ",
       "Les minutes restantes sont ensuite frappées sur un timbre plus aigu.",
       "L’ensemble doit être parfaitement synchronisé pour garantir une lecture sonore fiable."
     ],

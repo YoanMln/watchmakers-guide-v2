@@ -51,6 +51,7 @@ const uniqueCategory = [
         v-for="nameCategory in uniqueCategory"
         :key="nameCategory"
         type="button"
+        :aria-pressed="selectedCategory === nameCategory"
         @click="setCategory(nameCategory)"
       >
         <Icon :name="categoryIcons[nameCategory]" size="24" />
