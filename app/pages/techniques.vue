@@ -5,22 +5,30 @@ import aiguillage from "~/data/techniques/aiguillage.json";
 import posage from "~/data/techniques/posage.json";
 import tolerance from "~/data/techniques/tolerance-controle.json";
 
-const selectedTechnique = ref("posage");
+const selectedStep = ref("posage");
 
-const techniques = computed(() => {
-  switch (selectedTechnique.value) {
-    case "posage":
-      return posage;
-
-    case "aiguillage":
-      return aiguillage;
-
-    case "tolerance-controle":
-      return tolerance;
-
-    default:
-      return posage;
-  }
+const techniques = [
+  {
+    id: "posage",
+    label: "Posage",
+    data: posage,
+  },
+  {
+    id: "aiguillage",
+    label: "Aiguillage",
+    data: aiguillage,
+  },
+  {
+    id: "tolerance",
+    label: "Tolérance & contrôle",
+    data: tolerance,
+  },
+];
+const filteredSteps = computed(() => {
+  return (
+    techniques.find((technique) => technique.id === selectedStep.value)?.data ??
+    []
+  );
 });
 </script>
 
@@ -32,16 +40,19 @@ const techniques = computed(() => {
 
     <div class="container-select">
       <div class="list-choice">
-        <label for="element-choice"
-          >Choix de l'étape d'assemblage sur un mouvement 2824
-        </label>
-        <div class="select-wrapper">
-          <select id="element-choice" v-model="selectedTechnique">
-            <option value="posage">Posage</option>
-            <option value="aiguillage">Aiguillage</option>
-            <option value="tolerance-controle">Tolérance et contrôle</option>
-          </select>
-          <Icon name="mdi:chevron-down" class="select-arrow" />
+        <h2>Choix de l'étape d'assemblage sur un mouvement 2824</h2>
+        <div class="container-btn-technic">
+          <button
+            class="btn-filters btn"
+            v-for="technique in techniques"
+            :key="technique.id"
+            type="button"
+            :aria-pressed="selectedStep === technique.id"
+            @click="selectedStep = technique.id"
+            :class="{ active: selectedStep === technique.id }"
+          >
+            {{ technique.label }}
+          </button>
         </div>
       </div>
     </div>
@@ -49,7 +60,7 @@ const techniques = computed(() => {
     <section class="container-card">
       <div class="card-grid">
         <article
-          v-for="technic in techniques"
+          v-for="technic in filteredSteps"
           :key="technic.etape"
           class="card"
         >
@@ -96,5 +107,18 @@ ul {
       color: #ad856f;
     }
   }
+}
+
+.btn-filters {
+  padding: 1rem 2rem;
+  border: 1px solid #ad856f;
+  border-radius: 2px;
+  display: flex;
+}
+
+.container-btn-technic {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 </style>
