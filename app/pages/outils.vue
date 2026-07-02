@@ -7,20 +7,30 @@ import reglage from "~/data/outils/reglage-controle.json";
 
 const selectedTool = ref("assemblage");
 
-const tools = computed(() => {
-  switch (selectedTool.value) {
-    case "assemblage":
-      return assemblage;
+const categories = [
+  {
+    id: "assemblage",
+    label: "Assemblage",
+    data: assemblage,
+  },
+  {
+    id: "reglage",
+    label: "Réglage",
+    data: reglage,
+  },
+  {
+    id: "maintenance",
+    label: "Maintenance",
+    data: maintenance,
+  },
+];
 
-    case "reglage":
-      return reglage;
-
-    case "maintenance":
-      return maintenance;
-
-    default:
-      return assemblage;
-  }
+const filteredTools = computed(() => {
+  return (
+    categories.find((category) => category.id === selectedTool.value)?.data ??
+    categories[0]?.data ??
+    []
+  );
 });
 </script>
 
@@ -28,7 +38,6 @@ const tools = computed(() => {
   <div class="tools-page">
     <div class="title-pages">
       <h1>Les différents outils de l'artisan horloger</h1>
-
       <div class="intro-page">
         <h2>
           Découvrez les instruments essentiels du métier d’horloger, entre
@@ -36,37 +45,34 @@ const tools = computed(() => {
         </h2>
       </div>
     </div>
-
     <div class="container-select">
       <div class="list-choice">
-        <label for="element-choice"> Choix du type d'outils </label>
-        <div class="select-wrapper">
-          <select id="element-choice" v-model="selectedTool">
-            <option value="assemblage">Assemblage</option>
-            <option value="reglage">Réglage & Contrôle</option>
-            <option value="maintenance">Maintenance & Entretien</option>
-          </select>
-          <Icon name="mdi:chevron-down" class="select-arrow" />
+        <h2>Choix du type d'outils</h2>
+        <div class="container-btn-tools">
+          <button
+            class="btn btn-filters"
+            v-for="category in categories"
+            :key="category.id"
+            type="button"
+            :aria-pressed="selectedTool === category.id"
+            @click="selectedTool = category.id"
+            :class="{ active: selectedTool === category.id }"
+          >
+            {{ category.label }}
+          </button>
         </div>
       </div>
     </div>
-
     <section class="container-card">
       <div class="card-grid">
-        <article v-for="tool in tools" :key="tool.outil" class="card">
+        <article v-for="tool in filteredTools" :key="tool.outil" class="card">
           <img
             :src="`/images/outils/${tool.image}`"
             :alt="tool.outil"
             class="card-image"
           />
-
-          <h2>
-            {{ tool.outil }}
-          </h2>
-
-          <p>
-            {{ tool.utilisation }}
-          </p>
+          <h2>{{ tool.outil }}</h2>
+          <p>{{ tool.utilisation }}</p>
         </article>
       </div>
     </section>
@@ -91,5 +97,18 @@ const tools = computed(() => {
     pointer-events: none;
     margin-top: 1rem;
   }
+}
+
+.btn-filters {
+  padding: 1rem 2rem;
+  border: 1px solid #ad856f;
+  border-radius: 2px;
+  display: flex;
+}
+
+.container-btn-tools {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 </style>
