@@ -10,6 +10,11 @@
   flex-direction: column;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin text-center {
   text-align: center;
 }
