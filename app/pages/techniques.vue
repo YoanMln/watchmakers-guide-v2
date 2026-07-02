@@ -40,14 +40,14 @@ const filteredSteps = computed(() => {
 
     <div class="container-select">
       <div class="list-choice">
-        <label for="element-choice"
-          >Choix de l'étape d'assemblage sur un mouvement 2824
-        </label>
+        <h2>Choix de l'étape d'assemblage sur un mouvement 2824</h2>
         <div class="container-btn-technic">
           <button
             class="btn-filters btn"
             v-for="technique in techniques"
             :key="technique.id"
+            type="button"
+            :aria-pressed="selectedStep === technique.id"
             @click="selectedStep = technique.id"
             :class="{ active: selectedStep === technique.id }"
           >
