@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
-  title: String,
-  subtitle: String,
+  title: { type: String, required: true },
+  subtitle: { type: String, required: false },
 });
 </script>
 
@@ -11,7 +11,7 @@ defineProps({
       <h1 class="page-header__title">{{ title }}</h1>
       <h2 v-if="subtitle" class="page-header__sub">{{ subtitle }}</h2>
     </div>
-    <div class="page-header__actions">
+    <div v-if="$slots.actions" class="page-header__actions">
       <slot name="actions" />
     </div>
   </div>
