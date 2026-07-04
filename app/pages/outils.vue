@@ -37,23 +37,21 @@ const filteredTools = computed(() => {
 <template>
   <div class="tools-page">
     <PageHeader
-      title="Les différents outils de l'artisan horloger" 
+      title="Les différents outils de l'artisan horloger"
       subtitle="Découvrez les instruments essentiels du métier d'horloger, entre tradition et précision."
     >
       <template #actions>
-        
-          <button
-            class="btn btn-filters"
-            v-for="category in categories"
-            :key="category.id"
-            type="button"
-            :aria-pressed="selectedTool === category.id"
-            @click="selectedTool = category.id"
-            :class="{ active: selectedTool === category.id }"
-          >
-            {{ category.label }}
-          </button>
-        
+        <button
+          class="btn btn-filters"
+          v-for="category in categories"
+          :key="category.id"
+          type="button"
+          :aria-pressed="selectedTool === category.id"
+          @click="selectedTool = category.id"
+          :class="{ active: selectedTool === category.id }"
+        >
+          {{ category.label }}
+        </button>
       </template>
     </PageHeader>
     <section class="container-card">
