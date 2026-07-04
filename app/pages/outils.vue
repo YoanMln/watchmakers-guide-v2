@@ -36,19 +36,12 @@ const filteredTools = computed(() => {
 
 <template>
   <div class="tools-page">
-    <div class="title-pages">
-      <h1>Les différents outils de l'artisan horloger</h1>
-      <div class="intro-page">
-        <h2>
-          Découvrez les instruments essentiels du métier d’horloger, entre
-          tradition et précision.
-        </h2>
-      </div>
-    </div>
-    <div class="container-select">
-      <div class="list-choice">
-        <h2>Choix du type d'outils</h2>
-        <div class="container-btn-tools">
+    <PageHeader
+      title="Les différents outils de l'artisan horloger" 
+      subtitle="Découvrez les instruments essentiels du métier d'horloger, entre tradition et précision."
+    >
+      <template #actions>
+        
           <button
             class="btn btn-filters"
             v-for="category in categories"
@@ -60,9 +53,9 @@ const filteredTools = computed(() => {
           >
             {{ category.label }}
           </button>
-        </div>
-      </div>
-    </div>
+        
+      </template>
+    </PageHeader>
     <section class="container-card">
       <div class="card-grid">
         <article v-for="tool in filteredTools" :key="tool.outil" class="card">

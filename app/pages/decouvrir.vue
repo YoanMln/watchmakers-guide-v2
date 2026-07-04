@@ -1,14 +1,12 @@
 <template>
+  <PageHeader
+    title="Découvrir l’univers de l’horlogerie"
+    subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses
+          plus grands secrets."
+  >
+  </PageHeader>
   <div class="discovery-page">
     <div class="header-container-discovery">
-      <div class="discovery-intro">
-        <h1>Découvrir l’univers de l’horlogerie</h1>
-        <p>
-          Explorez son histoire, testez vos connaissances et plongez dans ses
-          plus grands secrets.
-        </p>
-      </div>
-
       <div class="container-gate">
         <div class="gate educational-gate">
           <h2>Histoire de la mesure du temps</h2>

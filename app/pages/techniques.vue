@@ -34,28 +34,24 @@ const filteredSteps = computed(() => {
 
 <template>
   <article class="techniques-page">
-    <div class="title-pages">
-      <h1>Techniques d'asssemblage en horlogerie</h1>
-    </div>
-
-    <div class="container-select">
-      <div class="list-choice">
-        <h2>Choix de l'étape d'assemblage sur un mouvement 2824</h2>
-        <div class="container-btn-technic">
-          <button
-            class="btn-filters btn"
-            v-for="technique in techniques"
-            :key="technique.id"
-            type="button"
-            :aria-pressed="selectedStep === technique.id"
-            @click="selectedStep = technique.id"
-            :class="{ active: selectedStep === technique.id }"
-          >
-            {{ technique.label }}
-          </button>
-        </div>
-      </div>
-    </div>
+    <PageHeader
+      title="Techniques d'asssemblage en horlogerie"
+      subtitle="Choix de l'étape d'assemblage sur un mouvement 2824"
+    >
+      <template #actions>
+        <button
+          class="btn-filters btn"
+          v-for="technique in techniques"
+          :key="technique.id"
+          type="button"
+          :aria-pressed="selectedStep === technique.id"
+          @click="selectedStep = technique.id"
+          :class="{ active: selectedStep === technique.id }"
+        >
+          {{ technique.label }}
+        </button>
+      </template>
+    </PageHeader>
 
     <section class="container-card">
       <div class="card-grid">

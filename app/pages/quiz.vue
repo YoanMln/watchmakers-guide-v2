@@ -72,7 +72,7 @@ const difficultyLevels = [
 </script>
 
 <template>
-  <div class="quiz-page">
+  <div class="quiz-page page-centered">
     <div class="header-container-quiz">
       <h1 class="title-quiz">Quiz horloger</h1>
 

@@ -3,12 +3,11 @@
 
 /* ------------------ HEADER ------------------ */
 header,
-main {
+.page-centered {
   @include flexCenter;
   position: $header-position;
   min-height: $header-min-height;
   width: $header-width;
-  /*background: url("../images/img/bg-home.webp") center/cover no-repeat;*/
   padding: $header-padding;
 
   &::before {
