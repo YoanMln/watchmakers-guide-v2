@@ -37,20 +37,11 @@ onBeforeUnmount(() => {
 
 <template>
   <article class="intro-temps">
+    <PageHeader
+      title="Histoire de la mesure du temps"
+      subtitle="Depuis les premières civilisations, la mesure du temps a permis d’organiser la vie quotidienne. D’abord fondée sur l’observation des astres, elle s’est progressivement perfectionnée grâce à des instruments toujours plus précis."
+    ></PageHeader>
     <div id="timeline-1" class="timeline-container">
-      <div class="timeline-header">
-        <h1 class="timeline-header__title">Histoire de la mesure du temps</h1>
-
-        <h2 class="timeline-header__subtitle">
-          Des premières civilisations au monde moderne, la mesure du temps a été
-          essentielle pour organiser la vie sociale, religieuse et économique.
-          <br />
-          D'abord basée sur l'observation des astres, elle s'est peu à peu
-          perfectionnée grâce à l'invention de moyens toujours plus précis pour
-          se repérer dans le temps.
-        </h2>
-      </div>
-
       <div class="timeline">
         <div
           v-for="(item, index) in items"

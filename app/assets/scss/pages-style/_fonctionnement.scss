@@ -3,9 +3,7 @@
 
 /* ------------------ FONCTIONNEMENT ------------------ */
 
-.fonctionnement {
-  padding: 2rem 0;
-}
+
 
 .container-title {
   max-width: 800px;
@@ -65,6 +63,7 @@
   @include card-construct;
   .title-details {
     text-align: $text-align;
+    
   }
   .card-fonctionnement {
     border: 1px solid $bronze;

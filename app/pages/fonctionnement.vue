@@ -10,16 +10,10 @@ const etapes = fonctionnementdata.etapes;
 
 <template>
   <article class="fonctionnement">
-    <div class="container-title">
-      <h1 class="title-mecanique">Le mouvement mécanique simple</h1>
-      <h2 class="intro">
-        Le mouvement mécanique utilise un ressort de barillet que l’on remonte
-        manuellement. Ce ressort emmagasine de l’énergie, qui est transmise à
-        des rouages. La régulation est assurée par le balancier qui contrôle
-        cette énergie pour la libérer à un rythme régulier, ce qui permet aux
-        aiguilles d’avancer de façon précise.
-      </h2>
-    </div>
+    <PageHeader
+      title="Le mouvement mécanique simple"
+      subtitle="Découvrez comment l'énergie mécanique se transforme en mesure précise du temps."
+    ></PageHeader>
 
     <div class="card-watch-parts">
       <h2>Les parties de la montre</h2>
