@@ -35,7 +35,7 @@ const filteredSteps = computed(() => {
 <template>
   <article class="techniques-page">
     <PageHeader
-      title="Techniques d'asssemblage en horlogerie"
+      title="Techniques d'assemblage en horlogerie"
       subtitle="Choix de l'étape d'assemblage sur un mouvement 2824"
     >
       <template #actions>

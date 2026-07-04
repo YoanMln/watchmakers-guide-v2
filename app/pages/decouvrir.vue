@@ -1,8 +1,7 @@
 <template>
   <PageHeader
     title="Découvrir l’univers de l’horlogerie"
-    subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses
-          plus grands secrets."
+    subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
   >
   </PageHeader>
   <div class="discovery-page">
