@@ -13,10 +13,6 @@
   align-items: center;
   white-space: nowrap;
   text-align: center;
-
-  &:hover:not(:disabled) {
-    @include btnStyleHover;
-  }
 }
 
 /* ==================== BUTTONS VARIANTS ==================== */
@@ -88,22 +84,32 @@
 
 .btn-filters {
   all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   cursor: pointer;
   color: $bronze;
   font-size: 17px;
   transition: transform 0.25s ease;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
   z-index: 1;
-
   &:hover {
     color: $light;
     border-bottom: 1px solid rgba($bronze, 0.4);
+    border-bottom-color: rgba($bronze, 0.4);
   }
-
+  &:focus-visible {
+    outline: 2px solid rgba($bronze, 0.8);
+    outline-offset: 2px;
+  }
   &.active {
     border-bottom: 1px solid $bronze;
+    border-bottom-color: $bronze;
   }
   &[aria-pressed="true"] {
     border-bottom: 1px solid $bronze;
+    border-bottom-color: $bronze;
     color: rgba($light, 0.8);
   }
 }
