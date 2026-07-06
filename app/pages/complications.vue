@@ -47,7 +47,7 @@ const uniqueCategory = [
     <div class="container-complications-filters">
       <!--btn-filter-->
       <button
-        class="btn btn-filters-complications"
+        class="btn-filters"
         v-for="nameCategory in uniqueCategory"
         :key="nameCategory"
         type="button"

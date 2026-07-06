@@ -40,7 +40,7 @@ const filteredSteps = computed(() => {
     >
       <template #actions>
         <button
-          class="btn-filters btn"
+          class="btn-filters"
           v-for="technique in techniques"
           :key="technique.id"
           type="button"
@@ -103,18 +103,5 @@ ul {
       color: #ad856f;
     }
   }
-}
-
-.btn-filters {
-  padding: 1rem 2rem;
-  border: 1px solid #ad856f;
-  border-radius: 2px;
-  display: flex;
-}
-
-.container-btn-technic {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
 }
 </style>
