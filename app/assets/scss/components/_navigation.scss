@@ -1,7 +1,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
-/* ------------------ NAVIGATION ------------------ */
+/* ------------------ NAVBAR ------------------ */
 nav {
   width: $nav-width;
   height: $nav-height;
@@ -49,26 +49,24 @@ nav {
 
     a {
       text-decoration: none;
-      font-size: 25px;
-      color: $light;
+      font-size: 1.5rem;
+      color: $bronze;
       font-weight: $font-weight300;
       transition: color 0.3s ease;
       font-family: "Alumni Sans", sans-serif;
       text-transform: uppercase;
-
       &:hover {
-        color: $bronze;
-        text-decoration: underline;
+        color: $light;
+      }
+      &.router-link-active {
+        border-bottom: 1px solid $bronze;
+        color: rgba($light, 0.8);
       }
     }
   }
 }
 
-.hide {
-  display: none;
-}
-
-/* ------------------ NAV-HOME DESKTOP ------------------ */
+/* ------------------ NAVBAR-HOME DESKTOP ------------------ */
 .nav-home-list {
   @include flexCenter;
   list-style: none;
@@ -81,11 +79,11 @@ nav {
     font-size: 1.5rem;
     color: $bronze;
     text-transform: uppercase;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 
     &:hover {
-      color: $light;
-      text-decoration: underline;
+      color: rgba($light, 0.8);
+      border-bottom: 1px solid $bronze;
     }
   }
 }

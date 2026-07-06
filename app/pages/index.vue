@@ -19,7 +19,7 @@ useHead({
         </h2>
       </div>
       <div class="btn-container-home">
-        <NuxtLink class="btn-index" to="/decouvrir"
+        <NuxtLink class="btn-cta" to="/decouvrir"
           >Découvrir l'horlogerie</NuxtLink
         >
       </div>

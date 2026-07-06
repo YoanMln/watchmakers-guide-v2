@@ -13,31 +13,25 @@
   align-items: center;
   white-space: nowrap;
   text-align: center;
-
-  &:hover:not(:disabled) {
-    @include btnStyleHover;
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
 }
 
-/* ==================== BUTTON VARIANTS ==================== */
+/* ==================== BUTTONS VARIANTS ==================== */
 
-// Boutton index CTA
+// Bouton index CTA
 
-.btn-index {
+.btn-cta {
+  @include flexCenter;
   font-size: $btn-home-a-font-size;
-  min-width: $btn-home-a-min-width;
+  width: 310px;
+  height: 65px;
   padding: $btn-home-a-padding;
   background: rgba(0, 0, 0, 0.322);
   border: 1px solid $pastel-grey;
-  border-radius: 5px;
-  color: $bronze;
+  border-radius: 1px;
+  color: $light;
   text-decoration: none;
   transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  cursor: pointer;
 
   &:hover {
     background: transparent;
@@ -47,29 +41,16 @@
   }
 }
 
-// Boutton découverte 
+// Bouton découverte
 .btn--discovery {
   color: $light;
   padding: 0.8rem 1.5rem;
   min-width: 150px;
   max-width: 210px;
   font-size: 1.1rem;
-
-  &:hover:not(:disabled) {
-    background-color: $bronze;
-    color: $matte-black;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba($bronze, 0.3);
-  }
-
-  &:disabled {
-    background-color: rgba($light, 0.1);
-    color: rgba($light, 0.5);
-    border-color: rgba($light, 0.2);
-  }
 }
 
-// Boutton quiz
+// Bouton quiz
 .btn--quiz {
   color: $light;
   background: rgba($matte-black, 0.55);
@@ -88,7 +69,7 @@
   }
 }
 
-// Boutton primary
+// Bouton primary
 .btn--primary {
   min-width: 250px;
   padding: 1rem 2rem;
@@ -96,5 +77,39 @@
 
   &:hover:not(:disabled) {
     transform: translateY(-2px);
+  }
+}
+
+// Bouton filtres
+
+.btn-filters {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  color: $bronze;
+  font-size: 17px;
+  transition: transform 0.25s ease;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  z-index: 1;
+  &:hover {
+    color: $light;
+    border-bottom: 1px solid rgba($bronze, 0.4);
+    border-bottom-color: rgba($bronze, 0.4);
+  }
+  &:focus-visible {
+    outline: 2px solid rgba($bronze, 0.8);
+    outline-offset: 2px;
+  }
+  &.active {
+    border-bottom: 1px solid $bronze;
+    border-bottom-color: $bronze;
+  }
+  &[aria-pressed="true"] {
+    border-bottom: 1px solid $bronze;
+    border-bottom-color: $bronze;
+    color: rgba($light, 0.8);
   }
 }

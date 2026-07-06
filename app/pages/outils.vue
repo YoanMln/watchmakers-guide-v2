@@ -42,7 +42,7 @@ const filteredTools = computed(() => {
     >
       <template #actions>
         <button
-          class="btn btn-filters"
+          class="btn-filters"
           v-for="category in categories"
           :key="category.id"
           type="button"
@@ -88,18 +88,5 @@ const filteredTools = computed(() => {
     pointer-events: none;
     margin-top: 1rem;
   }
-}
-
-.btn-filters {
-  padding: 1rem 2rem;
-  border: 1px solid #ad856f;
-  border-radius: 2px;
-  display: flex;
-}
-
-.container-btn-tools {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
 }
 </style>

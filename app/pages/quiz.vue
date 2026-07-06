@@ -114,7 +114,7 @@ const difficultyLevels = [
           <button
             v-for="(answer, i) in currentQuestion.answers"
             :key="i"
-            class="btn btn--quiz"
+            class="btn-cta"
             @click="selectAnswer(i)"
             :disabled="showFeedback"
           >
@@ -151,7 +151,7 @@ const difficultyLevels = [
         </p>
 
         <div id="retry">
-          <button class="btn btn--quiz" @click="restartQuiz">
+          <button class="btn-cta" @click="restartQuiz">
             Recommencer
           </button>
         </div>
