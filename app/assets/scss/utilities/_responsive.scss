@@ -6,7 +6,7 @@
   // Navigation
   nav,
   .footer {
-    background-color: $black-background;
+    background-color: rgba(0, 0, 0, 0.171);
   }
 
   .nav-menu {
@@ -18,7 +18,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.98);
+    background-color: rgba(0, 0, 0, 0.943);
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
     z-index: 20;
