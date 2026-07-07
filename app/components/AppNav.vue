@@ -38,7 +38,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <nav :class="{ hide: isHomePage, scrolled: isScrolled }">
+  <nav :class="{ 'home-desktop-hidden': isHomePage, scrolled: isScrolled }">
     <div class="nav-logo">
       <NuxtLink to="/">
         <img
@@ -76,8 +76,10 @@ onUnmounted(() => {
 
 <style lang="scss" scoped>
 nav {
-  &.hide {
-    display: none;
+  &.home-desktop-hidden {
+    @media (min-width: 781px) {
+      display: none;
+    }
   }
 
   &.scrolled {

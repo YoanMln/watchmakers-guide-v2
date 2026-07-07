@@ -8,9 +8,8 @@ nav {
   @include flexCenter;
   justify-content: space-between;
   padding: $nav-padding;
-
   z-index: $nav-z-index;
-  background-color: rgba($matte-black, 0.95);
+  background-color: rgba($black-background, 0.943);
   backdrop-filter: blur(3px);
   position: fixed;
   top: 0;
