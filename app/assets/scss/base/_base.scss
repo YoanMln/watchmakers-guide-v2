@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 30px;
-  background-color: #181818;
+  background-color: #181818 !important;
 
   &[data-page="home"] {
     background: url("~/assets/images/background/main-background.webp")
