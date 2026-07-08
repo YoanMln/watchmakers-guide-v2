@@ -7,9 +7,6 @@ defineProps({
 
 <template>
   <div class="page-header">
-    <div class="page-header__cover">
-      <img v-if="image" :src="image" alt="" aria-hidden="true" />
-    </div>
     <div class="page-header__content">
       <h1 class="page-header__title">{{ title }}</h1>
       <span class="page-header__separator"></span>
