@@ -71,10 +71,17 @@
       font-size: 2rem;
     }
     &__actions-container {
+      overflow-y: hidden;
       overflow-x: auto;
       scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
     &__actions {
+      flex-wrap: nowrap;
       gap: 2rem;
     }
   }
