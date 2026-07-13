@@ -14,9 +14,14 @@
     padding: 2rem;
     box-sizing: border-box;
     cursor: pointer;
-    &__chevron {
-      transition: transform 0.5s ease;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
     }
+  }
+
+  .accordion-items__chevron {
+    transition: transform 0.5s ease;
   }
 
   &--open {
