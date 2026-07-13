@@ -14,6 +14,7 @@ const emit = defineEmits(["toggle"]); // Event √©mis quand on clique sur l'en-t√
     <button
       class="accordion-items__header"
       type="button"
+      :aria-expanded="isOpen"
       @click="emit('toggle')"
     >
       <h2 class="accordion-items__title">{{ title }}</h2>
@@ -22,8 +23,8 @@ const emit = defineEmits(["toggle"]); // Event √©mis quand on clique sur l'en-t√
     <Transition name="accordion">
       <div v-if="isOpen" class="accordion-items__content">
         <ul class="accordion-items__details">
-          <li v-for="detail in details" :key="detail">
-            <Icon class="accordion-items__icons-list" name="mdi-gear-outline" />
+          <li v-for="(detail, index) in details" :key="`${title}-${index}`">
+            <Icon class="accordion-items__icons-list" name="mdi:gear-outline" />
             {{ detail }}
           </li>
         </ul>
