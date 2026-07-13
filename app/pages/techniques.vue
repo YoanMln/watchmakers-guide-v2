@@ -1,13 +1,18 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 
 import aiguillage from "~/data/techniques/aiguillage.json";
 import posage from "~/data/techniques/posage.json";
 import tolerance from "~/data/techniques/tolerance-controle.json";
 
-const selectedStep = ref("posage");
-
+const activeIndex = ref(null);
+const selectedStep = ref("all");
 const techniques = [
+  {
+    id: "all",
+    label: "Toutes les étapes",
+    data: [],
+  },
   {
     id: "posage",
     label: "Posage",
@@ -24,12 +29,28 @@ const techniques = [
     data: tolerance,
   },
 ];
+
 const filteredSteps = computed(() => {
+  if (selectedStep.value === "all") {
+    return techniques.flatMap((techniques) => techniques.data);
+  }
   return (
     techniques.find((technique) => technique.id === selectedStep.value)?.data ??
     []
   );
 });
+
+watch(
+  filteredSteps,
+  (steps) => {
+    if (steps.length > 0) {
+      activeIndex.value = steps[0].etape;
+    } else {
+      activeIndex.value = null;
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -52,56 +73,33 @@ const filteredSteps = computed(() => {
         </button>
       </template>
     </PageHeader>
-
-    <section class="container-card">
-      <div class="card-grid">
-        <article
+    <section class="accordion">
+      <div class="accordion-list">
+        <AccordionItems
           v-for="technic in filteredSteps"
           :key="technic.etape"
-          class="card"
-        >
+          :title="technic.etape"
+          :details="technic.details"
+          :image="`/images/techniques/${technic.image}`"
+          :is-open="activeIndex === technic.etape"
+          @toggle="
+            activeIndex = activeIndex === technic.etape ? null : technic.etape
+          "
+        />
+      </div>
+
+      <div class="accordion-image">
+        <Transition name="fade" mode="out-in">
           <img
-            :src="`/images/techniques/${technic.image}`"
-            :alt="technic.etape"
-            class="card-image"
+            v-if="activeIndex"
+            :key="activeIndex"
+            :src="`/images/techniques/${
+              filteredSteps.find((item) => item.etape === activeIndex)?.image
+            }`"
+            :alt="activeIndex"
           />
-          <h2>{{ technic.etape }}</h2>
-          <ul>
-            <li v-for="(detail, index) in technic.details" :key="index">
-              {{ detail }}
-            </li>
-          </ul>
-        </article>
+        </Transition>
       </div>
     </section>
   </article>
 </template>
-
-<style lang="scss" scoped>
-.select-wrapper {
-  display: inline-flex;
-  align-items: center;
-
-  select {
-    appearance: none;
-    padding-right: 2rem;
-    cursor: pointer;
-  }
-
-  .select-arrow {
-    margin-left: -1.8rem;
-    color: white;
-    font-size: 1.6rem;
-    pointer-events: none;
-    margin-top: 1rem;
-  }
-}
-ul {
-  li {
-    margin-bottom: 1em;
-    &::marker {
-      color: #ad856f;
-    }
-  }
-}
-</style>

@@ -123,12 +123,6 @@
     }
   }
 
-  .techniques-page h1 {
-    text-align: center;
-    font-size: 30px;
-    font-weight: $font-weight300;
-  }
-
   // Selects
   .container-select {
     padding: 0 1rem;
@@ -150,11 +144,6 @@
   .tool-card {
     margin: 0 auto;
     max-width: 350px;
-  }
-
-  .tools-page,
-  .techniques-page {
-    background-color: $black-background;
   }
 
   // Timeline
