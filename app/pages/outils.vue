@@ -5,9 +5,15 @@ import assemblage from "~/data/outils/assemblage.json";
 import maintenance from "~/data/outils/maintenance-entretien.json";
 import reglage from "~/data/outils/reglage-controle.json";
 
-const selectedTool = ref("assemblage");
+const openTool = ref(null);
+
+const selectedTool = ref("all");
 
 const categories = [
+  {
+    id: "all",
+    label: "Tous les outils",
+  },
   {
     id: "assemblage",
     label: "Assemblage",
@@ -26,6 +32,11 @@ const categories = [
 ];
 
 const filteredTools = computed(() => {
+  if (selectedTool.value === "all") {
+    return categories
+      .filter((category) => category.data)
+      .flatMap((category) => category.data);
+  }
   return (
     categories.find((category) => category.id === selectedTool.value)?.data ??
     categories[0]?.data ??
@@ -54,39 +65,50 @@ const filteredTools = computed(() => {
         </button>
       </template>
     </PageHeader>
-    <section class="container-card">
-      <div class="card-grid">
-        <article v-for="tool in filteredTools" :key="tool.outil" class="card">
+    <section class="tools-items">
+      <div class="tools-items__card-grid">
+        <article
+          v-for="tool in filteredTools"
+          :key="tool.outil"
+          class="tools-items__card"
+        >
+          <h2 class="tools-items__name">{{ tool.outil }}</h2>
           <img
             :src="`/images/outils/${tool.image}`"
             :alt="tool.outil"
-            class="card-image"
+            class="tools-items__card-image"
           />
-          <h2>{{ tool.outil }}</h2>
-          <p>{{ tool.utilisation }}</p>
+          <button
+            type="button"
+            class="tools-items__icon-action"
+            v-if="openTool !== tool.outil"
+            @click="openTool = tool.outil"
+            aria-label="Afficher la description"
+          >
+            <Icon name="mdi-light:plus-circle" />
+          </button>
+
+          <Transition name="overlay">
+            <div
+              v-if="openTool === tool.outil"
+              class="tools-items__card-overlay"
+            >
+              <p class="tools-items__description">
+                {{ tool.utilisation }}
+              </p>
+
+              <button
+                type="button"
+                class="tools-items__icon-action-close"
+                @click="openTool = null"
+                aria-label="Fermer la description"
+              >
+                <Icon name="material-symbols-light:close" />
+              </button>
+            </div>
+          </Transition>
         </article>
       </div>
     </section>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.select-wrapper {
-  display: inline-flex;
-  align-items: center;
-
-  select {
-    appearance: none;
-    padding-right: 2rem;
-    cursor: pointer;
-  }
-
-  .select-arrow {
-    margin-left: -1.8rem;
-    color: white;
-    font-size: 1.6rem;
-    pointer-events: none;
-    margin-top: 1rem;
-  }
-}
-</style>
