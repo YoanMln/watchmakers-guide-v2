@@ -78,14 +78,16 @@ const filteredTools = computed(() => {
             :alt="tool.outil"
             class="tools-items__card-image"
           />
-
-          <Icon
+          <button
+            type="button"
             class="tools-items__icon-action"
-            name="mdi-light:plus-circle"
             v-if="openTool !== tool.outil"
             @click="openTool = tool.outil"
+            aria-label="Afficher la description"
           >
-          </Icon>
+            <Icon name="mdi-light:plus-circle" />
+          </button>
+
           <Transition name="overlay">
             <div
               v-if="openTool === tool.outil"
@@ -95,11 +97,14 @@ const filteredTools = computed(() => {
                 {{ tool.utilisation }}
               </p>
 
-              <Icon
+              <button
+                type="button"
                 class="tools-items__icon-action-close"
-                name="material-symbols-light:close"
                 @click="openTool = null"
-              ></Icon>
+                aria-label="Fermer la description"
+              >
+                <Icon name="material-symbols-light:close" />
+              </button>
             </div>
           </Transition>
         </article>
