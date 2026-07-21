@@ -1,7 +1,7 @@
 <script setup>
 defineProps({
   title: { type: String, required: true }, // Titre de l'accordéon
-  details: { type: Array, String, required: true }, // Tableau JSON
+  details: { type: [Array, String], required: true }, // Tableau JSON
   image: { type: String, required: true },
   isOpen: { type: Boolean, default: false }, // Indique si l'accordéon est ouvert
 });
