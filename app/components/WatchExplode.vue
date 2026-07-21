@@ -61,6 +61,7 @@ function toggle(part) {
     <button
       v-for="part in parts"
       :key="part.id + '-hotspot'"
+      type="button"
       class="watch-explode__hotspot"
       :class="{ 'is-active': activeId === part.id }"
       :style="{ top: part.hotspot.top, left: part.hotspot.left }"
