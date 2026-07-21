@@ -3,8 +3,6 @@
 
 /* ------------------ FONCTIONNEMENT ------------------ */
 
-
-
 .container-title {
   max-width: 800px;
   margin: 0 auto;
@@ -20,7 +18,7 @@
   margin-top: 1rem;
 }
 
-///// CARDS-WATCH-PARTS /////
+///// CARDS-WATCH-EXPLODE /////
 .card-watch-parts {
   @include card-construct;
   h2 {
@@ -30,31 +28,6 @@
     color: $light;
     text-align: $text-align;
   }
-
-  .details {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 5rem;
-    .details-list {
-      list-style: none;
-      color: $light;
-      display: flex;
-      flex-direction: column;
-      gap: 5rem;
-
-      p {
-        max-width: 300px;
-        max-height: 150px;
-      }
-    }
-    .schema-parts {
-      margin-bottom: 0.5rem;
-
-      .watch-parts {
-        @include img-construct;
-      }
-    }
-  }
 }
 
 ///// CARDS-FONCTIONNEMENT /////
@@ -63,7 +36,6 @@
   @include card-construct;
   .title-details {
     text-align: $text-align;
-    
   }
   .card-fonctionnement {
     border: 1px solid $bronze;

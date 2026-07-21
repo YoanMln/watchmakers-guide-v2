@@ -2,9 +2,10 @@
 useSeoMeta({
   title: "Fonctionnement d'un mouvement mécanique | Watchmakers Guide",
   description:
-    "Découvrez le fonctionnement d’une montre mécanique : du barillet au balancier, en passant par les rouages et l’échappement, tout est expliqué simplement et clairement.",
+    "Découvrez le fonctionnement d'une montre mécanique : du barillet au balancier, en passant par les rouages et l'échappement, tout est expliqué simplement et clairement.",
 });
 import fonctionnementdata from "~/data/fonctionnement/fonctionnement-data.json";
+import watchParts from "~/data/fonctionnement/watchParts.json";
 const etapes = fonctionnementdata.etapes;
 </script>
 
@@ -17,36 +18,8 @@ const etapes = fonctionnementdata.etapes;
 
     <div class="card-watch-parts">
       <h2>Les parties de la montre</h2>
-      <p class="intro-card">Elle se compose en 3 parties essentielles</p>
-      <div class="details">
-        <ul class="details-list">
-          <li>
-            1. Le mouvement
-            <p>
-              Partie mécanique comprenant l’ensemble des organes et des
-              mécanisme qui servent à indiquer l’heure.
-            </p>
-          </li>
-          <li>
-            2. Le cadran et les aiguilles
-            <p>Qui sont les organes indicateurs</p>
-          </li>
-          <li>
-            3. La boîte
-            <p>
-              Composée de la carrure, la glace et le fond. C’est l’organe
-              protecteur du mouvement.
-            </p>
-          </li>
-        </ul>
-        <div class="schema-parts">
-          <img
-            class="watch-parts"
-            src="/images/fonctionnement/watch-parts.webp"
-            alt="schéma des différentes parties d'une montre"
-          />
-        </div>
-      </div>
+      <p class="intro-card">Cliquez sur chaque pièce pour en savoir plus</p>
+      <WatchExplode :parts="watchParts" />
     </div>
 
     <div class="fonctionnement-details">
