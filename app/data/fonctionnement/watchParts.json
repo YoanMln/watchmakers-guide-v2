@@ -1,0 +1,107 @@
+[
+  {
+    "id": "glass",
+    "title": "Le verre",
+    "description": "Le verre protège le cadran contre les chocs, les rayures et la poussière tout en assurant une parfaite lisibilité.",
+    "image": "/images/fonctionnement/watch-parts/glass.webp",
+    "animation": {
+      "zIndex": 5,
+      "startY": -280,
+      "activeY": -250,
+      "rotate": -8,
+      "scale": 1.12
+    },
+    "hotspot": {
+      "top": "8%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "4%",
+      "left": "80%"
+    }
+  },
+  {
+    "id": "case",
+    "title": "Le boîtier",
+    "description": "Le boîtier protège le mouvement contre les chocs, l'humidité et les agressions extérieures.",
+    "image": "/images/fonctionnement/watch-parts/case.webp",
+    "animation": {
+      "zIndex": 4,
+      "startY": -150,
+      "activeY": -165,
+      "rotate": 5,
+      "scale": 1.12
+    },
+    "hotspot": {
+      "top": "22%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "15%",
+      "left": "80%"
+    }
+  },
+  {
+    "id": "dial",
+    "title": "Le cadran",
+    "description": "Le cadran supporte les index et les aiguilles afin d'afficher clairement l'heure.",
+    "image": "/images/fonctionnement/watch-parts/dial.webp",
+    "animation": {
+      "zIndex": 3,
+      "startY": -40,
+      "activeY": 0,
+      "rotate": -5,
+      "scale": 1.1
+    },
+    "hotspot": {
+      "top": "40%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "35%",
+      "left": "80%"
+    }
+  },
+  {
+    "id": "movement",
+    "title": "Le mouvement",
+    "description": "Le mouvement est le cœur de la montre. Il transforme l'énergie emmagasinée dans le ressort en mouvement régulier des aiguilles.",
+    "image": "/images/fonctionnement/watch-parts/movement.webp",
+    "animation": {
+      "zIndex": 2,
+      "startY": 120,
+      "activeY": 150,
+      "rotate": 8,
+      "scale": 1.15
+    },
+    "hotspot": {
+      "top": "62%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "55%",
+      "left": "80%"
+    }
+  },
+  {
+    "id": "caseback",
+    "title": "Le fond de boîte",
+    "description": "Le fond de boîte ferme le boîtier et protège le mouvement tout en assurant l'étanchéité de la montre.",
+    "image": "/images/fonctionnement/watch-parts/back-case.webp",
+    "animation": {
+      "zIndex": 1,
+      "startY": 250,
+      "activeY": 285,
+      "rotate": -5,
+      "scale": 1.12
+    },
+    "hotspot": {
+      "top": "85%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "75%",
+      "left": "75%"
+    }
+  }
+]
