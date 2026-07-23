@@ -108,15 +108,15 @@ const difficultyLevels = [
           Difficulté choisie : {{ selectedDifficulty }}
         </p>
 
-        <div class="current-question"></div>
+        <div class="current-question" />
         <h2>{{ currentQuestion.question }}</h2>
         <div id="answers">
           <button
             v-for="(answer, i) in currentQuestion.answers"
             :key="i"
             class="btn-cta"
-            @click="selectAnswer(i)"
             :disabled="showFeedback"
+            @click="selectAnswer(i)"
           >
             {{ answer }}
           </button>
@@ -151,9 +151,7 @@ const difficultyLevels = [
         </p>
 
         <div id="retry">
-          <button class="btn-cta" @click="restartQuiz">
-            Recommencer
-          </button>
+          <button class="btn-cta" @click="restartQuiz">Recommencer</button>
         </div>
       </div>
     </div>

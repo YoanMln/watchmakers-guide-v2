@@ -2,7 +2,9 @@
   {
     "etape": "Saut de date",
     "image": "saut.webp",
-    "details": ["Faire tourner la tige de remontoir pour faire sauter la date (quand la date commence à passer, tourner lentement la tige de remontoir pour faire passer le saut à minuit précis)."]
+    "details": [
+      "Faire tourner la tige de remontoir pour faire sauter la date (quand la date commence à passer, tourner lentement la tige de remontoir pour faire passer le saut à minuit précis)."
+    ]
   },
   {
     "etape": "Pose d'aiguilles",

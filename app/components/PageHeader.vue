@@ -9,7 +9,7 @@ defineProps({
   <div class="page-header">
     <div class="page-header__content">
       <h1 class="page-header__title">{{ title }}</h1>
-      <span class="page-header__separator"></span>
+      <span class="page-header__separator" />
       <h2 v-if="subtitle" class="page-header__sub">{{ subtitle }}</h2>
     </div>
 

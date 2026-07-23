@@ -29,7 +29,9 @@
   align-items: center;
   border: 1px solid $bronze;
   border-radius: 5px;
-  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition:
+    background 0.2s ease-in-out,
+    color 0.2s ease-in-out;
   cursor: pointer;
 }
 

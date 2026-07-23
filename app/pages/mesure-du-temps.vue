@@ -22,7 +22,7 @@ onMounted(async () => {
     },
     {
       threshold: 0.15,
-    }
+    },
   );
 
   timelineItems.value.forEach((el) => {
@@ -40,7 +40,7 @@ onBeforeUnmount(() => {
     <PageHeader
       title="Histoire de la mesure du temps"
       subtitle="Depuis les premières civilisations, la mesure du temps a permis d’organiser la vie quotidienne. D’abord fondée sur l’observation des astres, elle s’est progressivement perfectionnée grâce à des instruments toujours plus précis."
-    ></PageHeader>
+    />
     <div id="timeline-1" class="timeline-container">
       <div class="timeline">
         <div

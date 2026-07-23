@@ -49,7 +49,7 @@ watch(
       activeIndex.value = null;
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 
@@ -61,13 +61,13 @@ watch(
     >
       <template #actions>
         <button
-          class="btn-filters"
           v-for="technique in techniques"
           :key="technique.id"
+          class="btn-filters"
           type="button"
           :aria-pressed="selectedStep === technique.id"
-          @click="selectedStep = technique.id"
           :class="{ active: selectedStep === technique.id }"
+          @click="selectedStep = technique.id"
         >
           {{ technique.label }}
         </button>

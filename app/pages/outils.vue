@@ -53,13 +53,13 @@ const filteredTools = computed(() => {
     >
       <template #actions>
         <button
-          class="btn-filters"
           v-for="category in categories"
           :key="category.id"
+          class="btn-filters"
           type="button"
           :aria-pressed="selectedTool === category.id"
-          @click="selectedTool = category.id"
           :class="{ active: selectedTool === category.id }"
+          @click="selectedTool = category.id"
         >
           {{ category.label }}
         </button>
@@ -79,11 +79,11 @@ const filteredTools = computed(() => {
             class="tools-items__card-image"
           />
           <button
+            v-if="openTool !== tool.outil"
             type="button"
             class="tools-items__icon-action"
-            v-if="openTool !== tool.outil"
-            @click="openTool = tool.outil"
             aria-label="Afficher la description"
+            @click="openTool = tool.outil"
           >
             <Icon name="mdi-light:plus-circle" />
           </button>
@@ -100,8 +100,8 @@ const filteredTools = computed(() => {
               <button
                 type="button"
                 class="tools-items__icon-action-close"
-                @click="openTool = null"
                 aria-label="Fermer la description"
+                @click="openTool = null"
               >
                 <Icon name="material-symbols-light:close" />
               </button>

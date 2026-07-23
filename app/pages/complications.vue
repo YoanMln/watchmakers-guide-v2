@@ -22,7 +22,7 @@ const filteredComplications = computed(() => {
   }
 
   return complications.filter(
-    (complication) => complication.category === selectedCategory.value
+    (complication) => complication.category === selectedCategory.value,
   );
 });
 const uniqueCategory = [
@@ -47,9 +47,9 @@ const uniqueCategory = [
     <div class="container-complications-filters">
       <!--btn-filter-->
       <button
-        class="btn-filters"
         v-for="nameCategory in uniqueCategory"
         :key="nameCategory"
+        class="btn-filters"
         type="button"
         :aria-pressed="selectedCategory === nameCategory"
         @click="setCategory(nameCategory)"

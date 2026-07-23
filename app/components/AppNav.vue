@@ -67,9 +67,9 @@ onUnmounted(() => {
     </ul>
 
     <div class="nav-burger" :class="{ active: menuOpen }" @click="toggleMenu">
-      <div class="ligne"></div>
-      <div class="ligne"></div>
-      <div class="ligne"></div>
+      <div class="ligne" />
+      <div class="ligne" />
+      <div class="ligne" />
     </div>
   </nav>
 </template>
