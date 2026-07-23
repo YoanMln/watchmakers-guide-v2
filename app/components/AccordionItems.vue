@@ -31,7 +31,7 @@ const emit = defineEmits(["toggle"]); // Event Ã©mis quand on clique sur l'en-tÃ
         <p v-else class="accordion-items__description">
           {{ details }}
         </p>
-        <img :src="image" :alt="title" class="accordion-items__image" />
+        <img :src="image" :alt="title" class="accordion-items__image" >
       </div>
     </Transition>
   </div>

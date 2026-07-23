@@ -40,7 +40,7 @@ onBeforeUnmount(() => {
     <PageHeader
       title="Histoire de la mesure du temps"
       subtitle="Depuis les premières civilisations, la mesure du temps a permis d’organiser la vie quotidienne. D’abord fondée sur l’observation des astres, elle s’est progressivement perfectionnée grâce à des instruments toujours plus précis."
-    ></PageHeader>
+    />
     <div id="timeline-1" class="timeline-container">
       <div class="timeline">
         <div
@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
               class="timeline__img"
               :src="`/images/mesure-du-temps/${item.img}`"
               :alt="item.alt"
-            />
+            >
 
             <h2 class="timeline__content-title">
               {{ item.title }}

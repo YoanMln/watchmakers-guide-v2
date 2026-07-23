@@ -55,7 +55,7 @@ function toggle(part) {
         :src="part.image"
         :alt="part.title"
         class="watch-explode__part"
-      />
+      >
     </div>
 
     <button

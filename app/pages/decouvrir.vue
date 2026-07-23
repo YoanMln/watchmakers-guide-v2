@@ -1,9 +1,9 @@
+<!-- eslint-disable vue/no-multiple-template-root -->
 <template>
   <PageHeader
     title="Découvrir l’univers de l’horlogerie"
     subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
-  >
-  </PageHeader>
+  />
   <div class="discovery-page">
     <div class="header-container-discovery">
       <div class="container-gate">

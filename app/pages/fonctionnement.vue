@@ -1,11 +1,11 @@
 <script setup>
+import fonctionnementdata from "~/data/fonctionnement/fonctionnement-data.json";
+import watchParts from "~/data/fonctionnement/watchParts.json";
 useSeoMeta({
   title: "Fonctionnement d'un mouvement mécanique | Watchmakers Guide",
   description:
     "Découvrez le fonctionnement d'une montre mécanique : du barillet au balancier, en passant par les rouages et l'échappement, tout est expliqué simplement et clairement.",
 });
-import fonctionnementdata from "~/data/fonctionnement/fonctionnement-data.json";
-import watchParts from "~/data/fonctionnement/watchParts.json";
 const etapes = fonctionnementdata.etapes;
 </script>
 
@@ -14,7 +14,7 @@ const etapes = fonctionnementdata.etapes;
     <PageHeader
       title="Le mouvement mécanique simple"
       subtitle="Découvrez comment l'énergie mécanique se transforme en mesure précise du temps."
-    ></PageHeader>
+    />
 
     <div class="card-watch-parts">
       <h2>Les parties de la montre</h2>
@@ -37,7 +37,7 @@ const etapes = fonctionnementdata.etapes;
             class="watch-parts"
             :src="`/images/fonctionnement/parts/${etape.image}`"
             :alt="etape.alt"
-          />
+          >
         </div>
       </div>
     </div>

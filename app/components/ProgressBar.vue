@@ -23,7 +23,7 @@ const percentage = computed(() => {
     aria-valuemax="100"
     aria-label="Progress"
   >
-    <div class="progress-bar__fill" :style="{ width: `${percentage}%` }"></div>
+    <div class="progress-bar__fill" :style="{ width: `${percentage}%` }"/>
   </div>
 </template>
 

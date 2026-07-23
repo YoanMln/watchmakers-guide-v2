@@ -47,9 +47,9 @@ const uniqueCategory = [
     <div class="container-complications-filters">
       <!--btn-filter-->
       <button
-        class="btn-filters"
         v-for="nameCategory in uniqueCategory"
         :key="nameCategory"
+        class="btn-filters"
         type="button"
         :aria-pressed="selectedCategory === nameCategory"
         @click="setCategory(nameCategory)"
@@ -90,7 +90,7 @@ const uniqueCategory = [
               <img
                 :src="complication.image"
                 :alt="`Illustration de ${complication.name}`"
-              />
+              >
             </div>
           </div>
         </article>

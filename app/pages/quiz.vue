@@ -108,15 +108,15 @@ const difficultyLevels = [
           Difficulté choisie : {{ selectedDifficulty }}
         </p>
 
-        <div class="current-question"></div>
+        <div class="current-question"/>
         <h2>{{ currentQuestion.question }}</h2>
         <div id="answers">
           <button
             v-for="(answer, i) in currentQuestion.answers"
             :key="i"
             class="btn-cta"
-            @click="selectAnswer(i)"
             :disabled="showFeedback"
+            @click="selectAnswer(i)"
           >
             {{ answer }}
           </button>
@@ -127,7 +127,7 @@ const difficultyLevels = [
           <p v-if="lastAnswerCorrect">Bonne réponse !</p>
 
           <p v-else>
-            Mauvaise réponse <br /><br />
+            Mauvaise réponse <br ><br >
             La bonne réponse était :
             <strong>
               {{ currentQuestion.answers[currentQuestion.correctAnswer] }}
