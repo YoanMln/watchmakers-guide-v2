@@ -68,7 +68,9 @@
   background-color: transparent;
   padding: 3rem 1rem;
   border: 1px solid $pastel-dark;
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease;
   &:hover {
     border-color: $bronze;
     background-color: transparent;

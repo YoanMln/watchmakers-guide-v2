@@ -9,7 +9,7 @@ const partRefs = ref([]);
 const activeId = ref(null);
 
 const activePart = computed(
-  () => props.parts.find((p) => p.id === activeId.value) || null
+  () => props.parts.find((p) => p.id === activeId.value) || null,
 );
 
 onMounted(() => {
@@ -116,7 +116,9 @@ function toggle(part) {
     line-height: 1;
     cursor: pointer;
     z-index: 10;
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition:
+      box-shadow 0.3s,
+      transform 0.3s;
 
     &:hover {
       transform: translate(-50%, -50%) scale(1.08);
@@ -154,7 +156,9 @@ function toggle(part) {
 
 .popover-enter-active,
 .popover-leave-active {
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 .popover-enter-from,
 .popover-leave-to {

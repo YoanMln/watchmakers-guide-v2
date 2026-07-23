@@ -49,7 +49,7 @@ watch(
       activeIndex.value = null;
     }
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
 

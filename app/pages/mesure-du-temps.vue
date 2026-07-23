@@ -22,7 +22,7 @@ onMounted(async () => {
     },
     {
       threshold: 0.15,
-    }
+    },
   );
 
   timelineItems.value.forEach((el) => {

@@ -24,9 +24,7 @@
             Explorez les mécanismes les plus complexes
           </p>
           <div class="gate-action">
-            <NuxtLink class="btn-cta" to="/complications"
-              >Explorez</NuxtLink
-            >
+            <NuxtLink class="btn-cta" to="/complications">Explorez</NuxtLink>
           </div>
         </div>
         <div class="gate quiz-gate">

@@ -22,7 +22,7 @@ const filteredComplications = computed(() => {
   }
 
   return complications.filter(
-    (complication) => complication.category === selectedCategory.value
+    (complication) => complication.category === selectedCategory.value,
   );
 });
 const uniqueCategory = [

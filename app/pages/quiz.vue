@@ -151,9 +151,7 @@ const difficultyLevels = [
         </p>
 
         <div id="retry">
-          <button class="btn-cta" @click="restartQuiz">
-            Recommencer
-          </button>
+          <button class="btn-cta" @click="restartQuiz">Recommencer</button>
         </div>
       </div>
     </div>
