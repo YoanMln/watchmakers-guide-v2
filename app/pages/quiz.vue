@@ -108,7 +108,7 @@ const difficultyLevels = [
           Difficulté choisie : {{ selectedDifficulty }}
         </p>
 
-        <div class="current-question"/>
+        <div class="current-question" />
         <h2>{{ currentQuestion.question }}</h2>
         <div id="answers">
           <button
@@ -127,7 +127,7 @@ const difficultyLevels = [
           <p v-if="lastAnswerCorrect">Bonne réponse !</p>
 
           <p v-else>
-            Mauvaise réponse <br ><br >
+            Mauvaise réponse <br /><br />
             La bonne réponse était :
             <strong>
               {{ currentQuestion.answers[currentQuestion.correctAnswer] }}

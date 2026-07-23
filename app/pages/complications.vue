@@ -90,7 +90,7 @@ const uniqueCategory = [
               <img
                 :src="complication.image"
                 :alt="`Illustration de ${complication.name}`"
-              >
+              />
             </div>
           </div>
         </article>

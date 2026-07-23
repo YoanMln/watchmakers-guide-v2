@@ -54,7 +54,7 @@ onBeforeUnmount(() => {
               class="timeline__img"
               :src="`/images/mesure-du-temps/${item.img}`"
               :alt="item.alt"
-            >
+            />
 
             <h2 class="timeline__content-title">
               {{ item.title }}

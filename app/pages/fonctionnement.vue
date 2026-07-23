@@ -37,7 +37,7 @@ const etapes = fonctionnementdata.etapes;
             class="watch-parts"
             :src="`/images/fonctionnement/parts/${etape.image}`"
             :alt="etape.alt"
-          >
+          />
         </div>
       </div>
     </div>

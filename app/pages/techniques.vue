@@ -97,7 +97,7 @@ watch(
               filteredSteps.find((item) => item.etape === activeIndex)?.image
             }`"
             :alt="activeIndex"
-          >
+          />
         </Transition>
       </div>
     </section>

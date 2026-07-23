@@ -77,7 +77,7 @@ const filteredTools = computed(() => {
             :src="`/images/outils/${tool.image}`"
             :alt="tool.outil"
             class="tools-items__card-image"
-          >
+          />
           <button
             v-if="openTool !== tool.outil"
             type="button"
