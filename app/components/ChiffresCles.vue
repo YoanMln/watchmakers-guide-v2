@@ -7,7 +7,7 @@ defineProps({
 <template>
   <div class="chiffres-cles">
     <div
-      v-for="(chiffre, index) in chiffres"
+      v-for="chiffre in chiffres"
       :key="chiffre.label"
       class="chiffres-cles__item"
     >
