@@ -38,49 +38,38 @@
     text-align: $text-align;
   }
 }
-.card-fonctionnement {
-  border: 1px solid $bronze;
-  border-radius: 5px;
-  margin: 1rem 10rem;
-  padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  background-color: #484b51b8;
 
-  .steps-content {
-    flex: 1;
-    max-width: 50%;
+.steps-content {
+  flex: 1;
+  max-width: 50%;
 
-    .card-title {
-      text-align: left;
-      margin-bottom: 1rem;
-      color: $bronze;
-    }
-  }
-  .resume-details {
-    color: $light;
+  .card-title {
     text-align: left;
-    line-height: 1.6;
-    margin: 0;
-    max-width: 100%;
+    margin-bottom: 1rem;
+    color: $bronze;
   }
+}
+.resume-details {
+  color: $light;
+  text-align: left;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 100%;
+}
 
-  .schema-fonctionnement {
-    flex: 1;
-    max-width: 50%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.schema-fonctionnement {
+  flex: 1;
+  max-width: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    .watch-parts {
-      @include img-construct;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
+  .watch-parts {
+    @include img-construct;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
 
