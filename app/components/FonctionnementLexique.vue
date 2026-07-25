@@ -6,7 +6,11 @@ defineProps({
 
 <template>
   <dl class="lexique">
-    <div v-for="(terme, index) in termes" :key="index" class="lexique__entry">
+    <div
+      v-for="(terme, index) in termes"
+      :key="index.term"
+      class="lexique__entry"
+    >
       <dt class="lexique__term">{{ terme.term }}</dt>
       <dd class="lexique__definition">{{ terme.definition }}</dd>
     </div>
