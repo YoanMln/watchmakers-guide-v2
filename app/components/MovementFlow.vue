@@ -12,8 +12,8 @@ const activeId = ref(null);
 const activeFonctionnement = computed(
   () =>
     props.fonctionnements.find(
-      (fonctionnement) => fonctionnement.id === activeId.value,
-    ) || null,
+      (fonctionnement) => fonctionnement.id === activeId.value
+    ) || null
 );
 
 function toggle(fonctionnement) {
@@ -86,7 +86,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
               {{
                 roman[
                   props.fonctionnements.findIndex(
-                    (f) => f.id === activeFonctionnement.id,
+                    (f) => f.id === activeFonctionnement.id
                   )
                 ]
               }}
@@ -109,7 +109,11 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
         v-for="(fonctionnement, index) in props.fonctionnements"
         :key="fonctionnement.id + '-legend'"
         :class="{ 'is-active': activeId === fonctionnement.id }"
+        role="button"
+        tabindex="0"
         @click="toggle(fonctionnement)"
+        @keydown.enter.prevent="toggle(fonctionnement)"
+        @keydown.space.prevent="toggle(fonctionnement)"
       >
         <span class="movement-flow__rn">{{ roman[index] }}</span>
         {{ fonctionnement.title }}
