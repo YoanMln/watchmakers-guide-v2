@@ -1,0 +1,18 @@
+[
+  {
+    "term": "Fréquence",
+    "definition": "Nombre d'oscillations au cours d'une unité de temps."
+  },
+  {
+    "term": "Réserve de marche",
+    "definition": "Autonomie de fonctionnement du mouvement une fois le ressort du barillet complètement remonté."
+  },
+  {
+    "term": "Rouage",
+    "definition": "Chaîne d'engrenages qui transmet et démultiplie l'énergie du barillet jusqu'à l'échappement."
+  },
+  {
+    "term": "Angle de levée",
+    "definition": "Angle de rotation que parcourt le balancier d'une montre lorsqu'il reçoit l'impulsion de l'échappement."
+  }
+]

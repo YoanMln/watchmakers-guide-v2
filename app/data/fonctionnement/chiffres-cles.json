@@ -1,0 +1,6 @@
+[
+  { "value": "18 800", "unit": "alt/heure", "label": "Fréquence du balancier" },
+  { "value": "46h", "unit": "", "label": "Réserve de marche" },
+  { "value": "17", "unit": "rubis", "label": "Nombre de rubis" },
+  { "value": "44''", "unit": "", "label": "Angle de levée du balancier" }
+]

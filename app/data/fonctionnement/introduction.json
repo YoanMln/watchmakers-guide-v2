@@ -1,0 +1,7 @@
+{
+  "intro": "Pour déterminer l’heure, il suffit de mesurer l’intervalle de temps écoulé depuis un instant de référence fixé par convention : 0 heure (minuit). Chaque tour des aiguilles permet ainsi de visualiser le temps qui s’est écoulé depuis ce point de départ.\n\n\n\n",
+
+  "exemple": "Par exemple, si les aiguilles indiquent 4 h 20, cela signifie que 4 heures et 20 minutes se sont écoulées depuis minuit. La montre ne « connaît » pas l’heure au sens propre : elle mesure et affiche simplement le nombre d’unités de temps — heures, minutes et parfois secondes — qui se sont succédé depuis cette référence.",
+
+  "conclusion": "Ainsi, une montre peut être considérée comme un instrument de mesure du temps, dont le rôle est de compter avec précision les unités de temps écoulées afin d’indiquer l’heure du moment. Grâce à son mécanisme, elle transforme un mouvement continu en une indication claire et lisible, permettant de se repérer à tout instant de la journée."
+}
