@@ -1,0 +1,63 @@
+[
+  {
+    "id": "accumulation",
+    "title": "Accumulation",
+    "text": "L'accumulateur d'énergie d'une montre mécanique est le ressort contenu dans le barillet. L'énergie est stockée dans le ressort du barillet. En remontant la montre, le ressort s'enroule autour de l'axe. En se détendant, il fait tourner le barillet, ce qui entraîne les rouages du mouvement.",
+    "image": "barillet.webp",
+    "alt": "barillet d'une montre mécanique",
+    "hotspot": {
+      "top": "40%",
+      "left": "65%"
+    },
+    "popover": {
+      "top": "50%",
+      "left": "120%"
+    }
+  },
+
+  {
+    "id": "transmission",
+    "title": "Transmission et comptage",
+    "text": "Le rouage transmet l'énergie du barillet à l'échappement. Chaque rouage est dimensionné pour respecter la fréquence du balancier, afin d'assurer une rotation régulière et précise des roues.",
+    "image": "transmission.webp",
+    "alt": "rouage de transmission d'une montre mécanique",
+    "hotspot": {
+      "top": "55%",
+      "left": "35%"
+    },
+    "popover": {
+      "top": "40%",
+      "left": "-35%"
+    }
+  },
+  {
+    "id": "distribution",
+    "title": "Distribution",
+    "text": "La distribution est assurée par la roue d'échappement, l'ancre et la cheville du plateau. Ce système entretient les oscillations du balancier en libérant l'énergie de façon rythmée.",
+    "image": "distribution.webp",
+    "alt": "système d'échappement d'une montre mécanique",
+    "hotspot": {
+      "top": "55%",
+      "left": "10%"
+    },
+    "popover": {
+      "top": "60%",
+      "left": "-45%"
+    }
+  },
+  {
+    "id": "regulation",
+    "title": "Régulation",
+    "text": "Assurée par le balancier-spiral. Celui-ci va rythmer la rotation du rouage de manière très précise et ainsi réguler la distribution de l'énergie.",
+    "image": "regulation.webp",
+    "alt": "balancier-spiral d'une montre mécanique",
+    "hotspot": {
+      "top": "40%",
+      "left": "30%"
+    },
+    "popover": {
+      "top": "20%",
+      "left": "-45%"
+    }
+  }
+]
