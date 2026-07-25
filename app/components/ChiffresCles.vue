@@ -8,7 +8,7 @@ defineProps({
   <div class="chiffres-cles">
     <div
       v-for="(chiffre, index) in chiffres"
-      :key="index"
+      :key="chiffre.label"
       class="chiffres-cles__item"
     >
       <b class="chiffres-cles__value">{{ chiffre.value }}</b>
