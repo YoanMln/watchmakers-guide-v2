@@ -4,6 +4,7 @@ import watchParts from "~/data/fonctionnement/watchParts.json";
 import chiffresCles from "~/data/fonctionnement/chiffres-cles.json";
 import lexique from "~/data/fonctionnement/lexique.json";
 import introduction from "~/data/fonctionnement/introduction.json";
+import FonctionnementLexique from "~/components/FonctionnementLexique.vue";
 
 useSeoMeta({
   title: "Fonctionnement d'un mouvement mécanique | Watchmakers Guide",
@@ -68,7 +69,7 @@ const readNextItems = [
           <div id="lexique" class="row__text lexique-section">
             <p class="fonctionnement-details__tag">Lexique</p>
             <h2>Le vocabulaire de l'horloger</h2>
-            <Lexique :termes="lexique" />
+            <FonctionnementLexique :termes="lexique" />
           </div>
         </section>
 

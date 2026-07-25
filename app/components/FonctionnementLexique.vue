@@ -40,7 +40,6 @@ defineProps({
     font-size: 1.1rem;
     color: #a9a49c;
     line-height: 1.4;
-
   }
 }
 </style>
