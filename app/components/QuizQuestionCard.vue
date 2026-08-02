@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from "vue";
-import { gsap } from "gsap";
+import gsap from "gsap";
 
 const props = defineProps({
   question: {
@@ -103,7 +103,7 @@ watch(
   () => [props.showFeedback, props.questionNumber],
   () => {
     resetCard();
-  },
+  }
 );
 </script>
 
@@ -134,8 +134,10 @@ watch(
       <button
         v-for="(answer, index) in question.answers"
         :key="index"
+        type="button"
         class="quiz-question-card__answer"
         :disabled="showFeedback"
+        :focus-visible
         @click="emit('answer', index)"
       >
         <Icon name="mdi:gear-outline" class="quiz-question-card__icon" />
@@ -151,8 +153,7 @@ watch(
 
 .quiz-question-card {
   @include quiz-card;
-
-  width: 520px;
+  width: min(520px, 90vw);
   margin-top: 2rem;
   transform-style: preserve-3d;
   backface-visibility: hidden;
