@@ -46,95 +46,50 @@ function restartQuiz() {
   score.value = 0;
   showFeedback.value = false;
 }
-
-// niveaux de difficulté
-
-const difficultyLevels = [
-  {
-    value: "novice",
-    numeral: "I",
-    label: "Novice",
-    description: "Vocabulaire, pièces visibles et marques emblématiques",
-  },
-  {
-    value: "horloger",
-    numeral: "II",
-    label: "Horloger",
-    description: "Mécanismes internes, réglage et complications classiques",
-  },
-  {
-    value: "maitre horloger",
-    numeral: "III",
-    label: "Maître-horloger",
-    description: "Haute fréquence, tourbillon et régulation avancée",
-  },
-];
 </script>
 
 <template>
   <div class="quiz-page page-centered">
-    <div class="header-container-quiz">
-      <h1 class="title-quiz">Quiz horloger</h1>
-
+    <div class="quiz-page__header-container">
       <!-- Sélection difficulté -->
-      <div v-if="!selectedDifficulty" class="difficulty-selection">
-        <h2 class="sub-text">Choisissez votre niveau de maîtrise :</h2>
-
-        <div class="container-card-difficulty">
-          <button
-            v-for="level in difficultyLevels"
-            :key="level.value"
-            class="card-difficulty"
-            @click="chooseDifficulty(level.value)"
-          >
-            <p class="card-difficulty__numeral">{{ level.numeral }}</p>
-            <h3 class="card-difficulty__title">{{ level.label }}</h3>
-            <p class="card-difficulty__desc">
-              {{ level.description }}
-            </p>
-          </button>
+      <div v-if="!selectedDifficulty">
+        <h1 class="quiz-page__title">Testez vos connaissances</h1>
+        <h2 class="quiz-page__sub-text">
+          Choisissez votre niveau de maîtrise :
+        </h2>
+        <div>
+          <QuizDifficultyCard @select="chooseDifficulty" />
         </div>
       </div>
 
       <!-- Quiz en cours -->
       <div v-else-if="currentQuestion">
-        <div id="quiz-progression">
-          Question : {{ currentQuestionIndex + 1 }} /
-          {{ filteredQuestions.length }}
-          <p class="sub-text">Score : {{ score }}</p>
-        </div>
+        <QuizQuestionCard
+          :question="currentQuestion"
+          :question-number="currentQuestionIndex + 1"
+          :total-questions="filteredQuestions.length"
+          :difficulty="selectedDifficulty"
+          :score="score"
+          :show-feedback="showFeedback"
+          @answer="selectAnswer"
+        />
 
-        <p class="quiz-difficulty">
-          Difficulté choisie : {{ selectedDifficulty }}
-        </p>
+        <!-- Popup-alert -->
+        <div v-if="showFeedback" class="container-alert">
+          <div class="container-alert__custom-alert">
+            <p v-if="lastAnswerCorrect">Bonne réponse !</p>
 
-        <div class="current-question" />
-        <h2>{{ currentQuestion.question }}</h2>
-        <div id="answers">
-          <button
-            v-for="(answer, i) in currentQuestion.answers"
-            :key="i"
-            class="btn-cta"
-            :disabled="showFeedback"
-            @click="selectAnswer(i)"
-          >
-            {{ answer }}
-          </button>
-        </div>
-
-        <!-- Popup résultat -->
-        <div v-if="showFeedback" id="custom-alert">
-          <p v-if="lastAnswerCorrect">Bonne réponse !</p>
-
-          <p v-else>
-            Mauvaise réponse <br /><br />
-            La bonne réponse était :
-            <strong>
-              {{ currentQuestion.answers[currentQuestion.correctAnswer] }}
-            </strong>
-          </p>
-
-          <button @click="nextQuestion">Question suivante</button>
+            <p v-else>
+              Mauvaise réponse <br /><br />
+              La bonne réponse était :
+              <span>
+                {{ currentQuestion.answers[currentQuestion.correctAnswer] }}
+              </span>
+            </p>
+            <button class="container-alert__next" @click="nextQuestion">
+              Question suivante
+            </button>
+          </div>
         </div>
         <ProgressBar
           :current="currentQuestionIndex + 1"
@@ -142,17 +97,19 @@ const difficultyLevels = [
         />
       </div>
 
-      <!-- Fin du quiz -->
-      <div v-else>
-        <h2 class="sub-text">Quiz terminé !</h2>
-
-        <p id="results">
+      <!-- End-zone -->
+      <div class="end-zone-quiz" v-else>
+        <h2 class="end-zone-quiz__title">Quiz terminé !</h2>
+        <p class="end-zone-quiz__results">
           Score final : {{ score }} / {{ filteredQuestions.length }}
         </p>
-
-        <div id="retry">
-          <button class="btn-cta" @click="restartQuiz">Recommencer</button>
-        </div>
+        <p class="end-zone-quiz__description">
+          Félicitations ! Vous avez terminé le parcours. Continuez à explorer
+          Watchmaker's Guide ou relevez le défi avec un autre niveau.
+        </p>
+        <button class="btn-cta end-zone-quiz__retry" @click="restartQuiz">
+          Changer de difficulté
+        </button>
       </div>
     </div>
   </div>
