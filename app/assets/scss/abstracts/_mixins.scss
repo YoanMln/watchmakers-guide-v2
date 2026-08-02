@@ -91,6 +91,8 @@
   border: 1px solid rgba($bronze, 0.25);
   border-radius: 28px;
   background: $background-card;
+  position: relative;
+  overflow: hidden;
   &::before {
     content: "";
     position: absolute;
