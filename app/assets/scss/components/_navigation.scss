@@ -10,6 +10,7 @@ nav {
   padding: $nav-padding;
   z-index: $nav-z-index;
 
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   position: fixed;
   top: 0;
