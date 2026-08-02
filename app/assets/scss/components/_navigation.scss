@@ -9,8 +9,8 @@ nav {
   justify-content: space-between;
   padding: $nav-padding;
   z-index: $nav-z-index;
-  background-color: rgba($black-background, 0.943);
-  backdrop-filter: blur(3px);
+
+  backdrop-filter: blur(2px);
   position: fixed;
   top: 0;
   left: 0;

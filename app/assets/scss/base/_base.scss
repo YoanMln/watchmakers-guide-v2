@@ -7,10 +7,12 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  padding-top: 30px;
-  background-color: #181818 !important;
+  max-height: 100%;
+}
 
-  &[data-page="home"] {
+.app {
+  background: #181818;
+  &[data-page="index"] {
     background: url("~/assets/images/background/main-background.webp")
       center/cover fixed no-repeat;
     padding-top: 0;

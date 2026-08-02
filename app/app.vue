@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app" :data-page="$route.name">
     <NuxtRouteAnnouncer />
     <AppNav />
     <main>
