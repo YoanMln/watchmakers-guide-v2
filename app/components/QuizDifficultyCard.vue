@@ -29,6 +29,7 @@ const difficultyLevels = [
       <button
         v-for="level in difficultyLevels"
         :key="level.value"
+        :type="button"
         class="card-difficulty"
         @click="emit('select', level.value)"
       >
