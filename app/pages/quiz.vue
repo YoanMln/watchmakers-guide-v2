@@ -58,10 +58,7 @@ function restartQuiz() {
           Choisissez votre niveau de maîtrise :
         </h2>
         <div>
-          <QuizDifficultyCard
-            v-if="!selectedDifficulty"
-            @select="chooseDifficulty"
-          />
+          <QuizDifficultyCard @select="chooseDifficulty" />
         </div>
       </div>
 
