@@ -4,7 +4,8 @@
 .page-header {
   @include flex-column;
   position: relative;
-  padding: 6rem;
+  padding: 7.5rem;
+  padding-bottom: 2rem;
   border-bottom: 0.5px solid rgba($bronze, 0.4);
   background-color: transparent;
 
@@ -42,7 +43,7 @@
   &__sub {
     font-size: 1.5rem;
     color: $light;
-    line-height: 1.7;
+    line-height: 1.5;
   }
 
   &__actions-container {
@@ -66,9 +67,13 @@
   @media (max-width: 780px) {
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 2rem;
+    padding-top: 9rem;
     &__title {
       font-size: 2rem;
+    }
+    &__sub {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
     }
     &__actions-container {
       max-width: 100%;
@@ -83,7 +88,7 @@
     }
     &__actions {
       flex-wrap: nowrap;
-      gap: 2rem;
+      gap: 1.8rem;
     }
   }
 }
