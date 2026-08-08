@@ -1,80 +1,56 @@
-@use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
 
-/* ------------------ DECOUVRIR------------------ */
+/* ------------------ DISCOVERY ------------------ */
 
 .discovery-page {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(90vh - 70px);
-}
-
-.header-container-discovery {
-  position: $header-container-position;
-  z-index: $header-container-z-index;
-  max-width: $max-width-discovery;
-  width: $header-container-width;
-  padding: $header-container-padding;
-  color: $light;
-  text-align: $header-container-text-align;
-  background-color: #111111aa;
-  border-radius: 5px;
-}
-.discovery-intro {
-  h1 {
-    margin-bottom: 1rem;
-  }
-  p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-  }
-}
-
-.container-gate {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5rem;
-}
-
-.gate {
-  @include card-construct;
-  height: auto;
-  min-height: 400px;
-  position: relative;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  &:hover:not(.coming-soon) {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba($bronze, 0.2);
-  }
-  h2 {
-    color: $bronze;
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.1rem;
+  gap: 2rem;
+
+  width: min(2000px, 100%);
+  margin: 0 auto;
+  padding: 3rem 1rem 6rem;
+
+  &__primary-gates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem;
   }
 
-  p {
-    font-size: 1rem;
-  }
-
-  .gate-description {
-    color: $light;
-    text-align: center;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex-grow: 1;
+  &__secondary-gates {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
-.gate-action {
-  display: flex;
-  justify-content: center;
+/* ------------------ RESPONSIVE ------------------ */
+
+@media (max-width: 1024px) {
+  .discovery-page {
+    gap: 3rem;
+
+    padding: 2rem 1.5rem 4rem;
+    &__primary-gates {
+      grid-template-columns: 1fr;
+    }
+
+    &__secondary-gates {
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .discovery-page {
+    padding-inline: 1rem;
+    &__secondary-gates {
+      flex-direction: column;
+
+      > * {
+        flex: 1 1 auto;
+      }
+    }
+  }
 }
