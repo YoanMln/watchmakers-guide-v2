@@ -1,42 +1,38 @@
-<!-- eslint-disable vue/no-multiple-template-root -->
+<script setup>
+import gateCard from "~/data/decouvrir/gate-card.json";
+import { computed } from "vue";
+
+const primaryGates = computed(() =>
+  gateCard.filter((gate) => gate.size === "large"),
+);
+const secondaryGates = computed(() =>
+  gateCard.filter((gate) => gate.size === "small"),
+);
+</script>
+
 <template>
-  <PageHeader
-    title="Découvrir l’univers de l’horlogerie"
-    subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
-  />
-  <div class="discovery-page">
-    <div class="header-container-discovery">
-      <div class="container-gate">
-        <div class="gate educational-gate">
-          <h2>Histoire de la mesure du temps</h2>
-          <p class="gate-description">
-            Découvrez l'évolution de la mesure du temps à travers les âges...
-          </p>
-          <div class="gate-action">
-            <NuxtLink class="btn-cta" to="/mesure-du-temps"
-              >Commencer le voyage</NuxtLink
-            >
-          </div>
-        </div>
-        <div class="gate complication-gate">
-          <h2>Les complications</h2>
-          <p class="gate-description">
-            Explorez les mécanismes les plus complexes
-          </p>
-          <div class="gate-action">
-            <NuxtLink class="btn-cta" to="/complications">Explorez</NuxtLink>
-          </div>
-        </div>
-        <div class="gate quiz-gate">
-          <h2>Quiz interactif</h2>
-          <p class="gate-description">
-            Testez vos connaissances avec un quiz au niveau adaptatif
-          </p>
-          <div class="gate-action">
-            <NuxtLink class="btn-cta" to="/quiz">Démarrer</NuxtLink>
-          </div>
-        </div>
-      </div>
+  <div>
+    <PageHeader
+      title="Découvrir l’univers de l’horlogerie"
+      subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
+    />
+
+    <div class="discovery-page">
+      <section class="discovery-page__primary-gates">
+        <DiscoveryGate
+          v-for="gate in primaryGates"
+          :key="gate.to"
+          v-bind="gate"
+        />
+      </section>
+
+      <section class="discovery-page__secondary-gates">
+        <DiscoveryGate
+          v-for="gate in secondaryGates"
+          :key="gate.to"
+          v-bind="gate"
+        />
+      </section>
     </div>
   </div>
 </template>

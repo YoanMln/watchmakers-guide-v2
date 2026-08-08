@@ -102,3 +102,57 @@
     pointer-events: none;
   }
 }
+
+@mixin background-blueprint-with-image(
+  $image,
+  $image-size: cover,
+  $image-position: center
+) {
+  background-image:
+    #{$image},
+    linear-gradient(rgba(183, 154, 114, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 154, 114, 0.085) 1px, transparent 1px),
+    linear-gradient(rgba(183, 154, 114, 0.15) 0.05px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 154, 114, 0.05) 1px, transparent 1px);
+
+  background-repeat: no-repeat, repeat, repeat, repeat, repeat;
+  background-size:
+    #{$image-size},
+    20px 20px,
+    20px 20px,
+    100px 100px,
+    100px 100px;
+
+  background-position:
+    #{$image-position},
+    center,
+    center,
+    center,
+    center;
+  background-color: #000;
+}
+
+@mixin animate-underline {
+  position: relative;
+  align-self: flex-start;
+  margin-top: 3rem;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 30%;
+    height: 1px;
+    background: $bronze;
+    transform: translateX(-50%);
+    transition:
+      width 0.35s ease,
+      left 0.35s ease,
+      transform 0.35s ease;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+}
