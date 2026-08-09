@@ -10,13 +10,15 @@
   &__header-container {
     position: $header-container-position;
     z-index: $header-container-z-index;
-    max-width: $header-container-max-width;
+    max-width: 1400px;
     width: $header-container-width;
-    padding: $header-container-padding;
+    padding: clamp(1.5rem, 5vw, 5rem);
     color: $light;
     text-align: $header-container-text-align;
     @include flex-column;
     @include flexCenter;
+
+    align-items: stretch;
     gap: 3rem;
   }
   &__title {

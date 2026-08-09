@@ -53,17 +53,17 @@ const difficultyLevels = [
 
 .container-card-difficulty {
   display: grid;
-  grid-template-columns: repeat(3, minmax(500px, 1fr));
-  gap: 10rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
   align-items: center;
   justify-content: center;
   margin: 3rem auto 0;
-  @media (max-width: 992px) {
-    grid-template-columns: 1fr;
-  }
 }
 .card-difficulty {
   @include quiz-card;
+  width: 100%;
+  max-width: 480px;
+  justify-self: center;
   transition: 0.3s;
   cursor: pointer;
   animation: levitate 2.5s ease-in-out infinite;
