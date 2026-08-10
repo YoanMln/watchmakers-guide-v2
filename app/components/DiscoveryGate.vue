@@ -124,16 +124,16 @@ const gateStyle = computed(() => ({
   /* ---------- Sizes ---------- */
 
   &--large {
-    --gate-min-height: 700px;
+    --gate-min-height: 600px;
   }
   &--small {
-    --gate-min-height: 350px;
+    --gate-min-height: 300px;
   }
 
   /* ---------- Variants ---------- */
 
   &--timeline {
-    --gate-illu-size: 80%;
+    --gate-illu-size: 550px;
     --gate-illu-position: center 65%;
 
     background-image:
@@ -150,7 +150,7 @@ const gateStyle = computed(() => ({
   }
 
   &--complication {
-    --gate-illu-size: 100%;
+    --gate-illu-size: 600px;
     --gate-illu-position: center calc(50% + 80px);
 
     @include background-blueprint-with-image(
