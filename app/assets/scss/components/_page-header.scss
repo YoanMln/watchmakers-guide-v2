@@ -13,6 +13,8 @@
     @include flexCenter;
     @include flex-column;
     @include text-center;
+    max-width: 1000px;
+    margin: 0 auto;
     gap: 2rem;
   }
 
