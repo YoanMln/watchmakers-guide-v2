@@ -153,8 +153,9 @@ watch(
 
 .quiz-question-card {
   @include quiz-card;
-  width: min(520px, 90vw);
+  width: min(520px, 100%);
   margin-top: 2rem;
+  margin-inline: auto;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   will-change: transform;

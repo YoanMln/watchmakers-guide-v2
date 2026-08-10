@@ -67,10 +67,6 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
         class="movement-flow__popover"
         role="dialog"
         :aria-label="activeFonctionnement.title"
-        :style="{
-          top: activeFonctionnement.popover.top,
-          left: activeFonctionnement.popover.left,
-        }"
       >
         <button
           type="button"
@@ -200,15 +196,24 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
   &__popover {
     position: absolute;
-    transform: translate(-50%, 0);
-    width: 600px;
-    max-width: 90vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(600px, calc(100% - 3rem));
+    max-height: calc(100% - 3rem);
+    overflow-y: auto;
     padding: 1.25rem 1.5rem;
     background: #1c1c1c;
     color: #fff;
     border: 1px solid rgba(173, 133, 111, 0.4);
     border-radius: 8px;
     z-index: 20;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+  .popover-enter-from,
+  .popover-leave-to {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 10px));
   }
 
   &__close {

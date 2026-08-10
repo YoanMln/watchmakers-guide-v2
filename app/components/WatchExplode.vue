@@ -12,15 +12,6 @@ const activePart = computed(
   () => props.parts.find((p) => p.id === activeId.value) || null,
 );
 
-onMounted(() => {
-  props.parts.forEach((part, i) => {
-    gsap.set(partRefs.value[i], {
-      y: part.animation.startY,
-      zIndex: part.animation.zIndex,
-    });
-  });
-});
-
 function toggle(part) {
   activeId.value = activeId.value === part.id ? null : part.id;
 
@@ -40,6 +31,26 @@ function toggle(part) {
     });
   });
 }
+
+function close() {
+  activeId.value = null;
+}
+
+function onKeydown(e) {
+  if (e.key === "Escape") close();
+}
+
+onMounted(() => {
+  props.parts.forEach((part, i) => {
+    gsap.set(partRefs.value[i], {
+      y: part.animation.startY,
+      zIndex: part.animation.zIndex,
+    });
+  });
+  window.addEventListener("keydown", onKeydown);
+});
+
+onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 </script>
 
 <template>
@@ -75,8 +86,19 @@ function toggle(part) {
       <div
         v-if="activePart"
         class="watch-explode__popover"
+        role="dialog"
+        aria-modal="true"
+        :aria-label="activePart.title"
         :style="{ top: activePart.popover.top, left: activePart.popover.left }"
       >
+        <button
+          type="button"
+          class="watch-explode__close"
+          aria-label="Fermer"
+          @click="close"
+        >
+          ×
+        </button>
         <h3>{{ activePart.title }}</h3>
         <p>{{ activePart.description }}</p>
       </div>
@@ -152,6 +174,10 @@ function toggle(part) {
       line-height: 1.4;
     }
   }
+
+  &__close {
+    display: none;
+  }
 }
 
 .popover-enter-active,
@@ -164,5 +190,40 @@ function toggle(part) {
 .popover-leave-to {
   opacity: 0;
   transform: translate(-50%, 10px);
+}
+
+@media (max-width: 1280px) {
+  .watch-explode__popover {
+    position: fixed !important;
+    top: auto !important;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .watch-explode__close {
+    display: block;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: #a9a49c;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    &:hover {
+      color: #ad856f;
+    }
+  }
 }
 </style>

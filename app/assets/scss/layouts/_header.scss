@@ -52,8 +52,9 @@ header h2 {
 
 .intro-container {
   @include flexCenter;
-  width: $intro-container-width;
-  height: $intro-container-height;
+  max-width: $intro-container-width;
+  width: 100%;
+  min-height: $intro-container-height;
   margin: $intro-container-margin;
 }
 
