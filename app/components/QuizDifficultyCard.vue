@@ -54,7 +54,7 @@ const difficultyLevels = [
 .container-card-difficulty {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: clamp(1.5rem, 4vw, 4rem);
+  gap: 4rem;
   align-items: center;
   justify-content: center;
   margin: 3rem auto 0;
