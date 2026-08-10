@@ -9,7 +9,7 @@ const partRefs = ref([]);
 const activeId = ref(null);
 
 const activePart = computed(
-  () => props.parts.find((p) => p.id === activeId.value) || null
+  () => props.parts.find((p) => p.id === activeId.value) || null,
 );
 
 function toggle(part) {
