@@ -50,17 +50,17 @@ nav {
     a {
       text-decoration: none;
       font-size: 1.5rem;
-      color: $bronze;
+      color: var(--color-accent-text);
       font-weight: $font-weight300;
       transition: color 0.3s ease;
       font-family: "Alumni Sans", sans-serif;
       text-transform: uppercase;
       &:hover {
-        color: $light;
+        color: var(--color-text);
       }
       &.router-link-active {
         border-bottom: 1px solid $bronze;
-        color: rgba($light, 0.8);
+        color: var(--color-text-muted);
       }
     }
   }
@@ -82,7 +82,7 @@ nav {
     transition: color 0.2s ease;
 
     &:hover {
-      color: rgba($light, 0.8);
+      color: rgba($on-media, 0.8);
       border-bottom: 1px solid $bronze;
     }
   }

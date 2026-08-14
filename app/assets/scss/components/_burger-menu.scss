@@ -2,6 +2,8 @@
 
 /* ------------------ BURGER MENU ------------------ */
 .nav-burger {
+  --burger-line-color: var(--color-text);
+
   position: $burger-position;
   top: $burger-top;
   right: $burger-right;
@@ -12,7 +14,7 @@
   display: none;
 
   .ligne {
-    background: $light;
+    background: var(--burger-line-color);
     width: $burger-line-width;
     height: $burger-line-height;
     border-radius: $burger-line-border-radius;
@@ -50,4 +52,8 @@
       background: $bronze;
     }
   }
+}
+
+.app[data-page="index"] .nav-burger {
+  --burger-line-color: #{$on-media};
 }

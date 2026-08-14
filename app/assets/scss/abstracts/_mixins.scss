@@ -21,8 +21,8 @@
 
 @mixin btnStyle {
   outline: none;
-  background: rgba(0, 0, 0, 0.569);
-  color: $pastel-grey;
+  background: var(--color-btn-bg);
+  color: var(--color-text-muted);
   font-weight: 400;
   display: inline-flex;
   justify-content: center;
@@ -37,8 +37,8 @@
 
 @mixin btnStyleHover {
   background-color: $bronze;
-  color: $light;
-  box-shadow: 0 0 5px $pastel-dark;
+  color: $on-accent;
+  box-shadow: 0 0 5px var(--color-shadow);
 }
 
 @mixin absoluteCenterOffset {
@@ -74,7 +74,8 @@
   padding: 2.5rem;
   border: 1px solid rgba($bronze, 0.25);
   border-radius: 28px;
-  background: $background-card;
+  background: $media-card;
+  color: $on-media;
   overflow: hidden;
 
   &::before {
@@ -90,7 +91,8 @@
 @mixin card-style {
   border: 1px solid rgba($bronze, 0.25);
   border-radius: 28px;
-  background: $background-card;
+  background: $media-card;
+  color: $on-media;
   position: relative;
   overflow: hidden;
   &::before {
@@ -110,10 +112,10 @@
 ) {
   background-image:
     #{$image},
-    linear-gradient(rgba(183, 154, 114, 0.085) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(183, 154, 114, 0.085) 1px, transparent 1px),
-    linear-gradient(rgba(183, 154, 114, 0.15) 0.05px, transparent 1px),
-    linear-gradient(90deg, rgba(183, 154, 114, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba($bronze, 0.085) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($bronze, 0.085) 1px, transparent 1px),
+    linear-gradient(rgba($bronze, 0.15) 0.05px, transparent 1px),
+    linear-gradient(90deg, rgba($bronze, 0.05) 1px, transparent 1px);
 
   background-repeat: no-repeat, repeat, repeat, repeat, repeat;
   background-size:
@@ -129,7 +131,7 @@
     center,
     center,
     center;
-  background-color: #000;
+  background-color: $media-bg;
 }
 
 @mixin animate-underline {

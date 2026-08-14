@@ -25,9 +25,9 @@ header,
   max-width: $header-container-max-width;
   width: $header-container-width;
   padding: $header-container-padding;
-  color: $light;
+  color: $on-media;
   text-align: $header-container-text-align;
-  background-color: #111111aa;
+  background-color: $media-surface;
   border-radius: 5px;
 }
 
@@ -37,17 +37,17 @@ header h1 {
   margin-bottom: $header-h1-margin-bottom;
   text-transform: uppercase;
   letter-spacing: $header-h1-letter-spacing;
-  text-shadow: 2px 2px 4px rgba($matte-black, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header h2 {
   font-size: $header-h2-font-size-clamp;
-  color: $light;
+  color: $on-media;
   font-weight: $header-h2-font-weight;
   line-height: $header-h2-line-height;
   margin: $header-h2-margin;
   max-width: $header-h2-max-width;
-  text-shadow: 1px 1px 2px rgba($matte-black, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .intro-container {

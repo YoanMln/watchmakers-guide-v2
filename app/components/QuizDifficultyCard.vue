@@ -71,18 +71,18 @@ const difficultyLevels = [
   &:hover {
     animation-play-state: paused;
     transform: translateY(-4px);
-    background: rgba(0, 0, 0, 0.898);
+    background: $media-card;
     border-color: $bronze;
     box-shadow: 0 15px 30px rgba($bronze, 0.2);
     h3 {
-      color: $bronze;
+      color: var(--color-accent-text);
     }
   }
   &__numeral {
     margin: 0;
     font-family: "Alumni Sans", sans-serif;
     font-size: 4rem;
-    color: $bronze;
+    color: var(--color-accent-text);
     line-height: 1;
   }
   &__title {
@@ -91,13 +91,13 @@ const difficultyLevels = [
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: $light;
+    color: $on-media;
   }
   &__desc {
     margin-top: 1rem;
     font-size: 0.9rem;
     line-height: 1.6;
-    color: $light;
+    color: $on-media;
   }
 }
 

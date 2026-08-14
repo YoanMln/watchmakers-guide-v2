@@ -119,6 +119,8 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 </template>
 
 <style scoped lang="scss">
+@use "~/assets/scss/abstracts/variables" as *;
+
 .movement-flow {
   position: relative;
   display: inline-block;
@@ -135,9 +137,9 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: #ad856f;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #fff;
+    background: $bronze;
+    border: 1px solid rgba($on-media, 0.5);
+    color: $on-accent;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
@@ -151,7 +153,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
       position: absolute;
       inset: -6px;
       border-radius: 50%;
-      border: 1px solid rgba(173, 133, 111, 0.6);
+      border: 1px solid rgba($bronze, 0.6);
       animation: pulse-ring 2s ease-out infinite;
     }
 
@@ -160,8 +162,8 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     }
 
     &.is-active {
-      background: #fff;
-      color: #ad856f;
+      background: var(--color-surface);
+      color: var(--color-accent-text);
 
       &::after {
         animation: none;
@@ -181,9 +183,9 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     left: 50%;
     transform: translate(-50%, 0);
     white-space: nowrap;
-    background: #1c1c1c;
-    border: 1px solid rgba(173, 133, 111, 0.4);
-    color: #f3efe8;
+    background: var(--color-surface);
+    border: 1px solid rgba($bronze, 0.4);
+    color: var(--color-text);
     font-size: 0.75rem;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
@@ -203,12 +205,12 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     max-height: calc(100% - 3rem);
     overflow-y: auto;
     padding: 1.25rem 1.5rem;
-    background: #1c1c1c;
-    color: #fff;
-    border: 1px solid rgba(173, 133, 111, 0.4);
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid rgba($bronze, 0.4);
     border-radius: 8px;
     z-index: 20;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 40px var(--color-shadow);
   }
   .popover-enter-from,
   .popover-leave-to {
@@ -225,12 +227,12 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     border-radius: 50%;
     border: none;
     background: transparent;
-    color: #a9a49c;
+    color: var(--color-text-muted);
     font-size: 1.1rem;
     cursor: pointer;
 
     &:hover {
-      color: #ad856f;
+      color: var(--color-accent-text);
     }
   }
 
@@ -248,20 +250,20 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
     h3 {
       margin: 0;
-      color: #ad856f;
+      color: var(--color-accent-text);
     }
 
     p {
       margin: 0;
       line-height: 1.5;
-      color: #cfc9c0;
+      color: var(--color-text-muted);
     }
   }
 
   &__rn {
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
-    color: #ad856f;
+    color: var(--color-accent-text);
     font-size: 1rem;
   }
 
@@ -285,11 +287,11 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     gap: 0.6rem 1.6rem;
     margin: 2rem 0 0;
     padding: 1.2rem 0 0;
-    border-top: 1px solid rgba(173, 133, 111, 0.2);
+    border-top: 1px solid rgba($bronze, 0.2);
 
     li {
       cursor: pointer;
-      color: #a9a49c;
+      color: var(--color-text-muted);
       font-size: 0.9rem;
       display: flex;
       align-items: center;
@@ -298,11 +300,11 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
       &:hover,
       &.is-active {
-        color: #f3efe8;
+        color: var(--color-text);
       }
 
       &.is-active .movement-flow__rn {
-        color: #ad856f;
+        color: $bronze;
       }
     }
   }

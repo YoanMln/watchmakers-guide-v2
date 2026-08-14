@@ -6,16 +6,16 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: $black-background;
+  background-color: var(--color-bg);
 
   .home__title {
     font-size: 2rem;
-    color: $bronze;
+    color: var(--color-accent-text);
   }
 
   .home__description {
     font-size: 1.2rem;
-    color: $light;
+    color: var(--color-text);
     text-align: center;
     max-width: 600px;
   }

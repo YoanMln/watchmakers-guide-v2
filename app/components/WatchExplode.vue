@@ -107,6 +107,8 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 </template>
 
 <style lang="scss" scoped>
+@use "~/assets/scss/abstracts/variables" as *;
+
 .watch-explode {
   position: relative;
   width: 100%;
@@ -131,9 +133,9 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: #ad856f;
-    color: #fff;
+    border: 1px solid rgba($on-media, 0.4);
+    background: $bronze;
+    color: $on-accent;
     font-size: 1.2rem;
     line-height: 1;
     cursor: pointer;
@@ -147,7 +149,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     }
 
     &.is-active {
-      box-shadow: 0 0 0 6px rgba(173, 133, 111, 0.25);
+      box-shadow: 0 0 0 6px rgba($bronze, 0.25);
     }
   }
 
@@ -156,16 +158,16 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     transform: translate(-50%, 0);
     width: 260px;
     padding: 1rem 1.25rem;
-    background: #1c1c1c;
-    color: #fff;
-    border: 1px solid rgba(173, 133, 111, 0.4);
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid rgba($bronze, 0.4);
     border-radius: 8px;
     z-index: 20;
 
     h3 {
       margin: 0 0 0.4rem;
       font-size: 1.5rem;
-      color: #ad856f;
+      color: var(--color-accent-text);
     }
 
     p {
@@ -217,12 +219,12 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     border-radius: 50%;
     border: none;
     background: transparent;
-    color: #a9a49c;
+    color: var(--color-text-muted);
     font-size: 1.1rem;
     cursor: pointer;
 
     &:hover {
-      color: #ad856f;
+      color: var(--color-accent-text);
     }
   }
 }

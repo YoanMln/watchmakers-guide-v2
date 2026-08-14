@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $bronze;
+    color: var(--color-accent-text);
     font-size: 1.5rem;
     gap: 5rem;
     width: 100%;
@@ -15,7 +15,7 @@
     box-sizing: border-box;
     cursor: pointer;
     &:focus-visible {
-      outline: 2px solid rgba($bronze, 0.8);
+      outline: 2px solid rgba$bronze;
       outline-offset: 2px;
     }
   }
@@ -32,13 +32,13 @@
 
   &__title {
     font-size: 2rem;
-    color: $light;
+    color: var(--color-text);
     transition: color 0.2s ease;
   }
 
   &--open {
     .accordion-items__title {
-      color: $bronze;
+      color: var(--color-accent-text);
     }
   }
 
@@ -50,7 +50,7 @@
 
   &__details {
     flex: 1;
-    color: white;
+    color: var(--color-text);
     margin: 2rem;
     font-size: 1rem;
     max-width: 600px;

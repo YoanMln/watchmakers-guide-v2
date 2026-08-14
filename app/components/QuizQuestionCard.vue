@@ -168,7 +168,7 @@ watch(
 
   &__info {
     span {
-      color: $bronze;
+      color: var(--color-accent-text);
       font-weight: 600;
     }
   }
@@ -204,7 +204,7 @@ watch(
     transition: 0.25s ease;
 
     &:hover {
-      color: $bronze;
+      color: var(--color-accent-text);
       transform: translateX(6px);
     }
   }

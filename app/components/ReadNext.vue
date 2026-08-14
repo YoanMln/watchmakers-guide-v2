@@ -21,6 +21,8 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
+@use "~/assets/scss/abstracts/variables" as *;
+
 .read-next {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -33,7 +35,7 @@ defineProps({
 
   &__item {
     display: block;
-    border: 1px solid rgba(173, 133, 111, 0.3);
+    border: 1px solid rgba($bronze, 0.3);
     border-radius: 8px;
     padding: 1.5rem 1.2rem;
     text-decoration: none;
@@ -42,13 +44,13 @@ defineProps({
       transform 0.25s;
 
     &:hover {
-      border-color: #ad856f;
+      border-color: $bronze;
       transform: translateY(-2px);
     }
   }
 
   &__arrow {
-    color: #ad856f;
+    color: var(--color-accent-text);
     font-family: "Cormorant Garamond", serif;
     font-size: 1.2rem;
   }
@@ -56,13 +58,13 @@ defineProps({
   &__title {
     margin: 0.3rem 0 0.4rem;
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--color-text);
   }
 
   &__text {
     margin: 0;
     font-size: 1rem;
-    color: #a9a49c;
+    color: var(--color-text-muted);
     line-height: 1.5;
   }
 }

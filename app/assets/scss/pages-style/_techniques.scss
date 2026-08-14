@@ -1,7 +1,7 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
-/* ------------- TECHNIQUES / OUTILS DE L'HORLOGER --------------- */
+/* ------------- TECHNIQUES --------------- */
 .techniques-page {
   min-height: 100vh;
 }
@@ -23,6 +23,9 @@
     height: 800px;
     display: block;
     border-radius: 3px;
+    .light & {
+      filter: invert(1);
+    }
   }
 }
 .accordion-items__image {

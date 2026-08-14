@@ -14,7 +14,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: $black-background;
+    background-color: var(--color-bg);
     transform: translateX(-100%);
     transition: transform 0.4s ease-in-out;
     z-index: 20;
@@ -30,13 +30,13 @@
       margin: 2rem 0;
 
       a {
-        color: $bronze !important;
+        color: var(--color-accent-text) !important;
         font-size: 1.5rem;
         font-weight: 500;
         transition: 0.2s;
 
         &:hover {
-          color: white !important;
+          color: var(--color-text) !important;
         }
       }
     }
@@ -169,7 +169,7 @@
 
   .container-complication-img {
     border-left: none;
-    border-top: 0.5px solid rgba($light, 0.08);
+    border-top: 0.5px solid var(--color-divider);
     min-height: 250px;
 
     img {

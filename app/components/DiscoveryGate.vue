@@ -68,7 +68,7 @@ const gateStyle = computed(() => ({
   min-height: var(--gate-min-height);
   border: none;
   text-decoration: none;
-  color: inherit;
+  color: $on-media;
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -102,18 +102,18 @@ const gateStyle = computed(() => ({
   &__title {
     margin-bottom: 1rem;
     font-size: var(--gate-title-size);
-    color: $light;
+    color: $on-media;
   }
   &__description {
     max-width: 60ch;
     margin-bottom: auto;
-    color: rgba($light, 0.8);
+    color: rgba($on-media, 0.8);
     line-height: 1.7;
   }
   &__button {
     @include animate-underline;
     margin-top: var(--gate-button-gap);
-    color: $light;
+    color: $on-media;
     font-size: var(--gate-button-size);
 
     &::after {
@@ -146,7 +146,7 @@ const gateStyle = computed(() => ({
     background-repeat: no-repeat;
     background-position: var(--gate-illu-position), center;
     background-size: var(--gate-illu-size), cover;
-    background-color: #000;
+    background-color: $media-bg;
   }
 
   &--complication {

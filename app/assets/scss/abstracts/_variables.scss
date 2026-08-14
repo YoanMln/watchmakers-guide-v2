@@ -12,13 +12,23 @@ $h1-to-h6-font-weight: 300;
 $h1-font-size: 2rem;
 
 // COLOR //
-
+// Palette du design.
 $bronze: #ad856f;
 $light: #f5f5f5;
 $matte-black: #28282b;
 $pastel-dark: #2c2c2c;
 $pastel-grey: #c7c8cc;
 $black-background: #141615;
+$pastel-beige: #f2eae0;
+
+// Constantes hors theme :
+$on-media: $light; // texte sur visuel sombre
+$on-accent: $light; // texte sur aplat bronze
+$media-surface: rgba(0, 0, 0, 0.55); // panneau translucide sur visuel
+$media-card: rgba(0, 0, 0, 0.734); // carte pour l'illustration sombre
+$media-bg: #000;
+$overlay: rgba(0, 0, 0, 0.594);
+$alert-bg: rgba(0, 0, 0, 0.45);
 
 // GENERAL //
 
@@ -100,7 +110,6 @@ $intro-container-height: 100px;
 $intro-container-border: 1px solid;
 $intro-container-border-radius: 5px;
 $intro-container-margin: 2rem auto;
-$intro-container-background-color: rgba($matte-black, 0.75);
 
 //---------------- BTN------------- //
 
@@ -139,7 +148,6 @@ $transition-timing: ease;
 // Outils
 
 $margin-top-h1: 1rem;
-$background-card: rgba(0, 0, 0, 0.734);
 
 // ------------------ DISCOVERY ------------------ //
 

@@ -2,9 +2,11 @@
 
 /* ------------------ FOOTER ------------------ */
 .footer {
+  --footer-color: var(--color-text);
+
   padding: 10px 10px;
   text-align: center;
-  color: $light;
+  color: var(--footer-color);
   backdrop-filter: blur(3px);
   font-family: "Alumni Sans", sans-serif;
   position: relative;
@@ -12,7 +14,7 @@
 
   &__name {
     font-size: 30px;
-    color: $bronze;
+    color: var(--color-accent-text);
     margin-bottom: 10px;
     letter-spacing: 1px;
     font-weight: $font-weight300;
@@ -24,7 +26,11 @@
 
     & a {
       text-decoration: underline;
-      color: $bronze;
+      color: var(--color-accent-text);
     }
   }
+}
+
+.app[data-page="index"] .footer {
+  --footer-color: #{$on-media};
 }

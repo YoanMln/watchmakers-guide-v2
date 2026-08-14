@@ -7,11 +7,11 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  background-color: #181818;
+  background-color: var(--color-bg);
 }
 
 .app {
-  background: #181818;
+  background: var(--color-bg);
   &[data-page="index"] {
     background: url("~/assets/images/background/main-background.webp")
       center/cover fixed no-repeat;

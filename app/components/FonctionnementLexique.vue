@@ -35,14 +35,14 @@ defineProps({
   &__term {
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
-    color: #ad856f;
+    color: var(--color-accent-text);
     font-size: 1.8rem;
   }
 
   &__definition {
     margin: 0.8rem 0 0;
     font-size: 1.1rem;
-    color: #a9a49c;
+    color: var(--color-text-muted);
     line-height: 1.4;
   }
 }
