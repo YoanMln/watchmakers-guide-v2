@@ -3,7 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   css: ["~/assets/scss/main.scss"],
-  modules: ["@nuxt/icon", "@nuxt/eslint"],
+  modules: ["@nuxt/icon", "@nuxt/eslint", "@nuxtjs/color-mode"],
+  colorMode: {
+    preference: "dark",
+    fallback: "dark",
+  },
   app: {
     head: {
       link: [
