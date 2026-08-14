@@ -8,6 +8,7 @@
 @use "base/base";
 @use "base/reset";
 @use "base/typography";
+@use "base/colors";
 
 // COMPONENTS //
 
@@ -28,7 +29,7 @@
 @use "pages-style/discovery";
 @use "pages-style/home";
 @use "pages-style/quizz";
-@use "pages-style/techniques-outils";
+@use "pages-style/techniques";
 @use "pages-style/outils";
 @use "pages-style/timeline";
 @use "pages-style/fonctionnement";
