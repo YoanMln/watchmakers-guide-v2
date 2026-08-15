@@ -1,0 +1,54 @@
+@use "../abstracts/variables" as *;
+:root,
+.light {
+  /* Fonds */
+  --color-bg: #f7f4ed;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ece5d8;
+  --color-discovery: #{$pastel-beige};
+
+  /* Textes */
+  --color-text: #28282b;
+  --color-text-muted: #5f5c57;
+  --color-divider: rgba(40, 40, 43, 0.08);
+
+  --color-accent-text: #8a604a;
+  --color-accent-soft: #8e6751;
+
+  /* Section blueprint (page Outils) : papier calque clair */
+  --color-blueprint: #d3c9bb;
+  --color-blueprint-card: #b8ab9cb2;
+  --color-blueprint-text: #{$matte-black};
+
+  /* Divers */
+  --color-btn-bg: rgba(247, 244, 237, 0.55);
+  --color-shadow: rgba(40, 40, 43, 0.15);
+  --color-action-outils: #{$matte-black};
+}
+
+.dark {
+  /* Fonds */
+  --color-bg: #181818;
+  --color-surface: #1c1c1c;
+  --color-surface-alt: #2c2c2c;
+
+  /* Textes */
+  --color-text: #f7f4ed;
+  --color-text-muted: #c7c8cc;
+  --color-divider: rgba(247, 244, 237, 0.08);
+
+  /* Accent */
+  --color-accent-text: #{$bronze};
+  --color-accent-soft: #c9aea0;
+
+  /* Section blueprint (page Outils) : plan technique sur noir,
+     comme la porte "complication" de la page Decouvrir */
+  --color-blueprint: #000;
+  --color-blueprint-card: #1c1c1c;
+  --color-blueprint-text: #f5f5f5;
+
+  /* Divers */
+  --color-btn-bg: rgba(24, 24, 24, 0.55);
+  --color-shadow: rgba(0, 0, 0, 0.6);
+  --color-action-outils: #{$light};
+}

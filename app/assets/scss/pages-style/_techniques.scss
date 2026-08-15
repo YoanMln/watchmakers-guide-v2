@@ -1,0 +1,72 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+/* ------------- TECHNIQUES --------------- */
+.techniques-page {
+  min-height: 100vh;
+}
+
+.accordion {
+  margin: 3rem auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.accordion-image {
+  align-items: start;
+  transition: all 0.5s ease;
+
+  img {
+    width: 700px;
+    height: 800px;
+    display: block;
+    border-radius: 3px;
+    .light & {
+      filter: invert(1);
+    }
+  }
+}
+.accordion-items__image {
+  display: none;
+}
+
+.accordion-image {
+  display: block;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+
+@media (max-width: 780px) {
+  .accordion {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .accordion-image {
+    display: none;
+  }
+
+  .accordion-items__image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 2rem auto 0;
+    border-radius: 3px;
+  }
+}

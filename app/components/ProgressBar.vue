@@ -29,7 +29,6 @@ const percentage = computed(() => {
 
 <style lang="scss" scoped>
 @use "~/assets/scss/abstracts/variables" as *;
-@use "sass:color";
 
 .progress-bar {
   width: 100%;
@@ -45,7 +44,7 @@ const percentage = computed(() => {
     background: linear-gradient(
       90deg,
       $bronze 0%,
-      color.adjust($bronze, $lightness: 15%) 100%
+      var(--color-accent-soft) 100%
     );
     border-radius: 15px;
     transition: width 0.4s ease;

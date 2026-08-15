@@ -30,7 +30,7 @@ defineProps({
   }
 
   &__item {
-    background: #161616;
+    background: var(--color-surface-alt);
     border-radius: 6px;
     padding: 1rem;
     text-align: center;
@@ -41,14 +41,14 @@ defineProps({
     font-family: "Cormorant Garamond", serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: #ad856f;
+    color: var(--color-accent-text);
   }
 
   &__unit,
   &__label {
     display: block;
     font-size: 0.8rem;
-    color: #a9a49c;
+    color: var(--color-text-muted);
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }

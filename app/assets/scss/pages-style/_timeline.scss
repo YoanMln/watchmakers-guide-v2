@@ -1,6 +1,5 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
-@use "sass:color";
 
 /* ------------------ MESURE DU TEMPS ------------------ */
 
@@ -16,8 +15,8 @@
     @include card-construct;
     background: linear-gradient(
       135deg,
-      $pastel-dark 0%,
-      color.adjust($pastel-dark, $lightness: -5%) 100%
+      var(--color-surface-alt) 0%,
+      var(--color-surface) 100%
     );
     border: 1px solid rgba($bronze, 0.2);
     transition:
@@ -37,7 +36,7 @@
       background: linear-gradient(
         180deg,
         $bronze 0%,
-        color.adjust($bronze, $lightness: 15%) 100%
+        var(--color-accent-soft) 100%
       );
       transform: scaleY(0);
       transition: transform 0.4s ease;
@@ -45,7 +44,7 @@
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 15px 35px var(--color-shadow);
       border-color: rgba($bronze, 0.4);
 
       &::before {
@@ -58,19 +57,19 @@
       font-size: 45px;
       margin: 0 0 15px;
       padding: 0 15px;
-      color: $bronze;
+      color: var(--color-accent-text);
       transition: 0.4s;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 4px var(--color-shadow);
 
       &:hover {
-        color: color.adjust($bronze, $lightness: 10%);
+        color: var(--color-accent-soft);
       }
     }
 
     &-date {
       margin: 0 0 15px;
       padding: 0 15px;
-      color: rgba($light, 0.9);
+      color: var(--color-text-muted);
       font-size: 24px;
       font-weight: $font-weight300;
       font-style: italic;
@@ -81,7 +80,7 @@
       padding: 0 15px 15px;
       font-size: 18px;
       font-weight: $font-weight300;
-      color: $pastel-grey;
+      color: var(--color-text-muted);
       line-height: 1.4;
     }
   }
@@ -113,9 +112,9 @@
       top: 70%;
       font-size: 14px;
       letter-spacing: 2px;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--color-text-muted);
       padding-left: 15px;
-      border-left: 2px solid rgba(255, 255, 255, 0.5);
+      border-left: 2px solid var(--color-text-muted);
       opacity: 0;
       right: calc(-100% - 56px);
       transition: all 0.3s ease;
@@ -130,7 +129,7 @@
         padding-left: 0;
         padding-right: 15px;
         border-left: none;
-        border-right: 2px solid rgba(255, 255, 255, 0.5);
+        border-right: 2px solid var(--color-text-muted);
         text-align: right;
       }
     }
@@ -148,7 +147,7 @@
 
   &__img {
     max-width: 100%;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 15px var(--color-shadow);
   }
 
   &-container {
@@ -171,7 +170,7 @@
     &__subtitle {
       font-size: 22px;
       font-weight: 300;
-      color: $light;
+      color: var(--color-text);
       letter-spacing: 1.5px;
       margin: 20px auto 0;
       max-width: 600px;

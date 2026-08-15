@@ -10,7 +10,7 @@
     text-align: $text-align;
   }
   .intro-card {
-    color: $light;
+    color: var(--color-text);
     text-align: $text-align;
   }
 }
@@ -21,7 +21,7 @@
   @include card-construct;
 
   &__tag {
-    color: $bronze;
+    color: var(--color-accent-text);
     font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -34,7 +34,7 @@
   }
 
   .intro-card {
-    color: $light;
+    color: var(--color-text);
     text-align: $text-align;
   }
 }
@@ -46,11 +46,11 @@
   .card-title {
     text-align: left;
     margin-bottom: 1rem;
-    color: $bronze;
+    color: var(--color-accent-text);
   }
 }
 .resume-details {
-  color: $light;
+  color: var(--color-text);
   text-align: left;
   line-height: 1.6;
   margin: 0;
@@ -108,7 +108,7 @@
   font-size: 1.1rem;
   line-height: 2.2;
 
-  color: $light;
+  color: var(--color-text);
 }
 
 .chiffres-cles-section {
@@ -136,7 +136,7 @@
   h2 {
     margin-bottom: 5rem;
     font-size: 2rem;
-    color: $light;
+    color: var(--color-text);
   }
   p {
     font-size: 2.5rem;

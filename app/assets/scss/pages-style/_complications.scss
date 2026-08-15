@@ -22,7 +22,7 @@
     margin-bottom: 1.5rem;
   }
   h2 {
-    color: $pastel-grey;
+    color: var(--color-text-muted);
     font-family: $FontFamily-body;
     font-size: 1.1rem;
     font-weight: $font-weight300;
@@ -52,15 +52,15 @@
 .complications-card {
   display: flex;
   align-items: stretch;
-  border-top: 0.5px solid rgba($light, 0.08);
+  border-top: 0.5px solid var(--color-divider);
 
-  color: $pastel-grey;
+  color: var(--color-text-muted);
 
   ul {
     list-style: none;
   }
   article:last-child & {
-    border-bottom: 0.5px solid rgba($light, 0.08);
+    border-bottom: 0.5px solid var(--color-divider);
   }
 }
 
@@ -80,13 +80,13 @@ article:nth-child(even) .complications-card {
     font-family: $h1-to-h6-font-family;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-weight: $font-weight300;
-    color: $bronze;
+    color: var(--color-accent-text);
     letter-spacing: 0.03em;
   }
 
   p {
     font-size: 1.1rem;
-    color: $pastel-grey;
+    color: var(--color-text-muted);
     line-height: 1.8;
   }
   ul {
@@ -97,7 +97,7 @@ article:nth-child(even) .complications-card {
 
     li {
       font-size: 1rem;
-      color: $pastel-grey;
+      color: var(--color-text-muted);
       line-height: 1.7;
       padding-left: 1rem;
       position: relative;
@@ -106,7 +106,7 @@ article:nth-child(even) .complications-card {
         content: "–";
         position: absolute;
         left: 0;
-        color: $bronze;
+        color: var(--color-accent-text);
       }
     }
   }
@@ -119,7 +119,7 @@ article:nth-child(even) .complications-card {
   font-size: 1.1rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: $bronze;
+  color: var(--color-accent-text);
   border: 0.5px solid $bronze;
   border-radius: 1px;
   padding: 0.3rem 0.75rem;
@@ -131,16 +131,19 @@ article:nth-child(even) .complications-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 0.5px solid rgba($light, 0.08);
+  border-left: 0.5px solid var(--color-divider);
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 80%;
+    object-fit: contain;
     object-position: center;
     filter: brightness(0.9);
     transition: transform 0.6s ease;
     overflow: hidden;
+    .light & {
+      filter: invert(1);
+    }
 
     &:hover {
       transform: scale(1.03);

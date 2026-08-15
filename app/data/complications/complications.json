@@ -14,7 +14,7 @@
       "À la fin de chaque mois, il adapte automatiquement le passage à la date suivante.",
       "Sa conception nécessite un très grand nombre de composants ainsi qu'un réglage d'une extrême précision."
     ],
-    "image": "/images/complications/perpetual-calendar.webp"
+    "image": "/images/complications/perpetual-calendar/perpetual-calendar.webp"
   },
   {
     "id": 2,
@@ -30,7 +30,7 @@
       "Sur les versions simples, une légère dérive peut apparaître au fil du temps.",
       "Les versions plus élaborées améliorent la précision du suivi du cycle lunaire."
     ],
-    "image": "/images/complications/moon-phase-1.webp"
+    "image": "/images/complications/moon-phase/moon-phase.webp"
   },
 
   {
@@ -48,7 +48,7 @@
       "Les minutes restantes sont ensuite frappées sur un timbre plus aigu.",
       "L’ensemble doit être parfaitement synchronisé pour garantir une lecture sonore fiable."
     ],
-    "image": "/images/complications/minute-repeater.webp"
+    "image": "/images/complications/minute-repeater/minute-repeater.webp"
   },
 
   {
@@ -66,7 +66,7 @@
       "Les compteurs affichent les temps mesurés.",
       "Le système de retour à zéro repositionne les aiguilles après utilisation."
     ],
-    "image": "/images/complications/chronograph.webp"
+    "image": "/images/complications/chronograph/chronograph.webp"
   },
   {
     "id": 5,
@@ -82,6 +82,6 @@
       "L’objectif est de moyenner les écarts de marche observés selon les positions de la montre.",
       "Le tourbillon est aussi devenu une démonstration de savoir-faire technique et esthétique."
     ],
-    "image": "/images/complications/tourbillon.webp"
+    "image": "/images/complications/tourbillon/tourbillon.webp"
   }
 ]

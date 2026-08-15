@@ -22,14 +22,14 @@
     font-size: 9px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: $bronze;
+    color: var(--color-accent-text);
   }
 
   &__title {
     font-family: $h1-to-h6-font-family;
     font-size: 3.5rem;
     font-weight: $font-weight300;
-    color: $light;
+    color: var(--color-text);
     letter-spacing: 0.02em;
     font-style: italic;
     @include text-center;
@@ -44,7 +44,7 @@
 
   &__sub {
     font-size: 1.5rem;
-    color: $light;
+    color: var(--color-text);
     line-height: 1.5;
   }
 
