@@ -64,7 +64,7 @@ onUnmounted(() => {
       <li>
         <NuxtLink to="/techniques" @click="closeMenu">Techniques</NuxtLink>
       </li>
-      <ColorModeToggle />
+      <li><ColorModeToggle /></li>
     </ul>
 
     <div class="nav-burger" :class="{ active: menuOpen }" @click="toggleMenu">
