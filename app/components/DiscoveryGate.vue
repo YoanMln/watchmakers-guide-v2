@@ -27,7 +27,7 @@ const gateStyle = computed(() => ({
 
 <template>
   <NuxtLink :to="to" :class="gateClasses" :style="gateStyle">
-    <img class="discovery-gate__illu" :src="image" alt="" loading="lazy" />
+    <NuxtImg class="discovery-gate__illu" :src="image" alt="" loading="lazy" />
 
     <div class="discovery-gate__body">
       <h2 class="discovery-gate__title">{{ title }}</h2>
@@ -60,7 +60,6 @@ const gateStyle = computed(() => ({
   &::before {
     display: none;
   }
-
   display: flex;
   flex-direction: column;
   position: relative;
@@ -150,7 +149,7 @@ const gateStyle = computed(() => ({
   }
 
   &--complication {
-    --gate-illu-size: 600px;
+    --gate-illu-size: 720px;
     --gate-illu-position: center calc(50% + 80px);
 
     @include background-blueprint-with-image(
@@ -161,7 +160,7 @@ const gateStyle = computed(() => ({
   }
 
   &--quiz {
-    --gate-illu-size: contain;
+    --gate-illu-size: cover;
     --gate-illu-position: left top;
 
     background-image: var(--gate-bg-image);

@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
           class="timeline-item"
         >
           <div class="timeline__content">
-            <img
+            <NuxtImg
               class="timeline__img"
               :src="`/images/mesure-du-temps/${item.img}`"
               :alt="item.alt"

@@ -73,7 +73,7 @@ const filteredTools = computed(() => {
           class="tools-items__card"
         >
           <h2 class="tools-items__name">{{ tool.outil }}</h2>
-          <img
+          <NuxtImg
             :src="`/images/outils/${tool.image}`"
             :alt="tool.outil"
             class="tools-items__card-image"

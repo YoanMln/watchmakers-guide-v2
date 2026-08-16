@@ -3,25 +3,30 @@
 
 /* ------------------ DISCOVERY ------------------ */
 
+.app[data-page="decouvrir"] {
+  --color-text: #{$on-media};
+  --color-accent-text: #{$bronze};
+}
+
 .discovery-page {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  width: min(1600px, 100%);
+  width: min(1800px, 100%);
   margin: 0 auto;
   padding: 3rem 1rem 6rem;
 
   &__primary-gates {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-    gap: 2rem;
+    gap: 20rem;
+    z-index: 2;
   }
 
   &__secondary-gates {
     display: flex;
     flex-wrap: wrap;
+    z-index: 2;
   }
 }
 

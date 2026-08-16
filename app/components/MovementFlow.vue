@@ -91,7 +91,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
             <p>{{ activeFonctionnement.text }}</p>
           </div>
           <div class="movement-flow__img">
-            <img
+            <NuxtImg
               :src="`/images/fonctionnement/movement-flow/${activeFonctionnement.image}`"
               :alt="activeFonctionnement.alt"
             />

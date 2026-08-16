@@ -90,7 +90,7 @@ watch(
 
       <div class="accordion-image">
         <Transition name="fade" mode="out-in">
-          <img
+          <NuxtImg
             v-if="activeIndex"
             :key="activeIndex"
             :src="`/images/techniques/${

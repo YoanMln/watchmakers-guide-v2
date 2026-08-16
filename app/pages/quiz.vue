@@ -98,7 +98,7 @@ function restartQuiz() {
       </div>
 
       <!-- End-zone -->
-      <div class="end-zone-quiz" v-else>
+      <div v-else class="end-zone-quiz">
         <h2 class="end-zone-quiz__title">Quiz terminé !</h2>
         <p class="end-zone-quiz__results">
           Score final : {{ score }} / {{ filteredQuestions.length }}
