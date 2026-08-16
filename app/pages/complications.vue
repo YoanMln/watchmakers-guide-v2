@@ -87,7 +87,7 @@ const uniqueCategory = [
             </div>
 
             <div class="container-complication-img">
-              <img
+              <NuxtImg
                 :src="complication.image"
                 :alt="`Illustration de ${complication.name}`"
               />

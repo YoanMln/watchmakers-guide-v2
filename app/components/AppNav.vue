@@ -41,8 +41,8 @@ onUnmounted(() => {
   <nav :class="{ 'home-desktop-hidden': isHomePage, scrolled: isScrolled }">
     <div class="nav-logo">
       <NuxtLink to="/">
-        <img
-          src="~/assets/images/logo/logo.webp"
+        <NuxtImg
+          src="/images/logo/logo.webp"
           alt="logo du site Watchmaker's Guide"
         />
       </NuxtLink>
