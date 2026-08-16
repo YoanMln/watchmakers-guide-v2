@@ -27,3 +27,5 @@ logs
 # GSAP
 .agents
 .output
+# Local Netlify folder
+.netlify
