@@ -11,31 +11,33 @@ const secondaryGates = computed(() =>
 </script>
 
 <template>
-  <div class="celestial" aria-hidden="true">
-    <div class="celestial__ring celestial__ring--solid"></div>
-    <div class="celestial__ring celestial__ring--dashed"></div>
-    <div class="celestial__moon"></div>
-  </div>
-  <PageHeader
-    title="Découvrir l’univers de l’horlogerie"
-    subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
-  />
-  <div class="discovery-page">
-    <section class="discovery-page__primary-gates">
-      <DiscoveryGate
-        v-for="gate in primaryGates"
-        :key="gate.to"
-        v-bind="gate"
-      />
-    </section>
+  <div>
+    <div class="celestial" aria-hidden="true">
+      <div class="celestial__ring celestial__ring--solid" />
+      <div class="celestial__ring celestial__ring--dashed" />
+      <div class="celestial__moon" />
+    </div>
+    <PageHeader
+      title="Découvrir l’univers de l’horlogerie"
+      subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
+    />
+    <div class="discovery-page">
+      <section class="discovery-page__primary-gates">
+        <DiscoveryGate
+          v-for="gate in primaryGates"
+          :key="gate.to"
+          v-bind="gate"
+        />
+      </section>
 
-    <section class="discovery-page__secondary-gates">
-      <DiscoveryGate
-        v-for="gate in secondaryGates"
-        :key="gate.to"
-        v-bind="gate"
-      />
-    </section>
+      <section class="discovery-page__secondary-gates">
+        <DiscoveryGate
+          v-for="gate in secondaryGates"
+          :key="gate.to"
+          v-bind="gate"
+        />
+      </section>
+    </div>
   </div>
 </template>
 
@@ -96,8 +98,7 @@ const secondaryGates = computed(() =>
   transform: translate(-50%, -50%);
   width: 20rem;
   height: 20rem;
-  background: url("~/assets/images/background/moon.webp") center/contain
-    no-repeat;
+  background: url("/images/background/moon.webp") center/contain no-repeat;
   border-radius: 50%;
 }
 </style>
