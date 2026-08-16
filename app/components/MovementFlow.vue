@@ -12,8 +12,8 @@ const activeId = ref(null);
 const activeFonctionnement = computed(
   () =>
     props.fonctionnements.find(
-      (fonctionnement) => fonctionnement.id === activeId.value
-    ) || null
+      (fonctionnement) => fonctionnement.id === activeId.value,
+    ) || null,
 );
 
 function toggle(fonctionnement) {
@@ -82,7 +82,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
               {{
                 roman[
                   props.fonctionnements.findIndex(
-                    (f) => f.id === activeFonctionnement.id
+                    (f) => f.id === activeFonctionnement.id,
                   )
                 ]
               }}
