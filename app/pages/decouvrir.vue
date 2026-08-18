@@ -4,19 +4,20 @@ import { computed } from "vue";
 import gsap from "gsap";
 
 const primaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "large")
+  gateCard.filter((gate) => gate.size === "large"),
 );
 const secondaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "small")
+  gateCard.filter((gate) => gate.size === "small"),
 );
 const tickCount = 72;
 
 const page = ref(null);
 
 onMounted(() => {
+  if (!page.value) return;
   const q = gsap.utils.selector(page.value);
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   gsap.set(q(".celestial__moon, .celestial__ring--solid, .celestial__ticks"), {
@@ -46,17 +47,17 @@ onMounted(() => {
     .from(
       q(".celestial__ring--solid"),
       { opacity: 0, rotation: "-=9", duration: 0.5 },
-      "-=0.5"
+      "-=0.5",
     )
     .from(
       q(".celestial__ticks"),
       { opacity: 0, rotation: "-=8", duration: 0.4 },
-      "-=0.25"
+      "-=0.25",
     )
     .from(
       q(".celestial__moon"),
       { opacity: 0, scale: 0.85, duration: 0.4 },
-      "<"
+      "<",
     )
     .to(q(".celestial__ticks"), {
       rotation: "+=360",
