@@ -1,6 +1,7 @@
 <script setup>
 import gateCard from "~/data/decouvrir/gate-card.json";
 import { computed } from "vue";
+import gsap from "gsap";
 
 const primaryGates = computed(() =>
   gateCard.filter((gate) => gate.size === "large"),
@@ -8,13 +9,92 @@ const primaryGates = computed(() =>
 const secondaryGates = computed(() =>
   gateCard.filter((gate) => gate.size === "small"),
 );
+const tickCount = 72;
+
+const page = ref(null);
+
+onMounted(() => {
+  if (!page.value) return;
+  const q = gsap.utils.selector(page.value);
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  gsap.set(q(".celestial__moon, .celestial__ring--solid, .celestial__ticks"), {
+    xPercent: -50,
+    yPercent: -50,
+  });
+  gsap.to(q(".celestial__moon"), {
+    filter: "brightness(0.1)",
+    duration: 15,
+    ease: "sine.inOut",
+    yoyo: true,
+    repeat: -1,
+  });
+
+  if (reduceMotion) return;
+
+  gsap
+    .timeline({ defaults: { ease: "power2.out" } })
+
+    .from(q(".discovery-backdrop"), {
+      opacity: 0,
+      duration: 0.9,
+      ease: "power1.out",
+    })
+    .from(q(".page-header__title"), { opacity: 0, y: 20, duration: 0.6 }, "<")
+    .from(q(".page-header__sub"), { opacity: 0, y: 14, duration: 0.5 }, "<0.1")
+    .from(
+      q(".celestial__ring--solid"),
+      { opacity: 0, rotation: "-=9", duration: 0.5 },
+      "-=0.5",
+    )
+    .from(
+      q(".celestial__ticks"),
+      { opacity: 0, rotation: "-=8", duration: 0.4 },
+      "-=0.25",
+    )
+    .from(
+      q(".celestial__moon"),
+      { opacity: 0, scale: 0.85, duration: 0.4 },
+      "<",
+    )
+    .to(q(".celestial__ticks"), {
+      rotation: "+=360",
+      duration: 240,
+      ease: "none",
+      repeat: -1,
+    });
+});
 </script>
 
 <template>
-  <div>
+  <div ref="page">
+    <div class="discovery-backdrop" aria-hidden="true" />
     <div class="celestial" aria-hidden="true">
       <div class="celestial__ring celestial__ring--solid" />
-      <div class="celestial__ring celestial__ring--dashed" />
+      <div class="celestial__ticks">
+        <svg
+          class="celestial__ticks-svg"
+          viewBox="0 0 400 400"
+          aria-hidden="true"
+        >
+          <g
+            v-for="n in tickCount"
+            :key="n"
+            :transform="`rotate(${(360 / tickCount) * n} 200 200)`"
+          >
+            <line
+              x1="200"
+              y1="14"
+              x2="200"
+              y2="28"
+              stroke="rgba(255, 255, 255, 0.5)"
+              stroke-width="0.5"
+            />
+          </g>
+        </svg>
+      </div>
       <div class="celestial__moon" />
     </div>
     <PageHeader
@@ -42,6 +122,48 @@ const secondaryGates = computed(() =>
 </template>
 
 <style scoped lang="scss">
+.discovery-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(20, 35, 65, 0.8) 0%,
+      rgba(8, 15, 30, 0.95) 35%,
+      #020308 75%
+    ),
+    #020308;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.9) 0 1px,
+        transparent 1.5px
+      ),
+      radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.7) 0 1px,
+        transparent 1.5px
+      ),
+      radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px);
+    background-size:
+      170px 170px,
+      250px 250px,
+      320px 320px;
+    background-position:
+      10px 20px,
+      80px 120px,
+      160px 40px;
+    opacity: 0.7;
+  }
+}
+
 .discovery-page__primary-gates {
   position: relative;
 }
@@ -68,27 +190,20 @@ const secondaryGates = computed(() =>
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
-.celestial__ring--dashed {
-  width: 90vmin;
-  aspect-ratio: 1;
-  background: repeating-conic-gradient(
-    rgba(255, 255, 255, 0.5) 0deg 0.6deg,
-    transparent 0.6deg 3deg
-  );
-  mask: radial-gradient(
-    circle,
-    transparent calc(50% - 6px),
-    black calc(50% - 5px),
-    black 50%,
-    transparent calc(50% + 1px)
-  );
-  -webkit-mask: radial-gradient(
-    circle,
-    transparent calc(50% - 6px),
-    black calc(50% - 5px),
-    black 50%,
-    transparent calc(50% + 1px)
-  );
+.celestial__ticks {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vmin;
+  height: 70vmin;
+}
+
+.celestial__ticks-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
 }
 
 .celestial__moon {
@@ -96,9 +211,10 @@ const secondaryGates = computed(() =>
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   background: url("/images/background/moon.webp") center/contain no-repeat;
   border-radius: 50%;
+  filter: brightness(0.7);
 }
 </style>
