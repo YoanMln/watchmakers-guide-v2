@@ -108,14 +108,15 @@
 @mixin background-blueprint-with-image(
   $image,
   $image-size: cover,
-  $image-position: center
+  $image-position: center,
+  $base-color: $media-bg
 ) {
   background-image:
     #{$image},
     linear-gradient(rgba($bronze, 0.085) 1px, transparent 1px),
     linear-gradient(90deg, rgba($bronze, 0.085) 1px, transparent 1px),
-    linear-gradient(rgba($bronze, 0.15) 0.05px, transparent 1px),
-    linear-gradient(90deg, rgba($bronze, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba($bronze, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($bronze, 0.15) 1px, transparent 1px);
 
   background-repeat: no-repeat, repeat, repeat, repeat, repeat;
   background-size:
@@ -131,7 +132,7 @@
     center,
     center,
     center;
-  background-color: $media-bg;
+  background-color: #{$base-color};
 }
 
 @mixin animate-underline {
@@ -163,52 +164,4 @@
   position: relative;
   min-height: 100dvh;
   overflow: hidden;
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgba(20, 35, 65, 0.8) 0%,
-      rgba(8, 15, 30, 0.95) 35%,
-      #020308 75%
-    ),
-    #020308;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.9) 0 1px,
-        transparent 1.5px
-      ),
-      radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.7) 0 1px,
-        transparent 1.5px
-      ),
-      radial-gradient(circle, rgba(255, 255, 255, 0.5) 0 1px, transparent 1.5px);
-    background-size:
-      170px 170px,
-      250px 250px,
-      320px 320px;
-    background-position:
-      10px 20px,
-      80px 120px,
-      160px 40px;
-    opacity: 0.7;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    background: url("/images/background/moon.webp") center/contain no-repeat;
-    width: 20rem;
-    height: 20rem;
-    position: absolute;
-    border-radius: 50%;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }

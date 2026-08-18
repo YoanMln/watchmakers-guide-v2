@@ -141,11 +141,11 @@ const gateStyle = computed(() => ({
         ellipse 900px 420px at 8% 95%,
         rgba($bronze, 0.18) 0%,
         transparent 70%
-      );
-    background-repeat: no-repeat;
-    background-position: var(--gate-illu-position), center;
-    background-size: var(--gate-illu-size), cover;
-    background-color: $media-bg;
+      ),
+      linear-gradient(180deg, #05070d 0%, #1c2740 55%, #47576f 100%);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: var(--gate-illu-position), center, center;
+    background-size: var(--gate-illu-size), cover, cover;
   }
 
   &--complication {
@@ -155,8 +155,19 @@ const gateStyle = computed(() => ({
     @include background-blueprint-with-image(
       var(--gate-bg-image),
       var(--gate-illu-size),
-      var(--gate-illu-position)
+      var(--gate-illu-position),
+      var(--color-blueprint)
     );
+
+    .discovery-gate__title,
+    .discovery-gate__button {
+      color: var(--color-blueprint-text);
+    }
+
+    .discovery-gate__description {
+      color: var(--color-blueprint-text);
+      opacity: 0.8;
+    }
   }
 
   &--quiz {
