@@ -4,9 +4,8 @@
     "description": "Découvrez l'évolution de la mesure du temps.",
     "buttonLabel": "Commencer le voyage",
     "to": "/mesure-du-temps",
-    "size": "large",
-    "variant": "timeline",
-    "image": "/images/decouvrir/histoire.webp"
+    "image": "/images/decouvrir/histoire.webp",
+    "icon": "guidance:time"
   },
 
   {
@@ -14,17 +13,16 @@
     "description": "Explorez les mécanismes les plus complexes.",
     "buttonLabel": "Explorer",
     "to": "/complications",
-    "size": "large",
-    "variant": "complication",
-    "image": "/images/decouvrir/complications.webp"
+    "image": "/images/decouvrir/complications.webp",
+    "icon": "boxicons:gear"
   },
   {
     "title": "Quiz horloger",
     "description": "Testez vos connaissances avec un quiz au niveau adaptatif.",
     "buttonLabel": "Démarrer",
     "to": "/quiz",
-    "size": "small",
-    "variant": "quiz",
-    "image": "/images/decouvrir/quiz.webp"
+    "image": "/images/decouvrir/quiz.webp",
+    "icon": "nrk:quiz",
+    "imageFit": "cover"
   }
 ]
