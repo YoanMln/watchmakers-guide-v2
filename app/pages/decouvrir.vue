@@ -3,12 +3,8 @@ import gateCard from "~/data/decouvrir/gate-card.json";
 import { computed } from "vue";
 import gsap from "gsap";
 
-const primaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "large"),
-);
-const secondaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "small"),
-);
+const cardGate = computed(() => gateCard);
+
 const tickCount = 72;
 
 const page = ref(null);
@@ -17,9 +13,10 @@ onMounted(() => {
   if (!page.value) return;
   const q = gsap.utils.selector(page.value);
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
+    "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  if (reduceMotion) return;
   gsap.set(q(".celestial__moon, .celestial__ring--solid, .celestial__ticks"), {
     xPercent: -50,
     yPercent: -50,
@@ -31,9 +28,6 @@ onMounted(() => {
     yoyo: true,
     repeat: -1,
   });
-
-  if (reduceMotion) return;
-
   gsap
     .timeline({ defaults: { ease: "power2.out" } })
 
@@ -47,17 +41,17 @@ onMounted(() => {
     .from(
       q(".celestial__ring--solid"),
       { opacity: 0, rotation: "-=9", duration: 0.5 },
-      "-=0.5",
+      "-=0.5"
     )
     .from(
       q(".celestial__ticks"),
       { opacity: 0, rotation: "-=8", duration: 0.4 },
-      "-=0.25",
+      "-=0.25"
     )
     .from(
       q(".celestial__moon"),
       { opacity: 0, scale: 0.85, duration: 0.4 },
-      "<",
+      "<"
     )
     .to(q(".celestial__ticks"), {
       rotation: "+=360",
@@ -102,20 +96,8 @@ onMounted(() => {
       subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
     />
     <div class="discovery-page">
-      <section class="discovery-page__primary-gates">
-        <DiscoveryGate
-          v-for="gate in primaryGates"
-          :key="gate.to"
-          v-bind="gate"
-        />
-      </section>
-
-      <section class="discovery-page__secondary-gates">
-        <DiscoveryGate
-          v-for="gate in secondaryGates"
-          :key="gate.to"
-          v-bind="gate"
-        />
+      <section class="discovery-page__card-gates">
+        <DiscoveryGate v-for="gate in cardGate" :key="gate.to" v-bind="gate" />
       </section>
     </div>
   </div>
@@ -164,7 +146,7 @@ onMounted(() => {
   }
 }
 
-.discovery-page__primary-gates {
+.discovery-page__card-gates {
   position: relative;
 }
 .celestial {
