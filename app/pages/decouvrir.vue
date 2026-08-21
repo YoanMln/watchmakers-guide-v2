@@ -52,13 +52,15 @@ onMounted(() => {
       q(".celestial__moon"),
       { opacity: 0, scale: 0.85, duration: 0.4 },
       "<"
-    )
+    );
+  /*
     .to(q(".celestial__ticks"), {
       rotation: "+=360",
       duration: 240,
       ease: "none",
       repeat: -1,
     });
+    */
 });
 </script>
 
@@ -91,6 +93,7 @@ onMounted(() => {
       </div>
       <div class="celestial__moon" />
     </div>
+    <DiscoveryHotSpot :card-gate="cardGate" />
     <PageHeader
       title="Découvrir l’univers de l’horlogerie"
       subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
@@ -177,8 +180,8 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70vmin;
-  height: 70vmin;
+  width: 105vmin;
+  height: 105vmin;
 }
 
 .celestial__ticks-svg {
