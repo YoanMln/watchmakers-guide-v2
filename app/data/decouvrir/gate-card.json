@@ -16,6 +16,7 @@
     "to": "/complications",
     "image": "/images/decouvrir/complications.webp",
     "icon": "/images/decouvrir/hotspot/complications-spot.webp",
+    "imageFit": "cover",
     "tickIndex": 10
   },
   {
