@@ -5,7 +5,8 @@
     "buttonLabel": "Commencer le voyage",
     "to": "/mesure-du-temps",
     "image": "/images/decouvrir/histoire.webp",
-    "icon": "guidance:time"
+    "icon": "/images/decouvrir/hotspot/histoire-spot.webp",
+    "tickIndex": 0
   },
 
   {
@@ -14,7 +15,8 @@
     "buttonLabel": "Explorer",
     "to": "/complications",
     "image": "/images/decouvrir/complications.webp",
-    "icon": "boxicons:gear"
+    "icon": "/images/decouvrir/hotspot/complications-spot.webp",
+    "tickIndex": 10
   },
   {
     "title": "Quiz horloger",
@@ -22,7 +24,8 @@
     "buttonLabel": "Démarrer",
     "to": "/quiz",
     "image": "/images/decouvrir/quiz.webp",
-    "icon": "nrk:quiz",
-    "imageFit": "cover"
+    "icon": "/images/decouvrir/hotspot/quiz-spot.webp",
+    "imageFit": "cover",
+    "tickIndex": 20
   }
 ]
