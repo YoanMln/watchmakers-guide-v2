@@ -15,13 +15,6 @@
   width: min(1800px, 100%);
   margin: 0 auto;
   padding: 3rem 1rem 6rem;
-
-  &__card-gates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20rem;
-    z-index: 2;
-  }
 }
 
 /* ------------------ RESPONSIVE ------------------ */
