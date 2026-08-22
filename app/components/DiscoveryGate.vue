@@ -6,7 +6,7 @@ const props = defineProps({
   buttonLabel: { type: String, required: true },
   to: { type: String, required: true },
   image: { type: String, required: true },
-  imageFit: { type: String, default: "80%" },
+  imageFit: { type: String, default: "100%" },
 });
 
 const gateClasses = computed(() => ["discovery-gate"]);
@@ -15,14 +15,24 @@ const gateStyle = computed(() => ({
   "--gate-image-src": `url(${props.image})`,
   "--gate-bg-size": props.imageFit,
 }));
+defineEmits(["close"]);
 </script>
 
 <template>
   <NuxtLink :to="to" :class="gateClasses" :style="gateStyle">
     <NuxtImg class="discovery-gate__illu" :src="image" alt="" loading="lazy" />
-
     <div class="discovery-gate__body">
-      <h2 class="discovery-gate__title">{{ title }}</h2>
+      <div class="discovery-gate__header">
+        <h2 class="discovery-gate__title">{{ title }}</h2>
+        <button
+          type="button"
+          class="discovery-gate__close"
+          aria-label="Fermer"
+          @click.stop.prevent="$emit('close')"
+        >
+          <Icon name="ei:close-o" />
+        </button>
+      </div>
       <p class="discovery-gate__description">
         {{ description }}
       </p>
@@ -40,18 +50,29 @@ const gateStyle = computed(() => ({
 .discovery-gate {
   /* ----------  responsive ---------- */
   --gate-bg-image: var(--gate-image-src);
-  --gate-min-height: 500px;
+  --gate-min-height: 550px;
+  --gate-width: 700px;
   --gate-padding: 3rem;
   --gate-title-size: 2.8rem;
   --gate-button-gap: 3rem;
-  --gate-button-size: 0.95rem;
+  --gate-button-size: 1.1rem;
   --gate-underline-width: 30%;
   /* ----------------------- */
   @include card-style;
-  background-image: var(--gate-bg-image);
+  @include liquid-glass-border;
+
   background-size: var(--gate-bg-size);
   background-repeat: no-repeat;
   background-position: center;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.58) 0%,
+      rgba(0, 0, 0, 0.38) 50%,
+      rgba(0, 0, 0, 0.08) 100%,
+      transparent 100%
+    ),
+    var(--gate-bg-image);
 
   &::before {
     display: none;
@@ -61,6 +82,7 @@ const gateStyle = computed(() => ({
   position: relative;
   overflow: hidden;
   min-height: var(--gate-min-height);
+  width: var(--gate-width);
   border: none;
   text-decoration: none;
   color: $on-media;
@@ -91,6 +113,21 @@ const gateStyle = computed(() => ({
     flex: 1;
     align-items: flex-start;
     padding: var(--gate-padding);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  &__close {
+    all: unset;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 2.3rem;
   }
 
   &__title {
