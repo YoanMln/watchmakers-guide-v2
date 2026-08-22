@@ -1,6 +1,12 @@
 <script setup>
 import complications from "~/data/complications/complications.json";
 
+useSeoMeta({
+  title: "Complications horlogères : le guide",
+  description:
+    "Quantième perpétuel, tourbillon, chronographe, phase de lune : découvrez comment fonctionnent les complications horlogères, expliquées une par une.",
+});
+
 const categoryIcons = {
   Toutes: "material-symbols-light:grid-view-outline",
   Calendrier: "mdi:calendar-month",

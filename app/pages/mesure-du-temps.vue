@@ -1,7 +1,12 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
-
 import timeline from "~/data/timeline/timeline.json";
+
+useSeoMeta({
+  title: "Histoire de la mesure du temps",
+  description:
+    "Du gnomon au quartz : 5 000 ans d'inventions pour mesurer le temps, de la clepsydre au spiral de Huygens, réunies en une chronologie illustrée.",
+});
 
 const items = timeline;
 const timelineItems = ref([]);

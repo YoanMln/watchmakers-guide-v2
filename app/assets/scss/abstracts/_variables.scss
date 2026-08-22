@@ -78,6 +78,9 @@ $header-position: relative;
 $header-min-height: 100vh;
 $header-width: 100%;
 $header-padding: 4rem 0;
+$wordmark-margin-bottom: 0.75rem;
+$header-h1-promise-clamp: clamp(1.5rem, 3vw, 2.2rem);
+$header-tagline-clamp: clamp(1rem, 2vw, 1.25rem);
 
 // HEADER CONTAINER //
 
