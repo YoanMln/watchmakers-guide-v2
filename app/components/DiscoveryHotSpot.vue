@@ -14,7 +14,7 @@ function hotspotStyle(card) {
 const activeCard = ref(null);
 
 const showCard = computed(
-  () => props.cardGate.find((c) => c.to === activeCard.value) || null,
+  () => props.cardGate.find((c) => c.to === activeCard.value) || null
 );
 
 function openCard(card) {
@@ -130,8 +130,8 @@ function openCard(card) {
 }
 
 .discovery-hotspots__icon {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover;
   color: $on-media;
   transform: rotate(calc(var(--hotspot-angle) * -1));
