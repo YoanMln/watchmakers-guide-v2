@@ -2,7 +2,7 @@
 @use "../abstracts/variables" as *;
 
 /* ------------------ NAVBAR ------------------ */
-nav {
+.main-nav {
   width: $nav-width;
   height: $nav-height;
   @include flexCenter;

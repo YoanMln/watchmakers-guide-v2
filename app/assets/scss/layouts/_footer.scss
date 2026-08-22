@@ -4,13 +4,38 @@
 .footer {
   --footer-color: var(--color-text);
 
-  padding: 10px 10px;
-  text-align: center;
+  padding: 3rem 1.5rem 1.5rem;
   color: var(--footer-color);
   backdrop-filter: blur(3px);
-  font-family: "Alumni Sans", sans-serif;
+  font-family: $h1-to-h6-font-family;
   position: relative;
   z-index: 10;
+  border-top: 1px solid var(--color-divider);
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 2.5rem;
+    max-width: $header-container-max-width;
+    margin: 0 auto;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 650px;
+    margin-inline: auto;
+  }
 
   &__name {
     font-size: 30px;
@@ -20,14 +45,55 @@
     font-weight: $font-weight300;
   }
 
-  &__text {
+  &__gate {
     font-size: 20px;
-    margin-bottom: 15px;
+    color: var(--footer-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 
-    & a {
-      text-decoration: underline;
+    &:hover,
+    &:focus-visible {
       color: var(--color-accent-text);
     }
+  }
+
+  &__group-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--footer-color);
+    opacity: 0.6;
+    margin-bottom: 0.75rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      font-size: 20px;
+      color: var(--footer-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--color-accent-text);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    text-align: center;
+    color: var(--footer-color);
+    opacity: 0.6;
+    margin: 2.5rem 0 0;
   }
 }
 
