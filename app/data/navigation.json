@@ -1,0 +1,38 @@
+[
+  {
+    "to": "/fonctionnement",
+    "label": "Fonctionnement",
+    "labelLong": "Fonctionnement d'une montre mécanique",
+    "group": "atelier"
+  },
+  {
+    "to": "/outils",
+    "label": "Outils",
+    "labelLong": "Les outils de l'horloger",
+    "group": "atelier"
+  },
+  {
+    "to": "/techniques",
+    "label": "Techniques",
+    "labelLong": "Techniques d'assemblage",
+    "group": "atelier"
+  },
+  {
+    "to": "/complications",
+    "label": "Complications",
+    "labelLong": "Les complications horlogères",
+    "group": "univers"
+  },
+  {
+    "to": "/mesure-du-temps",
+    "label": "Mesure du temps",
+    "labelLong": "Histoire de la mesure du temps",
+    "group": "univers"
+  },
+  {
+    "to": "/quiz",
+    "label": "Quiz",
+    "labelLong": "Quiz d'horlogerie",
+    "group": "univers"
+  }
+]
