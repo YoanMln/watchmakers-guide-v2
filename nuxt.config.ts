@@ -19,6 +19,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
       link: [
         {
           rel: "preconnect",
