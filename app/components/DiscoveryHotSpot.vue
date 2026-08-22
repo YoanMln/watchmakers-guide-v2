@@ -13,10 +13,6 @@ function hotspotStyle(card) {
 
 const activeCard = ref(null);
 
-const showCard = computed(
-  () => props.cardGate.find((c) => c.to === activeCard.value) || null,
-);
-
 function openCard(card) {
   activeCard.value = activeCard.value === card.to ? null : card.to;
 }
@@ -40,9 +36,19 @@ function openCard(card) {
       </span>
     </button>
   </div>
-  <div class="gate-card-container" v-if="showCard" @click="activeCard = null">
+  <div
+    class="gate-card-container"
+    v-show="activeCard"
+    @click="activeCard = null"
+  >
     <div class="gate-card" @click.stop>
-      <DiscoveryGate v-bind="showCard" @close="activeCard = null" />
+      <DiscoveryGate
+        v-for="card in cardGate"
+        :key="card.to"
+        v-show="activeCard === card.to"
+        v-bind="card"
+        @close="activeCard = null"
+      />
     </div>
   </div>
 </template>
