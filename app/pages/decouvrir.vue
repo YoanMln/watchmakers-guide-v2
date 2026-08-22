@@ -3,12 +3,8 @@ import gateCard from "~/data/decouvrir/gate-card.json";
 import { computed } from "vue";
 import gsap from "gsap";
 
-const primaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "large"),
-);
-const secondaryGates = computed(() =>
-  gateCard.filter((gate) => gate.size === "small"),
-);
+const cardGate = computed(() => gateCard);
+
 const tickCount = 72;
 
 const page = ref(null);
@@ -20,20 +16,18 @@ onMounted(() => {
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
+  if (reduceMotion) return;
   gsap.set(q(".celestial__moon, .celestial__ring--solid, .celestial__ticks"), {
     xPercent: -50,
     yPercent: -50,
   });
   gsap.to(q(".celestial__moon"), {
     filter: "brightness(0.1)",
-    duration: 15,
+    duration: 6,
     ease: "sine.inOut",
     yoyo: true,
     repeat: -1,
   });
-
-  if (reduceMotion) return;
-
   gsap
     .timeline({ defaults: { ease: "power2.out" } })
 
@@ -51,72 +45,63 @@ onMounted(() => {
     )
     .from(
       q(".celestial__ticks"),
-      { opacity: 0, rotation: "-=8", duration: 0.4 },
+      { opacity: 0, rotation: "-=8", duration: 0.5 },
       "-=0.25",
     )
-    .from(
-      q(".celestial__moon"),
-      { opacity: 0, scale: 0.85, duration: 0.4 },
+    .to(
+      q(".celestial__ticks"),
+      { rotation: "+=20", duration: 2, ease: "power2.inOut" },
       "<",
     )
-    .to(q(".celestial__ticks"), {
-      rotation: "+=360",
-      duration: 240,
-      ease: "none",
-      repeat: -1,
-    });
+
+    .from(
+      q(".celestial__moon"),
+      { opacity: 0, scale: 0.85, duration: 0.5 },
+      "<",
+    )
+    .from(
+      q(".discovery-hotspots"),
+      { opacity: 0, rotation: "-=8", duration: 0.5 },
+      "<",
+    );
 });
 </script>
 
 <template>
   <div ref="page">
     <div class="discovery-backdrop" aria-hidden="true" />
-    <div class="celestial" aria-hidden="true">
-      <div class="celestial__ring celestial__ring--solid" />
-      <div class="celestial__ticks">
-        <svg
-          class="celestial__ticks-svg"
-          viewBox="0 0 400 400"
-          aria-hidden="true"
-        >
-          <g
-            v-for="n in tickCount"
-            :key="n"
-            :transform="`rotate(${(360 / tickCount) * n} 200 200)`"
-          >
-            <line
-              x1="200"
-              y1="14"
-              x2="200"
-              y2="28"
-              stroke="rgba(255, 255, 255, 0.5)"
-              stroke-width="0.5"
-            />
-          </g>
-        </svg>
-      </div>
-      <div class="celestial__moon" />
-    </div>
     <PageHeader
-      title="Découvrir l’univers de l’horlogerie"
+      title="Découvrez l’univers de l’horlogerie"
       subtitle="Explorez son histoire, testez vos connaissances et plongez dans ses plus grands secrets."
     />
-    <div class="discovery-page">
-      <section class="discovery-page__primary-gates">
-        <DiscoveryGate
-          v-for="gate in primaryGates"
-          :key="gate.to"
-          v-bind="gate"
-        />
-      </section>
-
-      <section class="discovery-page__secondary-gates">
-        <DiscoveryGate
-          v-for="gate in secondaryGates"
-          :key="gate.to"
-          v-bind="gate"
-        />
-      </section>
+    <div class="celestial-stage">
+      <div class="celestial" aria-hidden="true">
+        <div class="celestial__ring celestial__ring--solid" />
+        <div class="celestial__ticks">
+          <svg
+            class="celestial__ticks-svg"
+            viewBox="0 0 400 400"
+            aria-hidden="true"
+          >
+            <g
+              v-for="n in tickCount"
+              :key="n"
+              :transform="`rotate(${(360 / tickCount) * n} 200 200)`"
+            >
+              <line
+                x1="200"
+                y1="14"
+                x2="200"
+                y2="28"
+                stroke="rgba(255, 255, 255, 0.5)"
+                stroke-width="0.5"
+              />
+            </g>
+          </svg>
+        </div>
+        <div class="celestial__moon" />
+      </div>
+      <DiscoveryHotSpot :card-gate="cardGate" />
     </div>
   </div>
 </template>
@@ -164,9 +149,11 @@ onMounted(() => {
   }
 }
 
-.discovery-page__primary-gates {
+.celestial-stage {
   position: relative;
+  min-height: 75vh;
 }
+
 .celestial {
   position: absolute;
   top: 50%;
@@ -185,7 +172,7 @@ onMounted(() => {
 }
 
 .celestial__ring--solid {
-  width: 110vmin;
+  width: 73vmin;
   aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -195,8 +182,8 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70vmin;
-  height: 70vmin;
+  width: 60vmin;
+  height: 60vmin;
 }
 
 .celestial__ticks-svg {
@@ -216,5 +203,15 @@ onMounted(() => {
   background: url("/images/background/moon.webp") center/contain no-repeat;
   border-radius: 50%;
   filter: brightness(0.7);
+}
+
+@media (max-width: 768px) {
+  .celestial__ring--solid {
+    width: 100vmin;
+  }
+  .celestial__ticks {
+    width: 70vmin;
+    height: 70vmin;
+  }
 }
 </style>

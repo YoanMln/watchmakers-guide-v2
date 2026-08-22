@@ -15,19 +15,6 @@
   width: min(1800px, 100%);
   margin: 0 auto;
   padding: 3rem 1rem 6rem;
-
-  &__primary-gates {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20rem;
-    z-index: 2;
-  }
-
-  &__secondary-gates {
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 2;
-  }
 }
 
 /* ------------------ RESPONSIVE ------------------ */
@@ -37,12 +24,8 @@
     gap: 3rem;
 
     padding: 2rem 1.5rem 4rem;
-    &__primary-gates {
+    &__card-gates {
       grid-template-columns: 1fr;
-    }
-
-    &__secondary-gates {
-      gap: 1.5rem;
     }
   }
 }
@@ -50,7 +33,7 @@
 @media (max-width: 768px) {
   .discovery-page {
     padding-inline: 1rem;
-    &__secondary-gates {
+    &__card-gates {
       flex-direction: column;
 
       > * {
