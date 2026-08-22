@@ -6,6 +6,7 @@
     "to": "/mesure-du-temps",
     "image": "/images/decouvrir/histoire.webp",
     "icon": "/images/decouvrir/hotspot/histoire-spot.webp",
+    "imageFit": "cover",
     "tickIndex": 0
   },
 
