@@ -14,7 +14,7 @@ function hotspotStyle(card) {
 const activeCard = ref(null);
 
 const showCard = computed(
-  () => props.cardGate.find((c) => c.to === activeCard.value) || null
+  () => props.cardGate.find((c) => c.to === activeCard.value) || null,
 );
 
 function openCard(card) {
