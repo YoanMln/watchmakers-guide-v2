@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   seo: {
     meta: {
       ogLocale: "fr_FR",
-      ogImage: "/images/og/og-default.jpg",
+      ogImage: "/images/background/og/og-background.jpg",
       twitterCard: "summary_large_image",
     },
   },
