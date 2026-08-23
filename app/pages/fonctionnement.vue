@@ -7,9 +7,9 @@ import introduction from "~/data/fonctionnement/introduction.json";
 import FonctionnementLexique from "~/components/FonctionnementLexique.vue";
 
 useSeoMeta({
-  title: "Fonctionnement d'un mouvement mécanique | Watchmakers Guide",
+  title: "Comment fonctionne une montre mécanique",
   description:
-    "Découvrez le fonctionnement d'une montre mécanique : du barillet au balancier, en passant par les rouages et l'échappement, tout est expliqué simplement et clairement.",
+    "Du barillet à l'échappement : découvrez comment l'énergie d'un ressort devient une mesure précise du temps. Anatomie, rouages et lexique de l'horloger.",
 });
 
 const readNextItems = [

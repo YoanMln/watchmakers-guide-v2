@@ -1,9 +1,14 @@
 <script setup>
 import { ref, computed, watch } from "vue";
-
 import aiguillage from "~/data/techniques/aiguillage.json";
 import posage from "~/data/techniques/posage.json";
 import tolerance from "~/data/techniques/tolerance-controle.json";
+
+useSeoMeta({
+  title: "Techniques d'assemblage horloger",
+  description:
+    "Posage, aiguillage, tolérances et contrôle : les gestes de l'assemblage d'un mouvement mécanique, expliqués étape par étape sur un ETA 2824",
+});
 
 const activeIndex = ref(null);
 const selectedStep = ref("all");

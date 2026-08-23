@@ -1,9 +1,14 @@
 <script setup>
 import { ref, computed } from "vue";
-
 import assemblage from "~/data/outils/assemblage.json";
 import maintenance from "~/data/outils/maintenance-entretien.json";
 import reglage from "~/data/outils/reglage-controle.json";
+
+useSeoMeta({
+  title: "Outils d'horloger : le guide illustré",
+  description:
+    "Brucelle, potence, démagnétiseur, huilier : découvrez les outils de l'horloger, leur usage et leur rôle à chaque étape du travail sur un mouvement.",
+});
 
 const openTool = ref(null);
 
@@ -90,7 +95,7 @@ const filteredTools = computed(() => {
 
           <Transition name="overlay">
             <div
-              v-if="openTool === tool.outil"
+              v-show="openTool === tool.outil"
               class="tools-items__card-overlay"
             >
               <p class="tools-items__description">

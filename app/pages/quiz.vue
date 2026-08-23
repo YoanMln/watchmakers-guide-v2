@@ -3,6 +3,12 @@ import { ref, computed } from "vue";
 import dataquiz from "~/data/quiz/data-quiz.json";
 import ProgressBar from "~/components/ProgressBar.vue";
 
+useSeoMeta({
+  title: "Quiz d'horlogerie : 3 niveaux",
+  description:
+    "Trois niveaux de difficulté pour tester ce que vous savez vraiment de l'horlogerie mécanique : mouvements, complications, histoire et vocabulaire.",
+});
+
 const selectedDifficulty = ref(null);
 const currentQuestionIndex = ref(0);
 const score = ref(0);

@@ -4,19 +4,26 @@ useHead({
     "data-page": "home",
   },
 });
+useSeoMeta({
+  title: "Comprendre l'horlogerie mécanique",
+  description:
+    "Comment fonctionne une montre mécanique ? Complications, histoire de la mesure du temps, outils et techniques de l'horloger : le guide illustré",
+});
 </script>
 
 <template>
   <header>
     <div class="header-container">
       <div class="title-h1">
-        <h1>Watchmaker's Guide</h1>
+        <p class="brand-wordmark">Watchmaker's Guide</p>
+        <h1>Comprendre l'horlogerie mécanique</h1>
       </div>
+
       <div class="intro-container">
-        <h2>
-          Explorez la précision et la passion de l’horlogerie à travers un
+        <p class="header-tagline">
+          Explorez la précision et la passion de l'horlogerie à travers un
           regard technique et authentique
-        </h2>
+        </p>
       </div>
       <div class="btn-container-home">
         <NuxtLink class="btn-cta" to="/decouvrir"

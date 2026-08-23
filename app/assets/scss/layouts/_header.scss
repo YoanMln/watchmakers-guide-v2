@@ -31,22 +31,32 @@ header,
   border-radius: 5px;
 }
 
-header h1 {
+.brand-wordmark {
+  font-family: $h1-to-h6-font-family;
+  color: var(--color-accent-text);
   font-size: $header-h1-font-size-clamp;
   font-weight: $header-h1-font-weight;
-  margin-bottom: $header-h1-margin-bottom;
+  margin-bottom: $wordmark-margin-bottom;
   text-transform: uppercase;
   letter-spacing: $header-h1-letter-spacing;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-header h2 {
-  font-size: $header-h2-font-size-clamp;
+header h1 {
+  font-size: $header-h1-promise-clamp;
+  font-weight: $font-weight300;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.header-tagline {
+  font-size: $header-tagline-clamp;
   color: $on-media;
   font-weight: $header-h2-font-weight;
   line-height: $header-h2-line-height;
-  margin: $header-h2-margin;
   max-width: $header-h2-max-width;
+  margin: 0 auto;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 

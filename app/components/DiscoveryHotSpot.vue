@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   cardGate: { type: Array, required: true },
 });
 
@@ -13,10 +13,6 @@ function hotspotStyle(card) {
 
 const activeCard = ref(null);
 
-const showCard = computed(
-  () => props.cardGate.find((c) => c.to === activeCard.value) || null,
-);
-
 function openCard(card) {
   activeCard.value = activeCard.value === card.to ? null : card.to;
 }
@@ -25,7 +21,6 @@ function openCard(card) {
 <template>
   <div class="discovery-hotspots">
     <button
-      @click="openCard(card)"
       v-for="card in cardGate"
       :key="card.to"
       type="button"
@@ -33,6 +28,7 @@ function openCard(card) {
       :style="hotspotStyle(card)"
       :aria-label="card.title"
       :aria-expanded="activeCard === card.to"
+      @click="openCard(card)"
     >
       <NuxtImg :src="card.icon" class="discovery-hotspots__icon" />
       <span class="discovery-hotspots__label-anchor">
@@ -40,9 +36,19 @@ function openCard(card) {
       </span>
     </button>
   </div>
-  <div class="gate-card-container" v-if="showCard" @click="activeCard = null">
+  <div
+    v-show="activeCard"
+    class="gate-card-container"
+    @click="activeCard = null"
+  >
     <div class="gate-card" @click.stop>
-      <DiscoveryGate v-bind="showCard" @close="activeCard = null" />
+      <DiscoveryGate
+        v-for="card in cardGate"
+        v-show="activeCard === card.to"
+        :key="card.to"
+        v-bind="card"
+        @close="activeCard = null"
+      />
     </div>
   </div>
 </template>

@@ -3,10 +3,14 @@ import gateCard from "~/data/decouvrir/gate-card.json";
 import { computed } from "vue";
 import gsap from "gsap";
 
+useSeoMeta({
+  title: "Découvrir l'univers de l'horlogerie",
+  description:
+    "Histoire de la mesure du temps, complications horlogères, quiz : choisissez votre porte d'entrée dans l'univers de l'horlogerie mécanique",
+});
+
 const cardGate = computed(() => gateCard);
-
 const tickCount = 72;
-
 const page = ref(null);
 
 onMounted(() => {

@@ -9,7 +9,23 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@nuxt/image",
     "@netlify/nuxt",
+    "@nuxtjs/seo",
   ],
+  site: {
+    url: "https://watchmakersguide.com",
+    name: "Watchmaker's Guide",
+    description:
+      "Le guide illustré de l'horlogerie mécanique : fonctionnement, complications, outils et techniques de l'horloger.",
+    defaultLocale: "fr",
+  },
+  seo: {
+    meta: {
+      ogLocale: "fr_FR",
+      ogImage: "/images/background/og/og-background.jpg",
+      twitterCard: "summary_large_image",
+    },
+  },
+  ogImage: { enabled: false },
   colorMode: {
     preference: "dark",
     fallback: "dark",
@@ -19,6 +35,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
       link: [
         {
           rel: "preconnect",
