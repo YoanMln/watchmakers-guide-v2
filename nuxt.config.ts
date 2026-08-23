@@ -15,10 +15,6 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: "Bodoni Moda",
-        weights: [400, 500, 600],
-      },
-      {
         name: "Raleway",
         weights: [100, 200, 400],
       },
