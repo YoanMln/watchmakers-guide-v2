@@ -4,12 +4,66 @@ $margin-reset: 0;
 $padding-reset: 0;
 $box-sizing-reset: border-box;
 $scroll-behavior-reset: smooth;
-// reset body //
 
-$FontFamily-body: "Montserrat", sans-serif;
-$h1-to-h6-font-family: "Alumni Sans", sans-serif;
-$h1-to-h6-font-weight: 300;
-$h1-font-size: 2rem;
+// ============================================================
+// TYPOGRAPHIE
+// ============================================================
+
+// --- Breakpoint mobile (utilise par le mixin `mobile`) ---
+$bp-mobile: 780px;
+
+// --- Families ---
+$font-display: "Raleway", sans-serif; // titres
+$font-sub-title: "Jost", sans-serif;
+$font-body: "Montserrat", sans-serif; // corps, labels, boutons, nav
+
+// --- Weight ---
+$fw-ultra-light: 100;
+$fw-semi-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// --- Tailles : desktop ---
+$fs-eyebrow: 0.9rem; // surtitres, micro-labels
+$fs-sm: 0.875rem; // legendes, mentions
+$fs-body: 1rem; // corps de texte
+$fs-body-lg: 1.2rem; // corps large
+$fs-lead: 1.25rem; //  intro
+$fs-h3: 1.2rem;
+$fs-h2: 1.75rem;
+$fs-h1: 2rem;
+$fs-section: 2.2rem; // grands titres de section
+$fs-hero: 3rem; // h1 du hero de la home
+$fs-page-title: 2rem; // titre de page (.page-header__title)
+
+// --- Tailles : mobile (<= $bp-mobile) ---
+$fs-eyebrow-mobile: 0.75rem;
+$fs-sm-mobile: 0.875rem;
+$fs-body-mobile: 1rem;
+$fs-body-lg-mobile: 1rem;
+$fs-lead-mobile: 1.1rem;
+$fs-h3-mobile: 1.25rem;
+$fs-h2-mobile: 1.4rem;
+$fs-h1-mobile: 1.6rem;
+$fs-section-mobile: 1.8rem;
+$fs-hero-mobile: 2rem;
+$fs-page-title-mobile: 2.2rem;
+
+// --- Interlignes ---
+$lh-tight: 1.2;
+$lh-base: 1.6;
+$lh-loose: 1.8;
+
+// --- Letter-spacing ---
+$ls-normal: 0;
+$ls-wide: 0.06em;
+$ls-wider: 0.15em;
+$ls-widest: 0.26em;
+
+// ============================================================
 
 // COLOR //
 // Palette du design.
@@ -32,7 +86,6 @@ $alert-bg: rgba(0, 0, 0, 0.45);
 
 // GENERAL //
 
-$font-weight300: 300;
 $text-align: center;
 
 // BTN STYLE //
@@ -79,8 +132,6 @@ $header-min-height: 100vh;
 $header-width: 100%;
 $header-padding: 4rem 0;
 $wordmark-margin-bottom: 0.75rem;
-$header-h1-promise-clamp: clamp(1.5rem, 3vw, 2.2rem);
-$header-tagline-clamp: clamp(1rem, 2vw, 1.25rem);
 
 // HEADER CONTAINER //
 
@@ -93,16 +144,10 @@ $header-container-text-align: center;
 
 // HEADER H1 //
 
-$header-h1-font-size-clamp: clamp(2.5rem, 5vw, 4rem);
-$header-h1-font-weight: 200;
 $header-h1-margin-bottom: 2rem;
-$header-h1-letter-spacing: 2px;
 
 // HEADER H2 //
 
-$header-h2-font-size-clamp: clamp(1.2rem, 2.5vw, 1.8rem);
-$header-h2-font-weight: 300;
-$header-h2-line-height: 1.4;
 $header-h2-margin: 2rem auto;
 $header-h2-max-width: 800px;
 
@@ -122,7 +167,6 @@ $btn-container-home-margin-top: 3rem;
 
 // BTN CONTAINER HOME LINK //
 $btn-home-a-text-decoration: none;
-$btn-home-a-font-size: 1.1rem;
 $btn-home-a-min-width: 250px;
 $btn-home-a-padding: 19px 50px;
 $btn-home-a-text-align: center;
@@ -140,8 +184,6 @@ $padding-container-mobile: 1rem;
 $margin-bottom-title: 2rem;
 $margin-bottom-text: 1.5rem;
 $margin-vertical: 2rem;
-$font-size-button: 1rem;
-$font-weight-h1: bold;
 $box-shadow-img: 0 10px 20px rgba(0, 0, 0, 0.2);
 
 // Transitions
