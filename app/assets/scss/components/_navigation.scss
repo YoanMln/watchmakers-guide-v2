@@ -49,11 +49,11 @@
 
     a {
       text-decoration: none;
-      font-size: 1.5rem;
+      font-size: $fs-h3;
       color: var(--color-accent-text);
-      font-weight: $font-weight300;
+      font-weight: $fw-light;
       transition: color 0.3s ease;
-      font-family: "Alumni Sans", sans-serif;
+      font-family: $font-body;
       text-transform: uppercase;
       &:hover {
         color: var(--color-text);
@@ -76,7 +76,7 @@
 
   a {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: $fs-h3;
     color: $bronze;
     text-transform: uppercase;
     transition: color 0.2s ease;

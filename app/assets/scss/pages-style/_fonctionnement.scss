@@ -22,7 +22,7 @@
 
   &__tag {
     color: var(--color-accent-text);
-    font-size: 0.8rem;
+    font-size: $fs-eyebrow;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-align: $text-align;
@@ -36,40 +36,6 @@
   .intro-card {
     color: var(--color-text);
     text-align: $text-align;
-  }
-}
-
-.steps-content {
-  flex: 1;
-  max-width: 50%;
-
-  .card-title {
-    text-align: left;
-    margin-bottom: 1rem;
-    color: var(--color-accent-text);
-  }
-}
-.resume-details {
-  color: var(--color-text);
-  text-align: left;
-  line-height: 1.6;
-  margin: 0;
-  max-width: 100%;
-}
-
-.schema-fonctionnement {
-  flex: 1;
-  max-width: 50%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .watch-parts {
-    @include img-construct;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
   }
 }
 
@@ -105,8 +71,12 @@
 
 .row__text .intro {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: $fs-body-lg;
   line-height: 2.2;
+
+  @include mobile {
+    font-size: $fs-body-lg-mobile;
+  }
 
   color: var(--color-text);
 }
@@ -120,13 +90,21 @@
   text-align: $text-align;
 
   p {
-    font-size: 2.5rem;
+    font-size: $fs-section;
     margin-bottom: 1rem;
     margin-top: 1rem;
+
+    @include mobile {
+      font-size: $fs-section-mobile;
+    }
   }
   h2 {
-    font-size: 2rem;
+    font-size: $fs-h1;
     margin-bottom: 5rem;
+
+    @include mobile {
+      font-size: $fs-h1-mobile;
+    }
   }
 }
 
@@ -135,10 +113,18 @@
 
   h2 {
     margin-bottom: 5rem;
-    font-size: 2rem;
+    font-size: $fs-h1;
     color: var(--color-text);
+
+    @include mobile {
+      font-size: $fs-h1-mobile;
+    }
   }
   p {
-    font-size: 2.5rem;
+    font-size: $fs-section;
+
+    @include mobile {
+      font-size: $fs-section-mobile;
+    }
   }
 }

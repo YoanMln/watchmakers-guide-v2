@@ -4,7 +4,7 @@
 /* ------------------ BODY ------------------ */
 
 body {
-  font-family: $FontFamily-body;
+  font-family: $font-body;
   position: relative;
   margin: 0;
   padding: 0;
@@ -18,8 +18,42 @@ body {
       center/cover fixed no-repeat;
     padding-top: 0;
     min-height: 100dvh;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        to top,
+        rgba(12, 9, 7, 0.92) 0%,
+        rgba(12, 9, 7, 0.74) 38%,
+        rgba(12, 9, 7, 0.18) 72%,
+        rgba(12, 9, 7, 0) 100%
+      );
+      @media (min-width: 900px) {
+        background:
+          linear-gradient(
+            to left,
+            rgba(12, 9, 7, 0.88) 0%,
+            rgba(12, 9, 7, 0.72) 26%,
+            rgba(12, 9, 7, 0.28) 52%,
+            rgba(12, 9, 7, 0) 74%
+          ),
+          linear-gradient(to top, rgba(12, 9, 7, 0.6) 0%, rgba(12, 9, 7, 0) 30%);
+      }
+    }
   }
   &[data-page="decouvrir"] {
     @include discovery-background;
   }
+}
+
+.page-centered {
+  @include flexCenter;
+  position: relative;
+  min-height: 100dvh;
+  width: 100%;
+  padding: 4rem 0;
 }

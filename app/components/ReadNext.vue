@@ -51,19 +51,19 @@ defineProps({
 
   &__arrow {
     color: var(--color-accent-text);
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.2rem;
+    font-family: $font-body;
+    font-size: $fs-lead;
   }
 
   &__title {
     margin: 0.3rem 0 0.4rem;
-    font-size: 1.5rem;
+    font-size: $fs-h3;
     color: var(--color-text);
   }
 
   &__text {
     margin: 0;
-    font-size: 1rem;
+    font-size: $fs-body;
     color: var(--color-text-muted);
     line-height: 1.5;
   }

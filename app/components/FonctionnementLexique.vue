@@ -18,6 +18,8 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
+@use "~/assets/scss/abstracts/variables" as *;
+@use "~/assets/scss/abstracts/mixins" as *;
 .lexique {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -33,15 +35,15 @@ defineProps({
   }
 
   &__term {
-    font-family: "Cormorant Garamond", serif;
+    font-family: $font-display;
     font-style: italic;
     color: var(--color-accent-text);
-    font-size: 1.8rem;
+    font-size: $fs-h2;
   }
 
   &__definition {
     margin: 0.8rem 0 0;
-    font-size: 1.1rem;
+    font-size: $fs-body-lg;
     color: var(--color-text-muted);
     line-height: 1.4;
   }

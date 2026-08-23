@@ -169,7 +169,7 @@ watch(
   &__info {
     span {
       color: var(--color-accent-text);
-      font-weight: 600;
+      font-weight: $fw-semibold;
     }
   }
 
@@ -178,8 +178,12 @@ watch(
     z-index: 1;
     margin: auto 0;
     text-align: center;
-    font-size: clamp(1.6rem, 2vw, 2rem);
-    font-weight: 400;
+    font-size: $fs-h1;
+    font-weight: $fw-regular;
+
+    @include mobile {
+      font-size: $fs-h1-mobile;
+    }
     line-height: 1.5;
     text-wrap: balance;
   }

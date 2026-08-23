@@ -14,18 +14,21 @@
   text-align: center;
   padding: 3rem 2rem 2rem;
   margin-bottom: 1rem;
-
+  color: var(--color-text-muted);
   h1 {
-    font-family: $h1-to-h6-font-family;
-    font-size: $h1-font-size;
-    font-weight: $font-weight300;
+    font-size: $fs-page-title;
+    font-weight: $fw-light;
     margin-bottom: 1.5rem;
+
+    @include mobile {
+      font-size: $fs-page-title-mobile;
+    }
   }
   h2 {
     color: var(--color-text-muted);
-    font-family: $FontFamily-body;
-    font-size: 1.1rem;
-    font-weight: $font-weight300;
+
+    font-size: $fs-body-lg;
+    font-weight: $fw-light;
     line-height: 1.8;
     max-width: 600px;
     margin: 0 auto;
@@ -69,23 +72,27 @@ article:nth-child(even) .complications-card {
 }
 
 .container-desc-articles {
-  flex: 1;
+  flex: 1 1 50%;
   display: flex;
+  min-width: 0;
   flex-direction: column;
   justify-content: center;
   padding: 3rem 2.5rem;
   gap: 1rem;
 
   h2 {
-    font-family: $h1-to-h6-font-family;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: $font-weight300;
+    font-size: $fs-h1;
+    font-weight: $fw-light;
+
+    @include mobile {
+      font-size: $fs-h1-mobile;
+    }
     color: var(--color-accent-text);
     letter-spacing: 0.03em;
   }
 
   p {
-    font-size: 1.1rem;
+    font-size: $fs-body-lg;
     color: var(--color-text-muted);
     line-height: 1.8;
   }
@@ -96,7 +103,7 @@ article:nth-child(even) .complications-card {
     gap: 0.4rem;
 
     li {
-      font-size: 1rem;
+      font-size: $fs-body;
       color: var(--color-text-muted);
       line-height: 1.7;
       padding-left: 1rem;
@@ -116,8 +123,8 @@ article:nth-child(even) .complications-card {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 1.1rem;
-  letter-spacing: 0.15em;
+  font-size: $fs-body-lg;
+  letter-spacing: $ls-wider;
   text-transform: uppercase;
   color: var(--color-accent-text);
   border: 0.5px solid $bronze;
@@ -127,7 +134,8 @@ article:nth-child(even) .complications-card {
 }
 
 .container-complication-img {
-  flex: 1;
+  flex: 1 1 50%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
