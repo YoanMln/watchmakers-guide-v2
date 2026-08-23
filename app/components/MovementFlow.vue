@@ -39,7 +39,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
       src="/images/fonctionnement/movement-flow/movement-explode.webp"
       alt="Fonctionnement du mouvement"
       class="movement-flow__image"
-    >
+    />
 
     <button
       v-for="(fonctionnement, index) in props.fonctionnements"
