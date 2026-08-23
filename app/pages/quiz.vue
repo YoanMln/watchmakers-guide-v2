@@ -86,7 +86,7 @@ function restartQuiz() {
             <p v-if="lastAnswerCorrect">Bonne réponse !</p>
 
             <p v-else>
-              Mauvaise réponse <br /><br />
+              Mauvaise réponse <br ><br >
               La bonne réponse était :
               <span>
                 {{ currentQuestion.answers[currentQuestion.correctAnswer] }}
