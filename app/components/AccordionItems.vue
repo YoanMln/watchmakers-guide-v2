@@ -21,7 +21,7 @@ const emit = defineEmits(["toggle"]); // Event √©mis quand on clique sur l'en-t√
       <Icon class="accordion-items__chevron" name="mdi:chevron-down" />
     </button>
     <Transition name="accordion">
-      <div v-if="isOpen" class="accordion-items__content">
+      <div v-show="isOpen" class="accordion-items__content">
         <ul v-if="Array.isArray(details)" class="accordion-items__details">
           <li v-for="(detail, index) in details" :key="index">
             <Icon class="accordion-items__icons-list" name="mdi:gear-outline" />
@@ -31,7 +31,12 @@ const emit = defineEmits(["toggle"]); // Event √©mis quand on clique sur l'en-t√
         <p v-else class="accordion-items__description">
           {{ details }}
         </p>
-        <NuxtImg :src="image" :alt="title" class="accordion-items__image" />
+        <NuxtImg
+          :src="image"
+          :alt="title"
+          class="accordion-items__image"
+          loading="lazy"
+        />
       </div>
     </Transition>
   </div>
