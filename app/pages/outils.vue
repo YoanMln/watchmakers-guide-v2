@@ -95,7 +95,7 @@ const filteredTools = computed(() => {
 
           <Transition name="overlay">
             <div
-              v-if="openTool === tool.outil"
+              v-show="openTool === tool.outil"
               class="tools-items__card-overlay"
             >
               <p class="tools-items__description">
