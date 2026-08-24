@@ -102,7 +102,7 @@ onUnmounted(() => {
     </div>
   </nav>
 
-  <div class="nav-panel" :class="{ active: menuOpen }">
+  <div class="nav-panel" :class="{ active: menuOpen }" :inert="!menuOpen">
     <ul class="nav-list nav-list--panel">
       <li v-for="link in navAll" :key="link.to">
         <NuxtLink :to="link.to" @click="closeMenu">{{ link.label }}</NuxtLink>
