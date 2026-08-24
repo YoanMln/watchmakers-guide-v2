@@ -3,12 +3,13 @@
 /* ------------------ BURGER MENU ------------------ */
 .nav-burger {
   --burger-line-color: var(--color-text);
-
-  position: $burger-position;
-  top: $burger-top;
-  right: $burger-right;
+  position: relative;
+  flex-shrink: 0;
   width: $burger-width;
   height: $burger-height;
+  padding: 0;
+  border: none;
+  background: none;
   cursor: pointer;
   z-index: $burger-z-index;
   display: none;

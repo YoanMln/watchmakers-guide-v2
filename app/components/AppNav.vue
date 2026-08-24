@@ -7,6 +7,16 @@ const lastScrollTop = ref(0);
 const isHomePage = computed(() => route.path === "/");
 const isDiscoveryPage = computed(() => route.path === "/decouvrir");
 
+const navLeft = [
+  { to: "/decouvrir", label: "Découvrir" },
+  { to: "/fonctionnement", label: "Fonctionnement" },
+];
+const navRight = [
+  { to: "/outils", label: "Outils de l'horloger" },
+  { to: "/techniques", label: "Techniques" },
+];
+const navAll = [...navLeft, ...navRight];
+
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
 };
@@ -43,40 +53,62 @@ onUnmounted(() => {
     class="main-nav"
     :class="{ 'home-desktop-hidden': isHomePage, scrolled: isScrolled }"
   >
-    <div class="nav-logo">
-      <NuxtLink to="/">
-        <NuxtImg
-          src="/images/logo/logo.webp"
-          alt="logo du site Watchmaker's Guide"
-        />
-      </NuxtLink>
+    <div class="nav-side">
+      <button
+        class="nav-burger"
+        :class="{ active: menuOpen }"
+        type="button"
+        :aria-expanded="menuOpen"
+        aria-label="Ouvrir le menu"
+        @click="toggleMenu"
+      >
+        <span class="ligne" />
+        <span class="ligne" />
+        <span class="ligne" />
+      </button>
+
+      <ul class="nav-list">
+        <li v-for="link in navLeft" :key="link.to">
+          <NuxtLink :to="link.to" @click="closeMenu">{{ link.label }}</NuxtLink>
+        </li>
+      </ul>
     </div>
 
-    <ul class="nav-menu" :class="{ active: menuOpen }">
-      <li><NuxtLink to="/" @click="closeMenu">Accueil</NuxtLink></li>
-      <li><NuxtLink to="/decouvrir" @click="closeMenu">Découvrir</NuxtLink></li>
-      <li>
-        <NuxtLink to="/fonctionnement" @click="closeMenu"
-          >Fonctionnement</NuxtLink
-        >
-      </li>
-      <li>
-        <NuxtLink to="/outils" @click="closeMenu"
-          >Outils de l'horloger</NuxtLink
-        >
-      </li>
-      <li>
-        <NuxtLink to="/techniques" @click="closeMenu">Techniques</NuxtLink>
-      </li>
-      <li v-if="!isDiscoveryPage"><ColorModeToggle /></li>
-    </ul>
+    <NuxtLink to="/" class="nav-brand" @click="closeMenu">
+      <picture>
+        <source
+          media="(max-width: 580px)"
+          srcset="/images/logo/brand-logo-mobile.webp"
+          width="330"
+          height="330"
+        />
+        <img
+          class="brand-logo"
+          src="/images/logo/brand-logo.webp"
+          alt="Accueil"
+          width="1696"
+          height="927"
+        />
+      </picture>
+    </NuxtLink>
 
-    <div class="nav-burger" :class="{ active: menuOpen }" @click="toggleMenu">
-      <div class="ligne" />
-      <div class="ligne" />
-      <div class="ligne" />
+    <div class="nav-side nav-side--right">
+      <ul class="nav-list">
+        <li v-for="link in navRight" :key="link.to">
+          <NuxtLink :to="link.to" @click="closeMenu">{{ link.label }}</NuxtLink>
+        </li>
+      </ul>
+      <ColorModeToggle v-if="!isDiscoveryPage" />
     </div>
   </nav>
+
+  <div class="nav-panel" :class="{ active: menuOpen }" :inert="!menuOpen">
+    <ul class="nav-list nav-list--panel">
+      <li v-for="link in navAll" :key="link.to">
+        <NuxtLink :to="link.to" @click="closeMenu">{{ link.label }}</NuxtLink>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped>
