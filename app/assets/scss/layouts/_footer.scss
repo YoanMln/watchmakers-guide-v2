@@ -42,7 +42,8 @@
     color: var(--color-accent-text);
     margin-bottom: 10px;
     letter-spacing: 1px;
-    font-weight: $fw-light;
+    font-weight: $fw-regular;
+    font-family: $font-display;
   }
 
   &__gate {
@@ -90,6 +91,7 @@
 
   &__text {
     font-size: $fs-body-lg;
+    font-family: $font-display;
     text-align: center;
     color: var(--footer-color);
     opacity: 0.6;

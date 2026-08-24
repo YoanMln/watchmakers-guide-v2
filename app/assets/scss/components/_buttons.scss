@@ -38,7 +38,7 @@
   cursor: pointer;
   color: var(--color-accent-text);
   font-size: $fs-body-lg;
-  transition: transform 0.25s ease;
+  line-height: 1;
   border-bottom: 1px solid transparent;
   transition:
     color 0.25s ease,

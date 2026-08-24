@@ -41,9 +41,12 @@
 .nav-menu {
   list-style: none;
   display: flex;
+  align-items: center;
   position: relative;
 
   li {
+    display: flex;
+    align-items: center;
     margin: 0 1rem;
     position: relative;
 
