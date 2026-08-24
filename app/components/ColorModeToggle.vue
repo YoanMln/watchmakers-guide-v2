@@ -63,6 +63,6 @@ const toggle = () => {
 }
 
 .mode-toggle__icon {
-  font-size: $fs-lead;
+  font-size: 1.4rem;
 }
 </style>
