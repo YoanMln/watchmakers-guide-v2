@@ -5,6 +5,7 @@ const isScrolled = ref(false);
 const lastScrollTop = ref(0);
 
 const isHomePage = computed(() => route.path === "/");
+const isDiscoveryPage = computed(() => route.path === "/decouvrir");
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
@@ -67,7 +68,7 @@ onUnmounted(() => {
       <li>
         <NuxtLink to="/techniques" @click="closeMenu">Techniques</NuxtLink>
       </li>
-      <li><ColorModeToggle /></li>
+      <li v-if="!isDiscoveryPage"><ColorModeToggle /></li>
     </ul>
 
     <div class="nav-burger" :class="{ active: menuOpen }" @click="toggleMenu">
