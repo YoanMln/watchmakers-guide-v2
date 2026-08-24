@@ -136,7 +136,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     border: 1px solid rgba($on-media, 0.4);
     background: $bronze;
     color: $on-accent;
-    font-size: 1.2rem;
+    font-size: $fs-lead;
     line-height: 1;
     cursor: pointer;
     z-index: 10;
@@ -166,13 +166,13 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
     h3 {
       margin: 0 0 0.4rem;
-      font-size: 1.5rem;
+      font-size: $fs-h3;
       color: var(--color-accent-text);
     }
 
     p {
       margin: 0;
-      font-size: 1rem;
+      font-size: $fs-body;
       line-height: 1.4;
     }
   }
@@ -220,7 +220,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     border: none;
     background: transparent;
     color: var(--color-text-muted);
-    font-size: 1.1rem;
+    font-size: $fs-body-lg;
     cursor: pointer;
 
     &:hover {

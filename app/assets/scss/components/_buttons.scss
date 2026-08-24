@@ -1,27 +1,13 @@
 @use "../abstracts/mixins" as *;
 @use "../abstracts/variables" as *;
 
-/* ==================== BUTTONS BASE ==================== */
-
-.btn {
-  @include btnStyle;
-  transition: $transition-btn;
-  cursor: $cursor-btn;
-  text-decoration: none;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  text-align: center;
-}
-
 /* ==================== BUTTONS VARIANTS ==================== */
 
 // Bouton index CTA
 
 .btn-cta {
   @include flexCenter;
-  font-size: $btn-home-a-font-size;
+  font-size: $fs-body-lg;
   width: 310px;
   height: 65px;
   padding: $btn-home-a-padding;
@@ -42,46 +28,6 @@
   }
 }
 
-// Bouton découverte
-.btn--discovery {
-  color: $on-media;
-  background: $media-surface;
-  padding: 0.8rem 1.5rem;
-  min-width: 150px;
-  max-width: 210px;
-  font-size: 1.1rem;
-}
-
-// Bouton quiz
-.btn--quiz {
-  color: $on-media;
-  background: $media-surface;
-  padding: 0.65rem 1rem;
-  font-size: 0.95rem;
-  line-height: 1.35;
-  flex: 1 1 180px;
-  max-width: 300px;
-  min-width: 180px;
-  white-space: normal;
-  word-break: break-word;
-
-  &:hover:not(:disabled) {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba($bronze, 0.2);
-  }
-}
-
-// Bouton primary
-.btn--primary {
-  min-width: 250px;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-
-  &:hover:not(:disabled) {
-    transform: translateY(-2px);
-  }
-}
-
 // Bouton filtres
 
 .btn-filters {
@@ -91,7 +37,7 @@
   gap: 0.4rem;
   cursor: pointer;
   color: var(--color-accent-text);
-  font-size: 17px;
+  font-size: $fs-body-lg;
   transition: transform 0.25s ease;
   border-bottom: 1px solid transparent;
   transition:

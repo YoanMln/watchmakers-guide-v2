@@ -18,17 +18,9 @@
     gap: 2rem;
   }
 
-  &__eyebrow {
-    font-size: 9px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--color-accent-text);
-  }
-
   &__title {
-    font-family: $h1-to-h6-font-family;
-    font-size: 3.5rem;
-    font-weight: $font-weight300;
+    font-size: $fs-page-title;
+    font-weight: $fw-light;
     color: var(--color-text);
     letter-spacing: 0.02em;
     font-style: italic;
@@ -43,7 +35,7 @@
   }
 
   &__sub {
-    font-size: 1.5rem;
+    font-size: $fs-h3;
     color: var(--color-text);
     line-height: 1.5;
   }
@@ -66,16 +58,16 @@
     z-index: 1;
   }
 
-  @media (max-width: 780px) {
+  @include mobile {
     flex-direction: column;
     align-items: flex-start;
     padding-top: 9rem;
     &__title {
-      font-size: 2rem;
+      font-size: $fs-page-title-mobile;
     }
     &__sub {
       margin-bottom: 2rem;
-      font-size: 1.2rem;
+      font-size: $fs-h3-mobile;
     }
     &__actions-container {
       max-width: 100%;

@@ -7,7 +7,7 @@
   padding: 3rem 1.5rem 1.5rem;
   color: var(--footer-color);
   backdrop-filter: blur(3px);
-  font-family: $h1-to-h6-font-family;
+
   position: relative;
   z-index: 10;
   border-top: 1px solid var(--color-divider);
@@ -38,15 +38,15 @@
   }
 
   &__name {
-    font-size: 30px;
+    font-size: $fs-h2;
     color: var(--color-accent-text);
     margin-bottom: 10px;
     letter-spacing: 1px;
-    font-weight: $font-weight300;
+    font-weight: $fw-light;
   }
 
   &__gate {
-    font-size: 20px;
+    font-size: $fs-lead;
     color: var(--footer-color);
     text-decoration: underline;
     text-underline-offset: 3px;
@@ -58,7 +58,7 @@
   }
 
   &__group-title {
-    font-size: 18px;
+    font-size: $fs-body-lg;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--footer-color);
@@ -75,7 +75,7 @@
     gap: 0.5rem;
 
     a {
-      font-size: 20px;
+      font-size: $fs-lead;
       color: var(--footer-color);
       text-decoration: none;
       transition: color 0.2s ease;
@@ -89,7 +89,7 @@
   }
 
   &__text {
-    font-size: 18px;
+    font-size: $fs-body-lg;
     text-align: center;
     color: var(--footer-color);
     opacity: 0.6;

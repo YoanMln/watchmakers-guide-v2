@@ -119,7 +119,7 @@ function openCard(card) {
   transform: translate(-50%, -100%);
   white-space: nowrap;
   color: $on-media;
-  font-size: 1.1rem;
+  font-size: $fs-body-lg;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;

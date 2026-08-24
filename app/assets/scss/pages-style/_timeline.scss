@@ -53,8 +53,8 @@
     }
 
     &-title {
-      font-weight: $font-weight300;
-      font-size: 45px;
+      font-weight: $fw-light;
+      font-size: $fs-section;
       margin: 0 0 15px;
       padding: 0 15px;
       color: var(--color-accent-text);
@@ -70,16 +70,16 @@
       margin: 0 0 15px;
       padding: 0 15px;
       color: var(--color-text-muted);
-      font-size: 24px;
-      font-weight: $font-weight300;
+      font-size: $fs-h3;
+      font-weight: $fw-light;
       font-style: italic;
     }
 
     &-desc {
       margin: 0;
       padding: 0 15px 15px;
-      font-size: 18px;
-      font-weight: $font-weight300;
+      font-size: $fs-body-lg;
+      font-weight: $fw-light;
       color: var(--color-text-muted);
       line-height: 1.4;
     }
@@ -110,7 +110,7 @@
       content: attr(data-text);
       position: absolute;
       top: 70%;
-      font-size: 14px;
+      font-size: $fs-sm;
       letter-spacing: 2px;
       color: var(--color-text-muted);
       padding-left: 15px;
@@ -155,27 +155,5 @@
     margin: 0 auto;
     width: 100%;
     padding: 80px 0;
-  }
-
-  &-header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 80px;
-
-    &__title {
-      font-size: 46px;
-      margin: 0;
-    }
-
-    &__subtitle {
-      font-size: 22px;
-      font-weight: 300;
-      color: var(--color-text);
-      letter-spacing: 1.5px;
-      margin: 20px auto 0;
-      max-width: 600px;
-      line-height: 1.4;
-      text-align: center;
-    }
   }
 }

@@ -12,7 +12,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <header>
+  <header class="home-hero">
     <div class="header-container">
       <div class="title-h1">
         <p class="brand-wordmark">Watchmaker's Guide</p>
@@ -25,15 +25,17 @@ useSeoMeta({
           regard technique et authentique
         </p>
       </div>
+
       <div class="btn-container-home">
         <NuxtLink class="btn-cta" to="/decouvrir"
           >Découvrir l'horlogerie</NuxtLink
         >
       </div>
-      <div class="nav-home">
+
+      <nav class="nav-home" aria-label="Sections du guide">
         <ul class="nav-home-list">
           <li>
-            <NuxtLink to="/fonctionnement"> Fonctionnement</NuxtLink>
+            <NuxtLink to="/fonctionnement">Fonctionnement</NuxtLink>
           </li>
           <li>
             <NuxtLink to="/outils">Outils de l'horloger</NuxtLink>
@@ -42,7 +44,13 @@ useSeoMeta({
             <NuxtLink to="/techniques">Techniques</NuxtLink>
           </li>
         </ul>
-      </div>
+      </nav>
+    </div>
+
+    <!-- Signature : le battement du balancier en guise d'indicateur de scroll -->
+    <div class="home-hero__beat" aria-hidden="true">
+      <span class="home-hero__beat-line"></span>
+      <span class="home-hero__beat-dot"></span>
     </div>
   </header>
 </template>

@@ -21,6 +21,8 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
+@use "~/assets/scss/abstracts/variables" as *;
+@use "~/assets/scss/abstracts/mixins" as *;
 .chiffres-cles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -38,19 +40,19 @@ defineProps({
 
   &__value {
     display: block;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-family: $font-display;
+    font-size: $fs-h2;
+    font-weight: $fw-semibold;
     color: var(--color-accent-text);
   }
 
   &__unit,
   &__label {
     display: block;
-    font-size: 0.8rem;
+    font-size: $fs-eyebrow;
     color: var(--color-text-muted);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
+    letter-spacing: $ls-wide;
   }
 
   &__label {

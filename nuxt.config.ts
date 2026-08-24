@@ -10,7 +10,20 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@netlify/nuxt",
     "@nuxtjs/seo",
+    "@nuxt/fonts",
   ],
+  fonts: {
+    families: [
+      {
+        name: "Raleway",
+        weights: [100, 200, 400],
+      },
+      {
+        name: "Jost",
+        weights: [100, 200],
+      },
+    ],
+  },
   site: {
     url: "https://watchmakersguide.com",
     name: "Watchmaker's Guide",
@@ -38,21 +51,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "fr",
       },
-      link: [
-        {
-          rel: "preconnect",
-          href: "https://fonts.googleapis.com",
-        },
-        {
-          rel: "preconnect",
-          href: "https://fonts.gstatic.com",
-          crossorigin: "anonymous",
-        },
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Alumni+Sans:ital,wght@0,100..900;1,100..900&display=swap",
-        },
-      ],
     },
   },
 });

@@ -53,9 +53,7 @@ defineEmits(["close"]);
   --gate-min-height: 550px;
   --gate-width: 700px;
   --gate-padding: 3rem;
-  --gate-title-size: 2.8rem;
   --gate-button-gap: 3rem;
-  --gate-button-size: 1.1rem;
   --gate-underline-width: 30%;
   /* ----------------------- */
   @include card-style;
@@ -127,13 +125,17 @@ defineEmits(["close"]);
     color: white;
     cursor: pointer;
     line-height: 1;
-    font-size: 2.3rem;
+    font-size: $fs-h1;
   }
 
   &__title {
     margin-bottom: 1rem;
-    font-size: var(--gate-title-size);
+    font-size: $fs-section;
     color: $on-media;
+
+    @include mobile {
+      font-size: $fs-section-mobile;
+    }
   }
   &__description {
     max-width: 60ch;
@@ -145,7 +147,11 @@ defineEmits(["close"]);
     @include animate-underline;
     margin-top: var(--gate-button-gap);
     color: $on-media;
-    font-size: var(--gate-button-size);
+    font-size: $fs-body-lg;
+
+    @include mobile {
+      font-size: $fs-body-lg-mobile;
+    }
 
     &::after {
       width: var(--gate-underline-width);
@@ -159,23 +165,14 @@ defineEmits(["close"]);
   .discovery-gate {
     --gate-bg-image: none;
     --gate-padding: 2rem;
-    --gate-title-size: 2.2rem;
     --gate-button-gap: 2rem;
-    --gate-button-size: 0.875rem;
     --gate-underline-width: 45%;
-  }
-}
-
-@media (max-width: 768px) {
-  .discovery-gate {
-    --gate-title-size: 1.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .discovery-gate {
     --gate-padding: 1.5rem;
-    --gate-title-size: 1.5rem;
     --gate-button-gap: 1.5rem;
     --gate-underline-width: 60%;
   }

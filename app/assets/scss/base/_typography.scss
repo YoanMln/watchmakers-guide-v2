@@ -1,4 +1,16 @@
 @use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+body {
+  font-family: $font-body;
+  font-weight: $fw-regular;
+  font-size: $fs-body;
+  line-height: $lh-base;
+
+  @include mobile {
+    font-size: $fs-body-mobile;
+  }
+}
 
 h1,
 h2,
@@ -6,10 +18,30 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-accent-text);
-  font-family: $h1-to-h6-font-family;
-  font-weight: $h1-to-h6-font-weight;
+  font-family: $font-display;
+  font-weight: $fw-regular;
 }
+
 h1 {
-  font-size: $h1-font-size;
+  font-size: $fs-h1;
+
+  @include mobile {
+    font-size: $fs-h1-mobile;
+  }
+}
+
+h2 {
+  font-size: $fs-h2;
+
+  @include mobile {
+    font-size: $fs-h2-mobile;
+  }
+}
+
+h3 {
+  font-size: $fs-h3;
+
+  @include mobile {
+    font-size: $fs-h3-mobile;
+  }
 }

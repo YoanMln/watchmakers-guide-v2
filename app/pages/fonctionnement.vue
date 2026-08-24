@@ -78,3 +78,9 @@ const readNextItems = [
     </div>
   </article>
 </template>
+
+<style lang="scss" scoped>
+h2 {
+  color: #ad856f;
+}
+</style>

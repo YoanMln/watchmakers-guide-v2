@@ -80,22 +80,22 @@ const difficultyLevels = [
   }
   &__numeral {
     margin: 0;
-    font-family: "Alumni Sans", sans-serif;
-    font-size: 4rem;
+    font-family: $font-display;
+    font-size: $fs-page-title;
     color: var(--color-accent-text);
     line-height: 1;
   }
   &__title {
     margin: 0;
-    font-family: "Alumni Sans", sans-serif;
-    font-size: 1.8rem;
+    font-family: $font-display;
+    font-size: $fs-h2;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: $on-media;
   }
   &__desc {
     margin-top: 1rem;
-    font-size: 0.9rem;
+    font-size: $fs-sm;
     line-height: 1.6;
     color: $on-media;
   }

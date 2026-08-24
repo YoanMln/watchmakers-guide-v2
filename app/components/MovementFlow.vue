@@ -140,8 +140,8 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     background: $bronze;
     border: 1px solid rgba($on-media, 0.5);
     color: $on-accent;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: $fs-sm;
+    font-weight: $fw-semibold;
     cursor: pointer;
     z-index: 10;
     transition:
@@ -186,7 +186,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     background: var(--color-surface);
     border: 1px solid rgba($bronze, 0.4);
     color: var(--color-text);
-    font-size: 0.75rem;
+    font-size: $fs-eyebrow;
     padding: 0.2rem 0.6rem;
     border-radius: 4px;
     opacity: 0;
@@ -228,7 +228,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     border: none;
     background: transparent;
     color: var(--color-text-muted);
-    font-size: 1.1rem;
+    font-size: $fs-body-lg;
     cursor: pointer;
 
     &:hover {
@@ -261,10 +261,10 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
   }
 
   &__rn {
-    font-family: "Cormorant Garamond", serif;
+    font-family: $font-body;
     font-style: italic;
     color: var(--color-accent-text);
-    font-size: 1rem;
+    font-size: $fs-body;
   }
 
   &__img {
@@ -292,7 +292,7 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
     li {
       cursor: pointer;
       color: var(--color-text-muted);
-      font-size: 0.9rem;
+      font-size: $fs-sm;
       display: flex;
       align-items: center;
       gap: 0.4rem;
