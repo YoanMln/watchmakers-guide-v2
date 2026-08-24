@@ -5,12 +5,24 @@
 @include mobile {
   // Navigation
 
-  .nav-menu {
-    @include flexCenter;
-    flex-direction: column;
+  .nav-side .nav-list {
+    display: none;
+  }
+
+  .nav-burger {
+    display: block;
+  }
+
+  .brand-logo {
+    width: 45px;
+  }
+
+  .nav-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100vh;
-    min-height: 100vh;
+    height: 100dvh;
     position: fixed;
     top: 0;
     left: 0;
@@ -21,9 +33,11 @@
 
     &.active {
       transform: translateX(0);
-      height: 100vh;
-      min-height: 100vh;
-      max-height: 100vh;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      gap: 0;
     }
 
     li {
@@ -40,14 +54,6 @@
         }
       }
     }
-  }
-
-  .nav-burger {
-    display: block;
-  }
-
-  .nav-logo img {
-    width: 100%;
   }
 
   .nav-home-list {
