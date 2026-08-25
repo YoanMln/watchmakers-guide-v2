@@ -58,7 +58,7 @@
   a {
     text-decoration: none;
     font-size: $fs-h3;
-    color: var(--color-accent-text);
+    color: var(--color-text-nav);
     font-weight: $fw-light;
     transition: color 0.3s ease;
     font-family: $font-body;
@@ -69,7 +69,7 @@
     }
     &.router-link-active {
       border-bottom: 1px solid $bronze;
-      color: var(--color-text-muted);
+      color: var(--color-text-nav-hover);
     }
   }
 }
