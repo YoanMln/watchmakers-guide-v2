@@ -31,7 +31,7 @@ onMounted(() => {
   });
   gsap.to(q(".celestial__moon"), {
     filter: "brightness(0.1)",
-    duration: 6,
+    duration: 8.2,
     ease: "sine.inOut",
     yoyo: true,
     repeat: -1,
