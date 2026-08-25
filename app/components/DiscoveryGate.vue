@@ -51,7 +51,6 @@ defineEmits(["close"]);
   --gate-width: 700px;
   --gate-image-height: 68%;
   --gate-padding: 2.5rem;
-  --gate-button-gap: 2.5rem;
   --gate-underline-width: 30%;
 
   @include card-style;
@@ -178,7 +177,6 @@ defineEmits(["close"]);
   .discovery-gate {
     --gate-image-height: 64%;
     --gate-padding: 2rem;
-    --gate-button-gap: 2rem;
     --gate-underline-width: 45%;
     height: 600px;
   }
@@ -192,7 +190,6 @@ defineEmits(["close"]);
   .discovery-gate {
     --gate-image-height: 58%;
     --gate-padding: 1.5rem;
-    --gate-button-gap: 1.5rem;
     --gate-underline-width: 60%;
     height: 500px;
   }
