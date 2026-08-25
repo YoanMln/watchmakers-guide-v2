@@ -71,7 +71,10 @@
       font-size: $fs-h3-mobile;
     }
     &__actions-container {
-      max-width: 100%;
+      left: 0;
+      right: 0;
+      max-width: none;
+      padding-inline: 1.5rem;
       overflow-y: hidden;
       overflow-x: auto;
       scrollbar-width: none;

@@ -20,6 +20,11 @@
 
     align-items: stretch;
     gap: 3rem;
+
+    @include mobile {
+      padding: 8rem 1.25rem 3rem;
+      gap: 2rem;
+    }
   }
   &__title {
     color: $on-media;

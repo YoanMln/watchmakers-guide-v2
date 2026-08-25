@@ -164,6 +164,12 @@ watch(
     display: flex;
     justify-content: center;
     gap: 5rem;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      font-size: $fs-sm;
+    }
   }
 
   &__info {
