@@ -25,10 +25,6 @@ onMounted(() => {
   ).matches;
 
   if (reduceMotion) return;
-  gsap.set(q(".celestial__moon, .celestial__ring--solid, .celestial__ticks"), {
-    xPercent: -50,
-    yPercent: -50,
-  });
   gsap.to(q(".celestial__moon"), {
     filter: "brightness(0.1)",
     duration: 8.2,
