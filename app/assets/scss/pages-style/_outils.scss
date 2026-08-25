@@ -127,6 +127,24 @@
     opacity: 1;
     transform: scale(1);
   }
+  @include mobile {
+    &__card {
+      min-height: 0;
+      height: auto;
+      padding: 1.25rem;
+    }
+
+    &__card-image {
+      height: auto;
+      max-height: 160px;
+      max-width: 65%;
+      object-fit: contain;
+    }
+
+    &__name {
+      font-size: $fs-h3;
+    }
+  }
 }
 
 @media (max-width: 1200px) {

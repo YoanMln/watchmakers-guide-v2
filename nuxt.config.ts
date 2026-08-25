@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     families: [
       {
         name: "Raleway",
-        weights: [100, 200, 400],
+        weights: [100, 200, 400, 600],
       },
       {
         name: "Jost",

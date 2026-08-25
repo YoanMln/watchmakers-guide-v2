@@ -65,15 +65,17 @@ function openCard(card) {
 }
 
 .gate-card-container {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  margin-top: 20rem;
+
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .gate-card {
+  width: 700px;
+  max-width: calc(100vw - 2rem);
   pointer-events: auto;
 }
 

@@ -156,6 +156,7 @@ onMounted(() => {
 .celestial-stage {
   position: relative;
   min-height: 75vh;
+  top: 3rem;
 }
 
 .celestial {
@@ -210,6 +211,9 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .celestial-stage {
+    top: -4rem;
+  }
   .celestial__ring--solid {
     width: 100vmin;
   }
