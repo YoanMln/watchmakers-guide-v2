@@ -147,10 +147,10 @@ function openCard(card) {
 
 @media (max-width: 768px) {
   .discovery-hotspots__point {
-    transform: rotate(var(--hotspot-angle)) translateY(-33vmin);
-    width: 64px;
-    height: 64px;
-    margin: -32px;
+    transform: rotate(var(--hotspot-angle)) translateY(-40vmin);
+    width: 60px;
+    height: 60px;
+    margin: -30px;
   }
 }
 </style>

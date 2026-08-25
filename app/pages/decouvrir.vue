@@ -218,8 +218,8 @@ onMounted(() => {
     width: 100vmin;
   }
   .celestial__ticks {
-    width: 70vmin;
-    height: 70vmin;
+    width: 65vmin;
+    height: 65vmin;
   }
 }
 </style>

@@ -14,14 +14,9 @@ export default defineNuxtConfig({
   ],
   fonts: {
     families: [
-      {
-        name: "Raleway",
-        weights: [100, 200, 400, 600],
-      },
-      {
-        name: "Jost",
-        weights: [100, 200],
-      },
+      { name: "Raleway", weights: [200, 300, 400, 500, 600, 700] },
+      { name: "Montserrat", weights: [200, 300, 400, 500, 600, 700] },
+      { name: "Jost", weights: [100, 200] },
     ],
   },
   site: {
