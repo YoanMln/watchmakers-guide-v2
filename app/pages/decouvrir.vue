@@ -21,7 +21,7 @@ onMounted(() => {
   if (!page.value) return;
   const q = gsap.utils.selector(page.value);
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   if (reduceMotion) return;
@@ -49,28 +49,28 @@ onMounted(() => {
     .from(
       q(".celestial__ring--solid"),
       { opacity: 0, rotation: "-=9", duration: 0.5 },
-      "-=0.5"
+      "-=0.5",
     )
     .from(
       q(".celestial__ticks"),
       { opacity: 0, rotation: "-=8", duration: 0.5 },
-      "-=0.25"
+      "-=0.25",
     )
     .to(
       q(".celestial__ticks"),
       { rotation: "+=20", duration: 2, ease: "power2.inOut" },
-      "<"
+      "<",
     )
 
     .from(
       q(".celestial__moon"),
       { opacity: 0, scale: 0.85, duration: 0.5 },
-      "<"
+      "<",
     )
     .from(
       q(".discovery-hotspots"),
       { opacity: 0, rotation: "-=8", duration: 0.5 },
-      "<"
+      "<",
     );
 });
 </script>
