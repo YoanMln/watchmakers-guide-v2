@@ -9,6 +9,10 @@ useSeoMeta({
     "Histoire de la mesure du temps, complications horlogères, quiz : choisissez votre porte d'entrée dans l'univers de l'horlogerie mécanique",
 });
 
+definePageMeta({
+  colorMode: "dark",
+});
+
 const cardGate = computed(() => gateCard);
 const tickCount = 72;
 const page = ref(null);
