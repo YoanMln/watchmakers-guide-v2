@@ -48,45 +48,31 @@ defineEmits(["close"]);
 @use "~/assets/scss/abstracts/mixins" as *;
 
 .discovery-gate {
-  /* ----------  responsive ---------- */
-  --gate-bg-image: var(--gate-image-src);
-  --gate-min-height: 550px;
   --gate-width: 700px;
-  --gate-padding: 3rem;
-  --gate-button-gap: 3rem;
+  --gate-image-height: 68%;
+  --gate-padding: 2.5rem;
   --gate-underline-width: 30%;
-  /* ----------------------- */
+
   @include card-style;
   @include liquid-glass-border;
 
-  background-size: var(--gate-bg-size);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.58) 0%,
-      rgba(0, 0, 0, 0.38) 50%,
-      rgba(0, 0, 0, 0.08) 100%,
-      transparent 100%
-    ),
-    var(--gate-bg-image);
-
-  &::before {
-    display: none;
-  }
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  min-height: var(--gate-min-height);
-  width: var(--gate-width);
+  width: min(var(--gate-width), 100%);
+  height: 700px;
   border: none;
   text-decoration: none;
   color: $on-media;
+  background: #030508;
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
+
+  &::before {
+    display: none;
+  }
 
   @media (hover: hover) {
     &:hover {
@@ -99,19 +85,31 @@ defineEmits(["close"]);
   }
 
   &__illu {
-    display: none;
+    display: block;
     width: 100%;
-    height: 250px;
-    object-fit: contain;
+    height: var(--gate-image-height);
+    flex: none;
+    object-fit: cover;
   }
+
+  // ---------------- CONTENT ----------------
 
   &__body {
     display: flex;
     flex-direction: column;
-    flex: 1;
     align-items: flex-start;
+    flex: 1;
+    min-height: 0;
     padding: var(--gate-padding);
+    background:
+      radial-gradient(
+        circle at 70% 0%,
+        rgba(255, 255, 255, 0.025),
+        transparent 45%
+      ),
+      #030508;
   }
+
   &__header {
     display: flex;
     align-items: center;
@@ -122,14 +120,26 @@ defineEmits(["close"]);
 
   &__close {
     all: unset;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $on-media;
     cursor: pointer;
     line-height: 1;
     font-size: $fs-h1;
+    transition: transform 0.25s ease;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
+    &:hover {
+      transform: rotate(90deg);
+    }
   }
 
   &__title {
-    margin-bottom: 1rem;
+    margin: 0;
     font-size: $fs-section;
     color: $on-media;
 
@@ -137,15 +147,17 @@ defineEmits(["close"]);
       font-size: $fs-section-mobile;
     }
   }
+
   &__description {
     max-width: 60ch;
-    margin-bottom: auto;
+    margin: 1.25rem 0 0;
     color: rgba($on-media, 0.8);
     line-height: 1.7;
   }
+
   &__button {
     @include animate-underline;
-    margin-top: var(--gate-button-gap);
+    margin-top: auto;
     color: $on-media;
     font-size: $fs-body-lg;
 
@@ -159,22 +171,31 @@ defineEmits(["close"]);
   }
 }
 
-/* ------------------ RESPONSIVE ------------------ */
+// ---------------- RESPONSIVE ----------------
 
 @media (max-width: 1024px) {
   .discovery-gate {
-    --gate-bg-image: none;
+    --gate-image-height: 64%;
     --gate-padding: 2rem;
-    --gate-button-gap: 2rem;
     --gate-underline-width: 45%;
+    height: 600px;
+  }
+
+  .discovery-gate__title {
+    font-size: $fs-h3-mobile;
   }
 }
 
 @media (max-width: 480px) {
   .discovery-gate {
+    --gate-image-height: 58%;
     --gate-padding: 1.5rem;
-    --gate-button-gap: 1.5rem;
     --gate-underline-width: 60%;
+    height: 500px;
+  }
+
+  .discovery-gate__description {
+    line-height: 1.5;
   }
 }
 </style>

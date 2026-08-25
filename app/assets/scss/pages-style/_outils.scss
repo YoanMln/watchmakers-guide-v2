@@ -76,6 +76,10 @@
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
     &:hover {
       transform: rotate(45deg);
     }
@@ -89,6 +93,10 @@
     color: $bronze;
     font-size: $fs-section;
     cursor: pointer;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
   }
 
   &__card-overlay {
@@ -126,6 +134,24 @@
   .overlay-leave-from {
     opacity: 1;
     transform: scale(1);
+  }
+  @include mobile {
+    &__card {
+      min-height: 0;
+      height: auto;
+      padding: 1.25rem;
+    }
+
+    &__card-image {
+      height: auto;
+      max-height: 160px;
+      max-width: 65%;
+      object-fit: contain;
+    }
+
+    &__name {
+      font-size: $fs-h3;
+    }
   }
 }
 
