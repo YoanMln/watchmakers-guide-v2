@@ -103,7 +103,7 @@ watch(
   () => [props.showFeedback, props.questionNumber],
   () => {
     resetCard();
-  }
+  },
 );
 </script>
 
