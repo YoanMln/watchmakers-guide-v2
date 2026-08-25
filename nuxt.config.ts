@@ -52,12 +52,22 @@ export default defineNuxtConfig({
         lang: "fr",
       },
       link: [
-        { rel: "icon", href: "/favicon.ico", sizes: "any" },
+        {
+          rel: "icon",
+          href: "/favicon.ico",
+          sizes: "16x16 32x32 48x48 64x64 128x128",
+        },
         {
           rel: "icon",
           type: "image/png",
           href: "/favicon-96x96.png",
           sizes: "96x96",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon-192x192.png",
+          sizes: "192x192",
         },
         {
           rel: "apple-touch-icon",
