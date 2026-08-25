@@ -76,6 +76,10 @@
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
     &:hover {
       transform: rotate(45deg);
     }
@@ -89,6 +93,10 @@
     color: $bronze;
     font-size: $fs-section;
     cursor: pointer;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
   }
 
   &__card-overlay {

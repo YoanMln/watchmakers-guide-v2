@@ -130,6 +130,10 @@ defineEmits(["close"]);
     line-height: 1;
     font-size: $fs-h1;
     transition: transform 0.25s ease;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
     &:hover {
       transform: rotate(90deg);
     }

@@ -103,7 +103,7 @@ watch(
   () => [props.showFeedback, props.questionNumber],
   () => {
     resetCard();
-  },
+  }
 );
 </script>
 
@@ -202,10 +202,13 @@ watch(
     display: flex;
     align-items: center;
     gap: 0.4rem;
-
     cursor: pointer;
     border-radius: 12px;
     transition: 0.25s ease;
+    &:focus-visible {
+      outline: 2px solid rgba($bronze, 0.8);
+      outline-offset: 2px;
+    }
 
     &:hover {
       color: var(--color-accent-text);
