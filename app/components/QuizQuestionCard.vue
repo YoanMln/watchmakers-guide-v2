@@ -155,6 +155,11 @@ watch(
   @include quiz-card;
   width: min(520px, 100%);
   margin-top: 2rem;
+
+  @include short {
+    margin-top: 0.5rem;
+    max-height: calc(100dvh - 11rem);
+  }
   margin-inline: auto;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -164,6 +169,11 @@ watch(
     display: flex;
     justify-content: center;
     gap: 5rem;
+
+    @include short {
+      gap: 2.5rem;
+      font-size: $fs-sm;
+    }
 
     @include mobile {
       flex-wrap: wrap;
@@ -190,6 +200,10 @@ watch(
     @include mobile {
       font-size: $fs-h1-mobile;
     }
+
+    @include short {
+      font-size: $fs-h2;
+    }
     line-height: 1.5;
     text-wrap: balance;
   }
@@ -201,6 +215,11 @@ watch(
     flex-direction: column;
     gap: 3rem;
     margin-top: 4rem;
+
+    @include short {
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
   }
 
   &__answer {

@@ -1,9 +1,32 @@
 @use "variables" as *;
 
 // Breakpoint mobile unique du site.
-// Le seuil est pilote par $bp-mobile dans _variables.scss.
 @mixin mobile {
   @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $bp-laptop) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: $bp-wide) {
+    @content;
+  }
+}
+
+@mixin short {
+  @media (max-height: $bp-short) {
     @content;
   }
 }
@@ -75,11 +98,16 @@
   position: relative;
   width: min(480px, 90vw);
   aspect-ratio: 7 / 10;
+  max-height: calc(100dvh - 8rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   padding: 2.5rem;
+
+  @include short {
+    padding: 1.75rem;
+  }
   border: 1px solid rgba($bronze, 0.25);
   border-radius: 28px;
   background: $media-card;

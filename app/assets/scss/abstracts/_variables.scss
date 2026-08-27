@@ -9,8 +9,14 @@ $scroll-behavior-reset: smooth;
 // TYPOGRAPHIE
 // ============================================================
 
-// --- Breakpoint mobile (utilise par le mixin `mobile`) ---
+// --- Breakpoints ---
+// Largeur (pilotes par les mixins `mobile`, `tablet`, `laptop`, `wide`)
 $bp-mobile: 780px;
+$bp-tablet: 1024px;
+$bp-laptop: 1450px;
+$bp-wide: 1900px;
+
+$bp-short: 720px;
 
 // --- Families ---
 $font-display: "Raleway", sans-serif; // titres

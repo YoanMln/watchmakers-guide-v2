@@ -120,7 +120,7 @@ onUnmounted(() => {
   }
 
   &.scrolled {
-    top: -100px;
+    top: calc(var(--nav-height) * -1);
   }
 }
 </style>

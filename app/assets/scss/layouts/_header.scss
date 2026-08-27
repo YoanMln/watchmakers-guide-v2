@@ -156,6 +156,9 @@
   .home-hero__beat {
     position: absolute;
     bottom: 2.5rem;
+    @include short {
+      bottom: 1rem;
+    }
     left: 50%;
     z-index: 1;
     display: none;
@@ -167,6 +170,10 @@
   .home-hero__beat-line {
     width: 1px;
     height: 4.5rem;
+
+    @include short {
+      height: 2.5rem;
+    }
     background: linear-gradient(
       to bottom,
       rgba(176, 141, 99, 0) 0%,
@@ -177,6 +184,10 @@
   .home-hero__beat-dot {
     width: 5px;
     height: 5px;
+
+    @include short {
+      --hero-beat-travel: -2rem;
+    }
     margin-top: -2.5px;
     border-radius: 50%;
     background: var(--hero-bronze);
@@ -213,7 +224,7 @@
 @keyframes hero-beat {
   0%,
   100% {
-    transform: translateY(-3.5rem);
+    transform: translateY(var(--hero-beat-travel, -3.5rem));
     opacity: 0.35;
   }
   50% {

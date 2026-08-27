@@ -55,6 +55,7 @@ function openCard(card) {
 
 <style scoped lang="scss">
 @use "~/assets/scss/abstracts/variables" as *;
+@use "~/assets/scss/abstracts/mixins" as *;
 
 .discovery-hotspots {
   position: absolute;
@@ -65,13 +66,13 @@ function openCard(card) {
 }
 
 .gate-card-container {
-  position: absolute;
+  position: fixed;
   inset: 0;
-
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 .gate-card {
   width: 700px;
@@ -80,13 +81,15 @@ function openCard(card) {
 }
 
 .discovery-hotspots__point {
+  --hotspot-size: clamp(46px, calc(var(--celestial-size) * 0.115), 55px);
+
   all: unset;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  margin: -35px;
+  width: var(--hotspot-size);
+  height: var(--hotspot-size);
+  margin: calc(var(--hotspot-size) / -2);
   border-radius: 50%;
 
   display: flex;
@@ -96,7 +99,8 @@ function openCard(card) {
   border: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
   pointer-events: auto;
-  transform: rotate(var(--hotspot-angle)) translateY(-32vmin);
+  transform: rotate(var(--hotspot-angle))
+    translateY(calc(var(--celestial-size) * -0.44));
   animation: levitate 2.5s ease-in-out infinite;
   &:focus-visible {
     outline: 2px solid $bronze;
@@ -121,7 +125,7 @@ function openCard(card) {
   transform: translate(-50%, -100%);
   white-space: nowrap;
   color: $on-media;
-  font-size: $fs-body-lg;
+  font-size: $fs-body;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s;
@@ -138,19 +142,18 @@ function openCard(card) {
 }
 
 .discovery-hotspots__icon {
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   object-fit: cover;
   color: $on-media;
   transform: rotate(calc(var(--hotspot-angle) * -1));
 }
 
-@media (max-width: 768px) {
+@include mobile {
   .discovery-hotspots__point {
-    transform: rotate(var(--hotspot-angle)) translateY(-40vmin);
-    width: 60px;
-    height: 60px;
-    margin: -30px;
+    --hotspot-size: 56px;
+    transform: rotate(var(--hotspot-angle))
+      translateY(calc(var(--celestial-size) * -0.42));
   }
 }
 </style>

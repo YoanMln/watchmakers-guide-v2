@@ -56,6 +56,10 @@
   display: grid;
   gap: 5rem;
   align-items: start;
+
+  @include short {
+    gap: 2.5rem;
+  }
   @media (max-width: 900px) {
     grid-template-columns: 1fr !important;
   }
@@ -72,7 +76,9 @@
 .row__text .intro {
   margin-top: 1rem;
   font-size: $fs-body-lg;
-  line-height: 2.2;
+  // Etait 2.2 : trop aere, le bloc de texte occupait deux ecrans pour trois
+  // paragraphes. 1.8 reste confortable en lecture longue.
+  line-height: 1.8;
 
   @include mobile {
     font-size: $fs-body-lg-mobile;
@@ -84,23 +90,31 @@
 .chiffres-cles-section {
   width: 100%;
   margin-top: 5rem;
+
+  @include short {
+    margin-top: 2.5rem;
+  }
   padding: 2rem 0;
   border-top: 1px solid rgba($bronze, 0.15);
   border-bottom: 1px solid rgba($bronze, 0.15);
   text-align: $text-align;
 
   p {
-    font-size: $fs-section;
+    font-size: $fs-h2;
     margin-bottom: 1rem;
     margin-top: 1rem;
 
     @include mobile {
-      font-size: $fs-section-mobile;
+      font-size: $fs-h2-mobile;
     }
   }
   h2 {
     font-size: $fs-h1;
     margin-bottom: 5rem;
+
+    @include short {
+      margin-bottom: 2rem;
+    }
 
     @include mobile {
       font-size: $fs-h1-mobile;
@@ -114,6 +128,10 @@
   h2 {
     margin-bottom: 5rem;
     font-size: $fs-h1;
+
+    @include short {
+      margin-bottom: 2rem;
+    }
     color: var(--color-text);
 
     @include mobile {
@@ -121,10 +139,12 @@
     }
   }
   p {
-    font-size: $fs-section;
+    // Idem : les termes du lexique etaient en 2.2rem dans une colonne etroite,
+    // ils passaient systematiquement sur deux lignes.
+    font-size: $fs-h2;
 
     @include mobile {
-      font-size: $fs-section-mobile;
+      font-size: $fs-h2-mobile;
     }
   }
 }

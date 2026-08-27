@@ -14,7 +14,7 @@ definePageMeta({
 });
 
 const cardGate = computed(() => gateCard);
-const tickCount = 72;
+const tickCount = 60;
 const page = ref(null);
 
 onMounted(() => {
@@ -111,6 +111,8 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+@use "~/assets/scss/abstracts/mixins" as *;
+
 .discovery-backdrop {
   position: absolute;
   inset: 0;
@@ -154,16 +156,19 @@ onMounted(() => {
 }
 
 .celestial-stage {
+  --celestial-size: min(46vw, 82vmin, 900px);
   position: relative;
-  min-height: 75vh;
-  top: 3rem;
+  display: grid;
+  place-items: center;
+  min-height: calc(100dvh - var(--nav-height) - 6rem);
+  margin-top: 4rem;
 }
 
 .celestial {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  grid-area: 1 / 1;
+  width: var(--celestial-size);
+  aspect-ratio: 1;
   z-index: 1;
   pointer-events: none;
 }
@@ -177,7 +182,7 @@ onMounted(() => {
 }
 
 .celestial__ring--solid {
-  width: 73vmin;
+  width: 100%;
   aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
@@ -187,8 +192,8 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60vmin;
-  height: 60vmin;
+  width: calc(var(--celestial-size) * 0.82);
+  height: calc(var(--celestial-size) * 0.82);
 }
 
 .celestial__ticks-svg {
@@ -203,23 +208,23 @@ onMounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 15rem;
-  height: 15rem;
+  width: calc(var(--celestial-size) * 0.35);
+  height: calc(var(--celestial-size) * 0.35);
   background: url("/images/background/moon.webp") center/contain no-repeat;
   border-radius: 50%;
   filter: brightness(0.7);
 }
 
-@media (max-width: 768px) {
+@include short {
   .celestial-stage {
-    top: -4rem;
+    margin-top: 4rem;
+    min-height: calc(100dvh - var(--nav-height) - 3rem);
   }
-  .celestial__ring--solid {
-    width: 100vmin;
-  }
-  .celestial__ticks {
-    width: 65vmin;
-    height: 65vmin;
+}
+
+@include mobile {
+  .celestial-stage {
+    --celestial-size: min(96vw, 96vmin);
   }
 }
 </style>

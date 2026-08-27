@@ -108,11 +108,16 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
 <style lang="scss" scoped>
 @use "~/assets/scss/abstracts/variables" as *;
+@use "~/assets/scss/abstracts/mixins" as *;
 
 .watch-explode {
+  --explode-scale: 1;
   position: relative;
   width: 100%;
   height: 700px;
+  transform: scale(var(--explode-scale));
+  transform-origin: top center;
+  margin-bottom: calc(700px * (var(--explode-scale) - 1));
 
   &__wrap {
     position: absolute;
@@ -156,8 +161,10 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
   &__popover {
     position: absolute;
     transform: translate(-50%, 0);
-    width: 260px;
-    padding: 1rem 1.25rem;
+    width: calc(260px / var(--explode-scale));
+    font-size: calc(1rem / var(--explode-scale));
+    padding: calc(1rem / var(--explode-scale))
+      calc(1.25rem / var(--explode-scale));
     background: var(--color-surface);
     color: var(--color-text);
     border: 1px solid rgba($bronze, 0.4);
@@ -166,13 +173,13 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 
     h3 {
       margin: 0 0 0.4rem;
-      font-size: $fs-h3;
+      font-size: calc(#{$fs-h3} / var(--explode-scale));
       color: var(--color-accent-text);
     }
 
     p {
       margin: 0;
-      font-size: $fs-body;
+      font-size: calc(#{$fs-body} / var(--explode-scale));
       line-height: 1.4;
     }
   }
@@ -192,6 +199,12 @@ onUnmounted(() => window.removeEventListener("keydown", onKeydown));
 .popover-leave-to {
   opacity: 0;
   transform: translate(-50%, 10px);
+}
+
+@media (max-height: $bp-short) and (min-width: 1281px) {
+  .watch-explode {
+    --explode-scale: 0.72;
+  }
 }
 
 @media (max-width: 1280px) {

@@ -4,6 +4,10 @@
 .tools-items {
   min-height: calc(100vh - 30px);
   padding: 5rem;
+
+  @include short {
+    padding: 2.5rem 5rem;
+  }
   background-color: var(--color-blueprint);
   background-image:
     linear-gradient(rgba($bronze, 0.085) 1px, transparent 1px),
@@ -16,7 +20,7 @@
     100px 100px,
     100px 100px;
 
-  @media (max-width: 780px) {
+  @include mobile {
     padding: 2rem 1rem;
   }
   &__card-grid {
@@ -32,8 +36,11 @@
   }
   &__card {
     background-color: var(--color-blueprint-card);
-    min-height: 540px;
     height: 560px;
+
+    @include short {
+      height: 380px;
+    }
     border-radius: 8px;
     padding: 1.5rem;
     box-shadow: 0 8px 16px var(--color-shadow);
@@ -48,6 +55,7 @@
     display: block;
     max-width: 80%;
     height: 45%;
+    object-fit: contain;
     margin-bottom: 1rem;
     border-radius: 8px;
     transition: transform 0.4s ease;
@@ -161,7 +169,7 @@
   }
 }
 
-@media (max-width: 780px) {
+@include mobile {
   .tools-items__card-grid {
     grid-template-columns: 1fr;
   }
