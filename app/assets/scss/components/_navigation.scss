@@ -7,7 +7,7 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   width: $nav-width;
-  height: $nav-height;
+  height: var(--nav-height);
   padding: $nav-padding;
   z-index: $nav-z-index;
 
@@ -77,7 +77,10 @@
 .brand-logo {
   display: block;
   width: 250px;
+  max-width: 100%;
   height: auto;
+  max-height: calc(var(--nav-height) - 12px);
+  object-fit: contain;
   cursor: pointer;
   .light & {
     filter: invert(1);

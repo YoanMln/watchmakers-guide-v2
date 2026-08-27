@@ -1,6 +1,16 @@
 @use "../abstracts/variables" as *;
 @use "../abstracts/mixins" as *;
 
+/* ------------------ TOKENS DE LAYOUT ------------------ */
+
+:root {
+  --nav-height: #{$nav-height};
+
+  @include short {
+    --nav-height: 72px;
+  }
+}
+
 /* ------------------ BODY ------------------ */
 
 body {
@@ -56,4 +66,8 @@ body {
   min-height: 100dvh;
   width: 100%;
   padding: 4rem 0;
+
+  @include short {
+    padding: 1.5rem 0;
+  }
 }

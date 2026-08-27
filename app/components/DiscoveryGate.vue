@@ -61,7 +61,12 @@ defineEmits(["close"]);
   position: relative;
   overflow: hidden;
   width: min(var(--gate-width), 100%);
-  height: 700px;
+  height: min(700px, calc(100dvh - 4rem));
+  @include short {
+    --gate-width: 560px;
+    --gate-padding: 1.75rem;
+    height: min(560px, calc(100dvh - 6rem));
+  }
   border: none;
   text-decoration: none;
   color: $on-media;
@@ -173,12 +178,12 @@ defineEmits(["close"]);
 
 // ---------------- RESPONSIVE ----------------
 
-@media (max-width: 1024px) {
+@include tablet {
   .discovery-gate {
     --gate-image-height: 64%;
     --gate-padding: 2rem;
     --gate-underline-width: 45%;
-    height: 600px;
+    height: min(600px, calc(100dvh - 4rem));
   }
 
   .discovery-gate__title {
@@ -191,7 +196,7 @@ defineEmits(["close"]);
     --gate-image-height: 58%;
     --gate-padding: 1.5rem;
     --gate-underline-width: 60%;
-    height: 500px;
+    height: min(500px, calc(100dvh - 4rem));
   }
 
   .discovery-gate__description {

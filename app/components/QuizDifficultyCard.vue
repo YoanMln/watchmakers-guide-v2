@@ -58,12 +58,21 @@ const difficultyLevels = [
   align-items: center;
   justify-content: center;
   margin: 3rem auto 0;
+
+  @include short {
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
 }
 .card-difficulty {
   @include quiz-card;
   width: 100%;
   max-width: 480px;
   justify-self: center;
+
+  @include short {
+    max-height: calc(100dvh - 15rem);
+  }
   transition: 0.3s;
   cursor: pointer;
   animation: levitate 2.5s ease-in-out infinite;
