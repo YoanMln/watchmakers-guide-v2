@@ -3,7 +3,7 @@ defineProps({
   cardGate: { type: Array, required: true },
 });
 
-const tickCount = 72;
+const tickCount = 60;
 
 function hotspotStyle(card) {
   return {
@@ -151,7 +151,7 @@ function openCard(card) {
 
 @include mobile {
   .discovery-hotspots__point {
-    --hotspot-size: 56px;
+    --hotspot-size: 45px;
     transform: rotate(var(--hotspot-angle))
       translateY(calc(var(--celestial-size) * -0.42));
   }

@@ -225,6 +225,11 @@ onMounted(() => {
 @include mobile {
   .celestial-stage {
     --celestial-size: min(96vw, 96vmin);
+    margin-top: 1rem;
+  }
+  .celestial__ticks {
+    width: calc(var(--celestial-size) * 0.7);
+    height: calc(var(--celestial-size) * 0.7);
   }
 }
 </style>
